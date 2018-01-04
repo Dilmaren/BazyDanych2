@@ -4,7 +4,16 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2158fd52444248a8bf425660f7878eae" Name="Diagram1" />
+      <Diagram DiagramId="2158fd52444248a8bf425660f7878eae" Name="Diagram1" ZoomLevel="73" >
+        <EntityTypeShape EntityType="MedDB.HCO" Width="1.5" PointX="0.5" PointY="0.5" />
+        <EntityTypeShape EntityType="MedDB.HCP" Width="1.5" PointX="2.75" PointY="0.5" />
+        <AssociationConnector Association="MedDB.HCOHCP" ManuallyRouted="false" >
+        </AssociationConnector>
+        <EntityTypeShape EntityType="MedDB.Address" Width="1.5" PointX="1.625" PointY="4.625" />
+        <AssociationConnector Association="MedDB.HCOAddress" />
+        <AssociationConnector Association="MedDB.HCPAddress" />
+        <EntityTypeShape EntityType="MedDB.Meeting" Width="1.5" PointX="5.5" PointY="0.5" />
+      </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
 </edmx:Edmx>

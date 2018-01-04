@@ -1,0 +1,61 @@
+Tabela: HCO (Healthcare Organisation - Szpital, klinika)
+		Pola:
+			Id - 
+			Name (String) - Nazwa
+			Level (byte, wartości: 1,2,3) - opisuje poziom leczenia:
+																	1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)
+																	2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)
+																	3 - szpital kliniczny i jednostki MSWiA
+			Range (String) - zasięg (gmina, powiat, województwo, ponadwojewództwo)
+			SpecialType (String) - specyficzna właściwość - wartości: szpital psychiatryczny/wojskowy/polowy/przemysłowy/uzdrowisko/BRAK
+			Beds (int16) - liczba dostępnych łóżek
+			Employees (int16) - liczba pracowników
+			PhoneNumber (int32) - numer telefonu na recepcję
+			Email (String) - 
+			Website (String) -
+			Address - odwołanie do tabeli zawierającej dane adresowe
+
+			
+Tabela: HCP (Healthcare Professional - lekarz/doktor)
+		Pola:
+			Id - 
+			FirstName - 
+			MiddleName - 
+			LastName -
+			Gender - 
+			AcademicTitle - tytuł naukowy   lek. med. (lekarz medycyny)
+											lek. dent. (lekarz dentysta)
+											dr n. med. (doktor nauk medycznych)
+											dr hab n. med. (doktor habilitowany nauk medycznych)
+											prof. dr hab (profesor doktor habilitowany) 
+			Birthdate (DateTime) - 
+			PhoneNumber - 
+			Email - 
+			KOL (boolean) - Key Opinion Leader - osoba opiniotwórcza (TRUE / FALSE)
+			Specialty - specjalizacja (kardiochirurgia, ginekolog, dentysta, itd.)
+			
+			
+Tabela: Address	
+		Pola:
+			Street - 
+			City - 
+			Territory - województwo
+			Country - 
+			ZipCode
+			
+Tabela: Meeting (spotkanie Usera (reprezentanta firmy medycznej) z HCP)
+		HCPName - 
+		User - 
+		Date - 
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
+			
