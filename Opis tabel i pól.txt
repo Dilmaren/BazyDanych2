@@ -13,7 +13,8 @@ Tabela: HCO (Healthcare Organisation - Szpital, klinika)
 			PhoneNumber (int32) - numer telefonu na recepcję
 			Email (String) - 
 			Website (String) -
-			Address - odwołanie do tabeli zawierającej dane adresowe
+			AddressID - odwołanie do tabeli zawierającej dane adresowe
+			HCPID - odwołanie do tabeli zawierającej dane HCP
 
 			
 Tabela: HCP (Healthcare Professional - lekarz/doktor)
@@ -33,7 +34,7 @@ Tabela: HCP (Healthcare Professional - lekarz/doktor)
 			Email - 
 			KOL (boolean) - Key Opinion Leader - osoba opiniotwórcza (TRUE / FALSE)
 			Specialty - specjalizacja (kardiochirurgia, ginekolog, dentysta, itd.)
-			
+			HCOID - odwołanie do tabeli HCO
 			
 Tabela: Address	
 		Pola:
@@ -42,12 +43,37 @@ Tabela: Address
 			Territory - województwo
 			Country - 
 			ZipCode
+			HCOID - odwołanie do tabeli HCO
+			HCPID - odwołanie do tabeli HCP
+
 			
 Tabela: Meeting (spotkanie Usera (reprezentanta firmy medycznej) z HCP)
-		HCPName - 
-		User - 
-		Date - 
+		Pola:
+			HCPID - odwołanie do tabeli HCP
+			UserID - odwołanie do tabeli User
+			Date - 
+			AddressID - odwołanie do tabeli Address
+			Topic - temat rozmowy
+			ProductID - produkt którego dotyczyło spotkanie
+		
+Tabela: Product
+		Pola:
+			ProductName - 
+			AntiDisease - na co jest lek
+			Manufacturer
+			QtyPerCase - ilość w opakowaniu
+			MIngredient - główny składnik
 			
+Tabela: User (pracownik)
+		Pola:
+			ManagerID - ID Managera (także Usera)
+			FirstName -
+			LastName - 
+			JobTitle - stanowisko (np. MR - Medical Representative (reprezentant medyczny), MMR (Manager MR))
+			City -
+			Email -
+			PhoneNumber -
+			HireDate - 
 			
 			
 			
