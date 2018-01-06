@@ -91,9 +91,9 @@
           <Property Name="Specialty" Type="String" Nullable="false" />
           <NavigationProperty Name="HCO" Relationship="MedDB.HCOHCP" FromRole="HCP" ToRole="HCO" />
           <NavigationProperty Name="Address" Relationship="MedDB.HCPAddress" FromRole="HCP" ToRole="Address" />
-          <Property Name="AddressID" Type="String" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingHCP" FromRole="HCP" ToRole="Meeting" />
-          <Property Name="HCOID" Type="String" Nullable="false" />
+          <Property Name="HCOID" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="HCOHCP">
           <End Type="MedDB.HCO" Role="HCO" Multiplicity="1" />
@@ -125,7 +125,7 @@
           <Property Name="HCPID" Type="Int32" Nullable="false" />
         </EntityType>
         <Association Name="HCOAddress">
-          <End Type="MedDB.HCO" Role="HCO" Multiplicity="1" />
+          <End Type="MedDB.HCO" Role="HCO" Multiplicity="*" />
           <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="Address">
@@ -137,7 +137,7 @@
           </ReferentialConstraint>
         </Association>
         <Association Name="HCPAddress">
-          <End Type="MedDB.HCP" Role="HCP" Multiplicity="1" />
+          <End Type="MedDB.HCP" Role="HCP" Multiplicity="*" />
           <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="Address">
@@ -165,7 +165,7 @@
           <NavigationProperty Name="User" Relationship="MedDB.UserMeeting" FromRole="Meeting" ToRole="User" />
         </EntityType>
         <Association Name="MeetingAddress">
-          <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="1" />
+          <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
           <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="Address">
@@ -178,7 +178,7 @@
         </Association>
         <Association Name="MeetingHCP">
           <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
-          <End Type="MedDB.HCP" Role="HCP" Multiplicity="*" />
+          <End Type="MedDB.HCP" Role="HCP" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="HCP">
               <PropertyRef Name="HCPID" />
@@ -223,8 +223,8 @@
           <Property Name="MIngredient" Type="String" Nullable="false" />
         </EntityType>
         <Association Name="MeetingProduct">
-          <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="1" />
-          <End Type="MedDB.Product" Role="Product" Multiplicity="*" />
+          <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
+          <End Type="MedDB.Product" Role="Product" Multiplicity="1" />
           <ReferentialConstraint>
             <Principal Role="Product">
               <PropertyRef Name="ProductID" />
@@ -236,7 +236,7 @@
         </Association>
         <Association Name="UserUser">
           <End Type="MedDB.User" Role="User" Multiplicity="1" />
-          <End Type="MedDB.User" Role="User1" Multiplicity="1" />
+          <End Type="MedDB.User" Role="User1" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="User">
               <PropertyRef Name="UserID" />
