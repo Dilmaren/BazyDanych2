@@ -10,8 +10,6 @@
         <AssociationConnector Association="MedDB.HCOHCP" ManuallyRouted="false" >
         </AssociationConnector>
         <EntityTypeShape EntityType="MedDB.Address" Width="1.5" PointX="1.625" PointY="5.375" />
-        <AssociationConnector Association="MedDB.HCOAddress" />
-        <AssociationConnector Association="MedDB.HCPAddress" />
         <EntityTypeShape EntityType="MedDB.Meeting" Width="1.5" PointX="5.5" PointY="0.5" />
         <AssociationConnector Association="MedDB.MeetingAddress" />
         <AssociationConnector Association="MedDB.MeetingHCP" />
@@ -19,8 +17,6 @@
         <AssociationConnector Association="MedDB.AddressUser" />
         <EntityTypeShape EntityType="MedDB.Product" Width="1.5" PointX="8.875" PointY="0.5" />
         <AssociationConnector Association="MedDB.MeetingProduct" />
-        <AssociationConnector Association="MedDB.UserUser" ManuallyRouted="false" >
-        </AssociationConnector>
         <AssociationConnector Association="MedDB.UserMeeting" />
       </Diagram>
     </edmx:Diagrams>

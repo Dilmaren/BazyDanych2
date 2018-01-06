@@ -20,14 +20,6 @@
             <End Role="HCP" EntitySet="HCPSet" />
           </AssociationSet>
           <EntitySet Name="AddressSet" EntityType="MedDB.Address" />
-          <AssociationSet Name="HCOAddress" Association="MedDB.HCOAddress">
-            <End Role="HCO" EntitySet="HCOSet" />
-            <End Role="Address" EntitySet="AddressSet" />
-          </AssociationSet>
-          <AssociationSet Name="HCPAddress" Association="MedDB.HCPAddress">
-            <End Role="HCP" EntitySet="HCPSet" />
-            <End Role="Address" EntitySet="AddressSet" />
-          </AssociationSet>
           <EntitySet Name="MeetingSet" EntityType="MedDB.Meeting" />
           <AssociationSet Name="MeetingAddress" Association="MedDB.MeetingAddress">
             <End Role="Meeting" EntitySet="MeetingSet" />
@@ -47,13 +39,21 @@
             <End Role="Meeting" EntitySet="MeetingSet" />
             <End Role="Product" EntitySet="ProductSet" />
           </AssociationSet>
-          <AssociationSet Name="UserUser" Association="MedDB.UserUser">
-            <End Role="User" EntitySet="UserSet" />
-            <End Role="User1" EntitySet="UserSet" />
-          </AssociationSet>
           <AssociationSet Name="UserMeeting" Association="MedDB.UserMeeting">
             <End Role="User" EntitySet="UserSet" />
             <End Role="Meeting" EntitySet="MeetingSet" />
+          </AssociationSet>
+          <AssociationSet Name="HCPAddress" Association="MedDB.HCPAddress">
+            <End Role="HCP" EntitySet="HCPSet" />
+            <End Role="Address" EntitySet="AddressSet" />
+          </AssociationSet>
+          <AssociationSet Name="HCOAddress" Association="MedDB.HCOAddress">
+            <End Role="HCO" EntitySet="HCOSet" />
+            <End Role="Address" EntitySet="AddressSet" />
+          </AssociationSet>
+          <AssociationSet Name="UserUser" Association="MedDB.UserUser">
+            <End Role="User" EntitySet="UserSet" />
+            <End Role="User1" EntitySet="UserSet" />
           </AssociationSet>
         </EntityContainer>
         <EntityType Name="HCO">
@@ -71,8 +71,8 @@
           <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="Website" Type="String" Nullable="false" />
           <NavigationProperty Name="HCP" Relationship="MedDB.HCOHCP" FromRole="HCO" ToRole="HCP" />
-          <NavigationProperty Name="Address1" Relationship="MedDB.HCOAddress" FromRole="HCO" ToRole="Address" />
-          <Property Name="AddressID" Type="String" Nullable="false" />
+          <Property Name="AddressID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="MedDB.HCOAddress" FromRole="HCO" ToRole="Address" />
         </EntityType>
         <EntityType Name="HCP">
           <Key>
@@ -90,10 +90,10 @@
           <Property Name="KOL" Type="Boolean" Nullable="false" DefaultValue="FALSE" />
           <Property Name="Specialty" Type="String" Nullable="false" />
           <NavigationProperty Name="HCO" Relationship="MedDB.HCOHCP" FromRole="HCP" ToRole="HCO" />
-          <NavigationProperty Name="Address" Relationship="MedDB.HCPAddress" FromRole="HCP" ToRole="Address" />
           <Property Name="AddressID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingHCP" FromRole="HCP" ToRole="Meeting" />
           <Property Name="HCOID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Address" Relationship="MedDB.HCPAddress" FromRole="HCP" ToRole="Address" />
         </EntityType>
         <Association Name="HCOHCP">
           <End Type="MedDB.HCO" Role="HCO" Multiplicity="1" />
@@ -117,37 +117,13 @@
           <Property Name="Territory" Type="String" Nullable="false" />
           <Property Name="Country" Type="String" Nullable="false" />
           <Property Name="ZipCode" Type="Int16" Nullable="false" />
-          <NavigationProperty Name="HCO" Relationship="MedDB.HCOAddress" FromRole="Address" ToRole="HCO" />
-          <NavigationProperty Name="HCP" Relationship="MedDB.HCPAddress" FromRole="Address" ToRole="HCP" />
           <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingAddress" FromRole="Address" ToRole="Meeting" />
           <NavigationProperty Name="User" Relationship="MedDB.AddressUser" FromRole="Address" ToRole="User" />
           <Property Name="HCOID" Type="Int32" Nullable="false" />
           <Property Name="HCPID" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="HCP" Relationship="MedDB.HCPAddress" FromRole="Address" ToRole="HCP" />
+          <NavigationProperty Name="HCO" Relationship="MedDB.HCOAddress" FromRole="Address" ToRole="HCO" />
         </EntityType>
-        <Association Name="HCOAddress">
-          <End Type="MedDB.HCO" Role="HCO" Multiplicity="*" />
-          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="Address">
-              <PropertyRef Name="AddressID" />
-            </Principal>
-            <Dependent Role="HCO">
-              <PropertyRef Name="AddressID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="HCPAddress">
-          <End Type="MedDB.HCP" Role="HCP" Multiplicity="*" />
-          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
-          <ReferentialConstraint>
-            <Principal Role="Address">
-              <PropertyRef Name="AddressID" />
-            </Principal>
-            <Dependent Role="HCP">
-              <PropertyRef Name="AddressID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <EntityType Name="Meeting">
           <Key>
             <PropertyRef Name="MeetingID" />
@@ -194,7 +170,6 @@
           </Key>
           <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <NavigationProperty Name="Address" Relationship="MedDB.AddressUser" FromRole="User" ToRole="Address" />
-          <Property Name="ManagerID" Type="String" Nullable="false" />
           <Property Name="FirstName" Type="String" Nullable="false" />
           <Property Name="LastName" Type="String" Nullable="false" />
           <Property Name="JobTitle" Type="String" Nullable="false" />
@@ -202,9 +177,10 @@
           <Property Name="Email" Type="String" Nullable="false" />
           <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
           <Property Name="HireDate" Type="DateTime" Nullable="false" />
+          <NavigationProperty Name="Meeting" Relationship="MedDB.UserMeeting" FromRole="User" ToRole="Meeting" />
+          <Property Name="ManagerID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="User1" Relationship="MedDB.UserUser" FromRole="User" ToRole="User1" />
           <NavigationProperty Name="User2" Relationship="MedDB.UserUser" FromRole="User1" ToRole="User" />
-          <NavigationProperty Name="Meeting" Relationship="MedDB.UserMeeting" FromRole="User" ToRole="Meeting" />
         </EntityType>
         <Association Name="AddressUser">
           <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
@@ -234,18 +210,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="UserUser">
-          <End Type="MedDB.User" Role="User" Multiplicity="1" />
-          <End Type="MedDB.User" Role="User1" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="User">
-              <PropertyRef Name="UserID" />
-            </Principal>
-            <Dependent Role="User1">
-              <PropertyRef Name="ManagerID" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="UserMeeting">
           <End Type="MedDB.User" Role="User" Multiplicity="1" />
           <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
@@ -255,6 +219,42 @@
             </Principal>
             <Dependent Role="Meeting">
               <PropertyRef Name="UserID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HCPAddress">
+          <End Type="MedDB.HCP" Role="HCP" Multiplicity="*" />
+          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="HCP">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HCOAddress">
+          <End Type="MedDB.HCO" Role="HCO" Multiplicity="*" />
+          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="HCO">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="UserUser">
+          <End Type="MedDB.User" Role="User" Multiplicity="1" />
+          <End Type="MedDB.User" Role="User1" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="User">
+              <PropertyRef Name="UserID" />
+            </Principal>
+            <Dependent Role="User1">
+              <PropertyRef Name="ManagerID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
