@@ -18,6 +18,8 @@
         <EntityTypeShape EntityType="MedDB.Product" Width="1.5" PointX="8.875" PointY="0.5" />
         <AssociationConnector Association="MedDB.MeetingProduct" />
         <AssociationConnector Association="MedDB.UserMeeting" />
+        <AssociationConnector Association="MedDB.HCOAddress1" />
+        <AssociationConnector Association="MedDB.HCPAddress1" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

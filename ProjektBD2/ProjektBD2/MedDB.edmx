@@ -48,6 +48,14 @@
       <End Role="User" EntitySet="UserSet" />
       <End Role="User1" EntitySet="UserSet" />
     </AssociationSet>
+    <AssociationSet Name="HCOAddress1" Association="MedDB.Store.HCOAddress1">
+      <End Role="HCO" EntitySet="HCOSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="HCPAddress1" Association="MedDB.Store.HCPAddress1">
+      <End Role="HCP" EntitySet="HCPSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
   </EntityContainer>
   <EntityType Name="HCOSet">
     <Key>
@@ -242,6 +250,30 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="HCOAddress1">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCO">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCPAddress1">
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCP">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -289,6 +321,14 @@
             <End Role="User" EntitySet="UserSet" />
             <End Role="User1" EntitySet="UserSet" />
           </AssociationSet>
+          <AssociationSet Name="HCOAddress1" Association="MedDB.HCOAddress1">
+            <End Role="HCO" EntitySet="HCOSet" />
+            <End Role="Address" EntitySet="AddressSet" />
+          </AssociationSet>
+          <AssociationSet Name="HCPAddress1" Association="MedDB.HCPAddress1">
+            <End Role="HCP" EntitySet="HCPSet" />
+            <End Role="Address" EntitySet="AddressSet" />
+          </AssociationSet>
         </EntityContainer>
         <EntityType Name="HCO">
           <Key>
@@ -307,6 +347,7 @@
           <NavigationProperty Name="HCP" Relationship="MedDB.HCOHCP" FromRole="HCO" ToRole="HCP" />
           <Property Name="AddressID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Address" Relationship="MedDB.HCOAddress" FromRole="HCO" ToRole="Address" />
+          <NavigationProperty Name="Address1" Relationship="MedDB.HCOAddress1" FromRole="HCO" ToRole="Address" />
         </EntityType>
         <EntityType Name="HCP">
           <Key>
@@ -328,6 +369,7 @@
           <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingHCP" FromRole="HCP" ToRole="Meeting" />
           <Property Name="HCOID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Address" Relationship="MedDB.HCPAddress" FromRole="HCP" ToRole="Address" />
+          <NavigationProperty Name="Address1" Relationship="MedDB.HCPAddress1" FromRole="HCP" ToRole="Address" />
         </EntityType>
         <Association Name="HCOHCP">
           <End Type="MedDB.HCO" Role="HCO" Multiplicity="1" />
@@ -357,6 +399,8 @@
           <Property Name="HCPID" Type="Int32" Nullable="false" />
           <NavigationProperty Name="HCP" Relationship="MedDB.HCPAddress" FromRole="Address" ToRole="HCP" />
           <NavigationProperty Name="HCO" Relationship="MedDB.HCOAddress" FromRole="Address" ToRole="HCO" />
+          <NavigationProperty Name="HCO1" Relationship="MedDB.HCOAddress1" FromRole="Address" ToRole="HCO" />
+          <NavigationProperty Name="HCP1" Relationship="MedDB.HCPAddress1" FromRole="Address" ToRole="HCP" />
         </EntityType>
         <EntityType Name="Meeting">
           <Key>
@@ -489,6 +533,30 @@
             </Principal>
             <Dependent Role="User1">
               <PropertyRef Name="ManagerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HCOAddress1">
+          <End Type="MedDB.HCO" Role="HCO" Multiplicity="*" />
+          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="HCO">
+              <PropertyRef Name="AddressID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="HCPAddress1">
+          <End Type="MedDB.HCP" Role="HCP" Multiplicity="*" />
+          <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
+          <ReferentialConstraint>
+            <Principal Role="Address">
+              <PropertyRef Name="AddressID" />
+            </Principal>
+            <Dependent Role="HCP">
+              <PropertyRef Name="AddressID" />
             </Dependent>
           </ReferentialConstraint>
         </Association>

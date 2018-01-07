@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/06/2018 22:07:11
+-- Date Created: 01/06/2018 23:48:14
 -- Generated from EDMX file: E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\MedDB.edmx
 -- --------------------------------------------------
 
@@ -17,11 +17,56 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[FK_HCOHCP]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCOHCP];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MeetingAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingAddress];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MeetingHCP]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingHCP];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AddressUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_AddressUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MeetingProduct]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingProduct];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserMeeting]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_UserMeeting];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCOAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_UserUser];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[HCOSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[HCOSet];
+GO
+IF OBJECT_ID(N'[dbo].[HCPSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[HCPSet];
+GO
+IF OBJECT_ID(N'[dbo].[AddressSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AddressSet];
+GO
+IF OBJECT_ID(N'[dbo].[MeetingSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[MeetingSet];
+GO
+IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserSet];
+GO
+IF OBJECT_ID(N'[dbo].[ProductSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProductSet];
+GO
 
 -- --------------------------------------------------
 -- Creating all tables
@@ -289,6 +334,36 @@ GO
 CREATE INDEX [IX_FK_UserUser]
 ON [dbo].[UserSet]
     ([ManagerID]);
+GO
+
+-- Creating foreign key on [AddressID] in table 'HCOSet'
+ALTER TABLE [dbo].[HCOSet]
+ADD CONSTRAINT [FK_HCOAddress1]
+    FOREIGN KEY ([AddressID])
+    REFERENCES [dbo].[AddressSet]
+        ([AddressID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HCOAddress1'
+CREATE INDEX [IX_FK_HCOAddress1]
+ON [dbo].[HCOSet]
+    ([AddressID]);
+GO
+
+-- Creating foreign key on [AddressID] in table 'HCPSet'
+ALTER TABLE [dbo].[HCPSet]
+ADD CONSTRAINT [FK_HCPAddress1]
+    FOREIGN KEY ([AddressID])
+    REFERENCES [dbo].[AddressSet]
+        ([AddressID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_HCPAddress1'
+CREATE INDEX [IX_FK_HCPAddress1]
+ON [dbo].[HCPSet]
+    ([AddressID]);
 GO
 
 -- --------------------------------------------------

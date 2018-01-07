@@ -1,0 +1,13 @@
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Properties.Resources.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.GenerateResource.Cache
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.CoreCompileInputs.cache
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.exe.config
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.exe
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.pdb
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.dll
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.dll
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.xml
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.xml
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.exe
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
