@@ -1,4 +1,3 @@
-E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Properties.Resources.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.GenerateResource.Cache
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.CoreCompileInputs.cache
@@ -13,3 +12,5 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.exe
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Form1.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCO.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.DBMonitor.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
