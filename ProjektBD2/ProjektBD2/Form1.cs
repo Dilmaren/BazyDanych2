@@ -15,6 +15,8 @@ namespace ProjektBD2
         public Form1()
         {
             InitializeComponent();
+            dataGridView1.Update();
+            dataGridView1.Refresh();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -26,9 +28,9 @@ namespace ProjektBD2
 
         private void btn1_Click(object sender, EventArgs e)
         {
+            this.Hide();
             NewHCO nowyszpital = new NewHCO();
             nowyszpital.Show();
-
         }
     }
 }

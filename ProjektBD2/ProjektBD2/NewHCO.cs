@@ -57,6 +57,9 @@ namespace ProjektBD2
                 command.Parameters.AddWithValue("@AddressID", Int32.Parse(label13.Text.ToString()));
                 command.ExecuteNonQuery();
                 conn.Close();
+                Form1 powrot = new Form1();
+                powrot.Show();
+                this.Hide();
             }
             catch (SqlException er)
             {
