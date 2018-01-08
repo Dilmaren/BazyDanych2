@@ -11,3 +11,5 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.xml
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.xml
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.exe
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Form1.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCO.resources

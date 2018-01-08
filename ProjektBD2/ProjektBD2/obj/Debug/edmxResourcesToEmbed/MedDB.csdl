@@ -59,7 +59,7 @@
     <Property Name="HCOID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="Name" Type="String" Nullable="false" />
     <Property Name="Range" Type="String" Nullable="false" />
-    <Property Name="Level" Type="Byte" Nullable="false" />
+    <Property Name="Level" Type="Int16" Nullable="false" />
     <Property Name="SpecialType" Type="String" Nullable="false" />
     <Property Name="Beds" Type="String" Nullable="false" />
     <Property Name="Employees" Type="String" Nullable="false" />

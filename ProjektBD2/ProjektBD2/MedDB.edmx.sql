@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/06/2018 23:48:14
+-- Date Created: 01/07/2018 14:55:41
 -- Generated from EDMX file: E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\MedDB.edmx
 -- --------------------------------------------------
 
@@ -44,6 +44,12 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_UserUser];
 GO
+IF OBJECT_ID(N'[dbo].[FK_HCOAddress1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCPAddress1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress1];
+GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
@@ -77,7 +83,7 @@ CREATE TABLE [dbo].[HCOSet] (
     [HCOID] int IDENTITY(1,1) NOT NULL,
     [Name] nvarchar(max)  NOT NULL,
     [Range] nvarchar(max)  NOT NULL,
-    [Level] tinyint  NOT NULL,
+    [Level] smallint  NOT NULL,
     [SpecialType] nvarchar(max)  NOT NULL,
     [Beds] nvarchar(max)  NOT NULL,
     [Employees] nvarchar(max)  NOT NULL,

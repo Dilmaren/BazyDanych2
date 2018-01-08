@@ -64,7 +64,7 @@
     <Property Name="HCOID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Range" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Level" Type="tinyint" Nullable="false" />
+    <Property Name="Level" Type="smallint" Nullable="false" />
     <Property Name="SpecialType" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Beds" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Employees" Type="nvarchar(max)" Nullable="false" />
@@ -337,7 +337,7 @@
           <Property Name="HCOID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Name" Type="String" Nullable="false" />
           <Property Name="Range" Type="String" Nullable="false" />
-          <Property Name="Level" Type="Byte" Nullable="false" />
+          <Property Name="Level" Type="Int16" Nullable="false" />
           <Property Name="SpecialType" Type="String" Nullable="false" />
           <Property Name="Beds" Type="String" Nullable="false" />
           <Property Name="Employees" Type="String" Nullable="false" />

@@ -59,7 +59,7 @@
     <Property Name="HCOID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="Name" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Range" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Level" Type="tinyint" Nullable="false" />
+    <Property Name="Level" Type="smallint" Nullable="false" />
     <Property Name="SpecialType" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Beds" Type="nvarchar(max)" Nullable="false" />
     <Property Name="Employees" Type="nvarchar(max)" Nullable="false" />

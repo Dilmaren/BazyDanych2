@@ -23,7 +23,7 @@ namespace ProjektBD2
         public int HCOID { get; set; }
         public string Name { get; set; }
         public string Range { get; set; }
-        public byte Level { get; set; }
+        public short Level { get; set; }
         public string SpecialType { get; set; }
         public string Beds { get; set; }
         public string Employees { get; set; }

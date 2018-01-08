@@ -16,5 +16,19 @@ namespace ProjektBD2
         {
             InitializeComponent();
         }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+            // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
+            this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
+
+        }
+
+        private void btn1_Click(object sender, EventArgs e)
+        {
+            NewHCO nowyszpital = new NewHCO();
+            nowyszpital.Show();
+
+        }
     }
 }
