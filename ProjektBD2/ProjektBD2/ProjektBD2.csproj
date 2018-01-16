@@ -90,6 +90,12 @@
     <Compile Include="EditHCO.Designer.cs">
       <DependentUpon>EditHCO.cs</DependentUpon>
     </Compile>
+    <Compile Include="EditHCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditHCP.Designer.cs">
+      <DependentUpon>EditHCP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -160,6 +166,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="EditHCO.resx">
       <DependentUpon>EditHCO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EditHCP.resx">
+      <DependentUpon>EditHCP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>

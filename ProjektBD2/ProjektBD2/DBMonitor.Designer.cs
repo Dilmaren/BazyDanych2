@@ -1052,6 +1052,7 @@
             this.button9.TabIndex = 2;
             this.button9.Text = "EDIT HCP";
             this.button9.UseVisualStyleBackColor = true;
+            this.button9.Click += new System.EventHandler(this.button9_Click);
             // 
             // button8
             // 

@@ -19,3 +19,4 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showEmploye
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewAddress.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditAddress.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCP.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCP.resources
