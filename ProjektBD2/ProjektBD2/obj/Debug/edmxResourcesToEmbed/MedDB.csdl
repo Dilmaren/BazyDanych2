@@ -9,10 +9,6 @@
     </AssociationSet>
     <EntitySet Name="AddressSet" EntityType="MedDB.Address" />
     <EntitySet Name="MeetingSet" EntityType="MedDB.Meeting" />
-    <AssociationSet Name="MeetingAddress" Association="MedDB.MeetingAddress">
-      <End Role="Meeting" EntitySet="MeetingSet" />
-      <End Role="Address" EntitySet="AddressSet" />
-    </AssociationSet>
     <AssociationSet Name="MeetingHCP" Association="MedDB.MeetingHCP">
       <End Role="Meeting" EntitySet="MeetingSet" />
       <End Role="HCP" EntitySet="HCPSet" />
@@ -115,7 +111,6 @@
     <Property Name="Territory" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Country" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="ZipCode" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingAddress" FromRole="Address" ToRole="Meeting" />
     <NavigationProperty Name="User" Relationship="MedDB.AddressUser" FromRole="Address" ToRole="User" />
     <NavigationProperty Name="HCP" Relationship="MedDB.HCPAddress" FromRole="Address" ToRole="HCP" />
     <NavigationProperty Name="HCO" Relationship="MedDB.HCOAddress" FromRole="Address" ToRole="HCO" />
@@ -128,28 +123,14 @@
     </Key>
     <Property Name="MeetingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HCPID" Type="Int32" Nullable="false" />
-    <Property Name="Date" Type="DateTime" Nullable="false" />
-    <NavigationProperty Name="Address1" Relationship="MedDB.MeetingAddress" FromRole="Meeting" ToRole="Address" />
+    <Property Name="Date" Type="DateTime" Nullable="false" Precision="0" />
     <NavigationProperty Name="HCP" Relationship="MedDB.MeetingHCP" FromRole="Meeting" ToRole="HCP" />
     <Property Name="Topic" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
-    <Property Name="AddressID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="MedDB.MeetingProduct" FromRole="Meeting" ToRole="Product" />
     <Property Name="UserID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="User" Relationship="MedDB.UserMeeting" FromRole="Meeting" ToRole="User" />
   </EntityType>
-  <Association Name="MeetingAddress">
-    <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
-    <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
-    <ReferentialConstraint>
-      <Principal Role="Address">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="Meeting">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="MeetingHCP">
     <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
     <End Type="MedDB.HCP" Role="HCP" Multiplicity="1" />

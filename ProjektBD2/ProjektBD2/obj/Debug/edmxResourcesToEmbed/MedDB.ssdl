@@ -53,7 +53,6 @@
     <Property Name="HCPID" Type="int" Nullable="false" />
     <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Topic" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="AddressID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
   </EntityType>
@@ -154,18 +153,6 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MeetingAddress">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="MeetingSet" Type="Self.MeetingSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="MeetingSet">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <Association Name="FK_MeetingHCP">
     <End Role="HCPSet" Type="Self.HCPSet" Multiplicity="1" />
     <End Role="MeetingSet" Type="Self.MeetingSet" Multiplicity="*" />
@@ -232,10 +219,6 @@
     <AssociationSet Name="FK_HCPAddress1" Association="Self.FK_HCPAddress1">
       <End Role="AddressSet" EntitySet="AddressSet" />
       <End Role="HCPSet" EntitySet="HCPSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MeetingAddress" Association="Self.FK_MeetingAddress">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="MeetingSet" EntitySet="MeetingSet" />
     </AssociationSet>
     <AssociationSet Name="FK_MeetingHCP" Association="Self.FK_MeetingHCP">
       <End Role="HCPSet" EntitySet="HCPSet" />

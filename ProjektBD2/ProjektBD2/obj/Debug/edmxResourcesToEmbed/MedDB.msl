@@ -56,7 +56,6 @@
           <ScalarProperty Name="HCPID" ColumnName="HCPID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
           <ScalarProperty Name="Topic" ColumnName="Topic" />
-          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
           <ScalarProperty Name="ProductID" ColumnName="ProductID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
         </MappingFragment>

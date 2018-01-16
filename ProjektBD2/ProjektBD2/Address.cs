@@ -17,7 +17,6 @@ namespace ProjektBD2
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Address()
         {
-            this.Meeting = new HashSet<Meeting>();
             this.User = new HashSet<User>();
             this.HCP = new HashSet<HCP>();
             this.HCO = new HashSet<HCO>();
@@ -32,8 +31,6 @@ namespace ProjektBD2
         public string Country { get; set; }
         public int ZipCode { get; set; }
     
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Meeting> Meeting { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<User> User { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]

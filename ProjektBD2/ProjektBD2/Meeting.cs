@@ -18,11 +18,9 @@ namespace ProjektBD2
         public int HCPID { get; set; }
         public System.DateTime Date { get; set; }
         public string Topic { get; set; }
-        public int AddressID { get; set; }
         public int ProductID { get; set; }
         public int UserID { get; set; }
     
-        public virtual Address Address1 { get; set; }
         public virtual HCP HCP { get; set; }
         public virtual Product Product { get; set; }
         public virtual User User { get; set; }
