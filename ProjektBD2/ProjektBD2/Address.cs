@@ -31,8 +31,6 @@ namespace ProjektBD2
         public string Territory { get; set; }
         public string Country { get; set; }
         public int ZipCode { get; set; }
-        public int HCOID { get; set; }
-        public int HCPID { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Meeting> Meeting { get; set; }

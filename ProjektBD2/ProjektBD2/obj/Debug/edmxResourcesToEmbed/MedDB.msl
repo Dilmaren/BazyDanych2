@@ -46,8 +46,6 @@
           <ScalarProperty Name="Territory" ColumnName="Territory" />
           <ScalarProperty Name="Country" ColumnName="Country" />
           <ScalarProperty Name="ZipCode" ColumnName="ZipCode" />
-          <ScalarProperty Name="HCOID" ColumnName="HCOID" />
-          <ScalarProperty Name="HCPID" ColumnName="HCPID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -67,11 +65,11 @@
     <EntitySetMapping Name="UserSet">
       <EntityTypeMapping TypeName="IsTypeOf(MedDB.User)">
         <MappingFragment StoreEntitySet="UserSet">
+          <ScalarProperty Name="AddressID" ColumnName="Address_AddressID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
           <ScalarProperty Name="JobTitle" ColumnName="JobTitle" />
-          <ScalarProperty Name="City" ColumnName="City" />
           <ScalarProperty Name="Email" ColumnName="Email" />
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="HireDate" ColumnName="HireDate" />
@@ -91,13 +89,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <AssociationSetMapping Name="AddressUser" TypeName="MedDB.AddressUser" StoreEntitySet="UserSet">
-      <EndProperty Name="Address">
-        <ScalarProperty Name="AddressID" ColumnName="Address_AddressID" />
-      </EndProperty>
-      <EndProperty Name="User">
-        <ScalarProperty Name="UserID" ColumnName="UserID" />
-      </EndProperty>
-    </AssociationSetMapping>
   </EntityContainerMapping>
 </Mapping>

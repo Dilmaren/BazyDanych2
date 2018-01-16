@@ -13,10 +13,10 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Form1.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCO.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.DBMonitor.resources
-E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCO.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showEmployees.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewAddress.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditAddress.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCP.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCP.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.MeetingHistory.resources

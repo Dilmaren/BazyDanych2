@@ -315,6 +315,30 @@ namespace ProjektBD2
             }
         }
 
-        
+        //Show Meeting History Button
+        private void button11_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
+                command1.CommandText = "SELECT HCOID FROM dbo.HCOSet where NAME = @name1";
+                pomoc1 = Convert.ToString(command1.ExecuteScalar());
+                pomoc = Int32.Parse(pomoc1);
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+            this.Hide();
+            MeetingHistory historiaspotkan = new MeetingHistory();
+            historiaspotkan.Show();
+
+        }
     }
 }

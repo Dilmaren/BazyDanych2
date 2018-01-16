@@ -72,6 +72,19 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD2DataSet21.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD2DataSet3.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2DataSet3.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD2DataSet4.cs">
+      <DependentUpon>BD2DataSet4.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="BD2DataSet4.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2DataSet4.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -115,6 +128,12 @@
     </Compile>
     <Compile Include="Meeting.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="MeetingHistory.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetingHistory.Designer.cs">
+      <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
     <Compile Include="Model2.Context.cs">
       <AutoGen>True</AutoGen>
@@ -173,6 +192,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MeetingHistory.resx">
+      <DependentUpon>MeetingHistory.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewAddress.resx">
       <DependentUpon>NewAddress.cs</DependentUpon>
     </EmbeddedResource>
@@ -230,6 +252,28 @@
     </None>
     <None Include="BD2DataSet21.xss">
       <DependentUpon>BD2DataSet21.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet3.xsc">
+      <DependentUpon>BD2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet3.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD2DataSet3.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD2DataSet3.xss">
+      <DependentUpon>BD2DataSet3.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet4.xsc">
+      <DependentUpon>BD2DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet4.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD2DataSet4.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD2DataSet4.xss">
+      <DependentUpon>BD2DataSet4.xsd</DependentUpon>
     </None>
     <None Include="MedDB.edmx.diagram">
       <DependentUpon>MedDB.edmx</DependentUpon>

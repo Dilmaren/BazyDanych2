@@ -20,6 +20,7 @@
         <AssociationConnector Association="MedDB.UserMeeting" />
         <AssociationConnector Association="MedDB.HCOAddress1" />
         <AssociationConnector Association="MedDB.HCPAddress1" />
+        <AssociationConnector Association="MedDB.FK_UserUser" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

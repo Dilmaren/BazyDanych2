@@ -38,18 +38,7 @@ namespace ProjektBD2
 
         private void button2_Click(object sender, EventArgs e)
         {
-            String street = "Kolorowa 6";
-            String city = "Poznań";
-            String territory = "Wielkopolska";
-            String country = "Polska";
-            Int32 zipcode = 12010;
-            var adres = new Address { Street = street, City=city, Territory=territory, Country=country, ZipCode=zipcode };
-
-            using (var context = new MedDBContainer())
-            {
-                context.AddressSet.Add(adres);
-                context.SaveChanges();
-            }
+            
         }
     }
 }
