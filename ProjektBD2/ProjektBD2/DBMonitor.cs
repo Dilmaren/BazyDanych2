@@ -27,12 +27,14 @@ namespace ProjektBD2
 
         private void DBMonitor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD2DataSet5.AddressSet' table. You can move, or remove it, as needed.
+            this.addressSetTableAdapter1.Fill(this.bD2DataSet5.AddressSet);
             // TODO: This line of code loads data into the 'bD2DataSet2.HCPSet' table. You can move, or remove it, as needed.
             this.hCPSetTableAdapter.Fill(this.bD2DataSet2.HCPSet);
             // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
             this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
             // TODO: This line of code loads data into the 'bD2DataSet1.AddressSet' table. You can move, or remove it, as needed.
-            this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
+      //  this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
 
         }
         //New Address Button
@@ -283,10 +285,6 @@ namespace ProjektBD2
             pokazdoktorow.Show();
         }
 
-        
-       
-        
-       
         //Delete Address Button
         private void button7_Click(object sender, EventArgs e)
         {
@@ -318,23 +316,8 @@ namespace ProjektBD2
         //Show Meeting History Button
         private void button11_Click(object sender, EventArgs e)
         {
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
-            conn.Open();
-            try
-            {
-                SqlCommand command1 = new SqlCommand("", conn);
-                command1.CommandType = CommandType.Text;
-                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
-                command1.CommandText = "SELECT HCOID FROM dbo.HCOSet where NAME = @name1";
-                pomoc1 = Convert.ToString(command1.ExecuteScalar());
-                pomoc = Int32.Parse(pomoc1);
-            }
-            catch (SqlException er)
-            {
-                String text = "There was an error reported by SQL Server, " + er.Message;
-                MessageBox.Show(text, "ERROR");
-            }
+            pomoc = Convert.ToInt32(dataGridView3.CurrentRow.Cells[3].Value.ToString());
+            MessageBox.Show(Convert.ToString(pomoc), "info");
             this.Hide();
             MeetingHistory historiaspotkan = new MeetingHistory();
             historiaspotkan.Show();

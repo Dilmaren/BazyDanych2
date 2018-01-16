@@ -33,10 +33,10 @@ namespace ProjektBD2
                 cmd.Parameters.AddWithValue("@param", DBMonitor.pomoc);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dataTable);
-                SBind.DataSource = dataTable;
-                dataGridView1.DataSource = SBind;
+                //SBind.DataSource = dataTable;
+                dataGridView1.DataSource = dataTable;
 
-                da.Dispose();
+               // da.Dispose();
             }
             catch (SqlException er)
             {

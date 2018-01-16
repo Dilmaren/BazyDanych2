@@ -58,19 +58,20 @@
             this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCOIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
             this.addressSetTableAdapter = new ProjektBD2.BD2DataSet1TableAdapters.AddressSetTableAdapter();
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
+            this.bD2DataSet5 = new ProjektBD2.BD2DataSet5();
+            this.addressSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.addressSetTableAdapter1 = new ProjektBD2.BD2DataSet5TableAdapters.AddressSetTableAdapter();
             ((System.ComponentModel.ISupportInitialize)(this.AddressView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
             this.SuspendLayout();
             // 
             // namebox1
@@ -268,10 +269,8 @@
             this.cityDataGridViewTextBoxColumn,
             this.territoryDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
-            this.zipCodeDataGridViewTextBoxColumn,
-            this.hCOIDDataGridViewTextBoxColumn,
-            this.hCPIDDataGridViewTextBoxColumn});
-            this.AddressView1.DataSource = this.addressSetBindingSource;
+            this.zipCodeDataGridViewTextBoxColumn});
+            this.AddressView1.DataSource = this.addressSetBindingSource1;
             this.AddressView1.Location = new System.Drawing.Point(91, 261);
             this.AddressView1.Name = "AddressView1";
             this.AddressView1.ReadOnly = true;
@@ -320,32 +319,6 @@
             this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
             this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
             this.zipCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hCOIDDataGridViewTextBoxColumn
-            // 
-            this.hCOIDDataGridViewTextBoxColumn.DataPropertyName = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.HeaderText = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.Name = "hCOIDDataGridViewTextBoxColumn";
-            this.hCOIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hCOIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // hCPIDDataGridViewTextBoxColumn
-            // 
-            this.hCPIDDataGridViewTextBoxColumn.DataPropertyName = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.HeaderText = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.Name = "hCPIDDataGridViewTextBoxColumn";
-            this.hCPIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hCPIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // addressSetBindingSource
-            // 
-            this.addressSetBindingSource.DataMember = "AddressSet";
-            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
-            // 
-            // bD2DataSet1
-            // 
-            this.bD2DataSet1.DataSetName = "BD2DataSet1";
-            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addressSetTableAdapter
             // 
@@ -399,6 +372,20 @@
             this.button4.Text = "refresh list";
             this.button4.UseVisualStyleBackColor = true;
             // 
+            // bD2DataSet5
+            // 
+            this.bD2DataSet5.DataSetName = "BD2DataSet5";
+            this.bD2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // addressSetBindingSource1
+            // 
+            this.addressSetBindingSource1.DataMember = "AddressSet";
+            this.addressSetBindingSource1.DataSource = this.bD2DataSet5;
+            // 
+            // addressSetTableAdapter1
+            // 
+            this.addressSetTableAdapter1.ClearBeforeFill = true;
+            // 
             // NewHCO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -435,7 +422,8 @@
             this.Load += new System.EventHandler(this.NewHCO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AddressView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,7 +452,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox4;
-        private BD2DataSet1 bD2DataSet1;
         private System.Windows.Forms.BindingSource addressSetBindingSource;
         private BD2DataSet1TableAdapters.AddressSetTableAdapter addressSetTableAdapter;
         private System.Windows.Forms.Label label13;
@@ -476,10 +463,11 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn territoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hCPIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.Button button3;
         public System.Windows.Forms.DataGridView AddressView1;
         private System.Windows.Forms.Button button4;
+        private BD2DataSet5 bD2DataSet5;
+        private System.Windows.Forms.BindingSource addressSetBindingSource1;
+        private BD2DataSet5TableAdapters.AddressSetTableAdapter addressSetTableAdapter1;
     }
 }

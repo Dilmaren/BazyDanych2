@@ -85,6 +85,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD2DataSet4.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD2DataSet5.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2DataSet5.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -274,6 +279,17 @@
     </None>
     <None Include="BD2DataSet4.xss">
       <DependentUpon>BD2DataSet4.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet5.xsc">
+      <DependentUpon>BD2DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet5.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD2DataSet5.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD2DataSet5.xss">
+      <DependentUpon>BD2DataSet5.xsd</DependentUpon>
     </None>
     <None Include="MedDB.edmx.diagram">
       <DependentUpon>MedDB.edmx</DependentUpon>

@@ -33,10 +33,10 @@
             this.meetingSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.meetingSetTableAdapter = new ProjektBD2.BD2DataSet3TableAdapters.MeetingSetTableAdapter();
             this.meetingSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.productSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.userSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD2DataSet4BindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD2DataSet4 = new ProjektBD2.BD2DataSet4();
+            this.productSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.userSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.meetingSetTableAdapter1 = new ProjektBD2.BD2DataSet4TableAdapters.MeetingSetTableAdapter();
             this.productSetTableAdapter = new ProjektBD2.BD2DataSet4TableAdapters.ProductSetTableAdapter();
             this.userSetTableAdapter = new ProjektBD2.BD2DataSet4TableAdapters.UserSetTableAdapter();
@@ -44,10 +44,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meetingSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.meetingSetBindingSource1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet4BindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet4)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -70,16 +70,6 @@
             this.meetingSetBindingSource1.DataMember = "MeetingSet";
             this.meetingSetBindingSource1.DataSource = this.bD2DataSet4BindingSource;
             // 
-            // productSetBindingSource
-            // 
-            this.productSetBindingSource.DataMember = "ProductSet";
-            this.productSetBindingSource.DataSource = this.bD2DataSet4BindingSource;
-            // 
-            // userSetBindingSource
-            // 
-            this.userSetBindingSource.DataMember = "UserSet";
-            this.userSetBindingSource.DataSource = this.bD2DataSet4BindingSource;
-            // 
             // bD2DataSet4BindingSource
             // 
             this.bD2DataSet4BindingSource.DataSource = this.bD2DataSet4;
@@ -89,6 +79,16 @@
             // 
             this.bD2DataSet4.DataSetName = "BD2DataSet4";
             this.bD2DataSet4.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
+            // productSetBindingSource
+            // 
+            this.productSetBindingSource.DataMember = "ProductSet";
+            this.productSetBindingSource.DataSource = this.bD2DataSet4BindingSource;
+            // 
+            // userSetBindingSource
+            // 
+            this.userSetBindingSource.DataMember = "UserSet";
+            this.userSetBindingSource.DataSource = this.bD2DataSet4BindingSource;
             // 
             // meetingSetTableAdapter1
             // 
@@ -104,9 +104,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.AllowUserToAddRows = false;
+            this.dataGridView1.AllowUserToDeleteRows = false;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(12, 12);
             this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.ReadOnly = true;
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(901, 150);
             this.dataGridView1.TabIndex = 0;
@@ -123,10 +126,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meetingSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.meetingSetBindingSource1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.userSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet4BindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet4)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.productSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.userSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
 

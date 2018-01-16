@@ -33,6 +33,13 @@
             this.button1 = new System.Windows.Forms.Button();
             this.label13 = new System.Windows.Forms.Label();
             this.AddressView1 = new System.Windows.Forms.DataGridView();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.label11 = new System.Windows.Forms.Label();
             this.label10 = new System.Windows.Forms.Label();
@@ -53,20 +60,16 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.namebox1 = new System.Windows.Forms.TextBox();
-            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
-            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressSetTableAdapter = new ProjektBD2.BD2DataSet1TableAdapters.AddressSetTableAdapter();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCOIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.bD2DataSet5 = new ProjektBD2.BD2DataSet5();
+            this.addressSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.addressSetTableAdapter1 = new ProjektBD2.BD2DataSet5TableAdapters.AddressSetTableAdapter();
+            this.addressSetBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.AddressView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource2)).BeginInit();
             this.SuspendLayout();
             // 
             // button2
@@ -110,16 +113,56 @@
             this.cityDataGridViewTextBoxColumn,
             this.territoryDataGridViewTextBoxColumn,
             this.countryDataGridViewTextBoxColumn,
-            this.zipCodeDataGridViewTextBoxColumn,
-            this.hCOIDDataGridViewTextBoxColumn,
-            this.hCPIDDataGridViewTextBoxColumn});
-            this.AddressView1.DataSource = this.addressSetBindingSource;
+            this.zipCodeDataGridViewTextBoxColumn});
+            this.AddressView1.DataSource = this.addressSetBindingSource2;
             this.AddressView1.Location = new System.Drawing.Point(42, 251);
             this.AddressView1.Name = "AddressView1";
             this.AddressView1.ReadOnly = true;
             this.AddressView1.RowTemplate.Height = 24;
-            this.AddressView1.Size = new System.Drawing.Size(845, 150);
+            this.AddressView1.Size = new System.Drawing.Size(645, 150);
             this.AddressView1.TabIndex = 45;
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // streetDataGridViewTextBoxColumn
+            // 
+            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
+            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
+            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
+            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // territoryDataGridViewTextBoxColumn
+            // 
+            this.territoryDataGridViewTextBoxColumn.DataPropertyName = "Territory";
+            this.territoryDataGridViewTextBoxColumn.HeaderText = "Territory";
+            this.territoryDataGridViewTextBoxColumn.Name = "territoryDataGridViewTextBoxColumn";
+            this.territoryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zipCodeDataGridViewTextBoxColumn
+            // 
+            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
+            this.zipCodeDataGridViewTextBoxColumn.ReadOnly = true;
             // 
             // textBox4
             // 
@@ -303,75 +346,28 @@
             this.namebox1.Size = new System.Drawing.Size(152, 22);
             this.namebox1.TabIndex = 25;
             // 
-            // bD2DataSet1
-            // 
-            this.bD2DataSet1.DataSetName = "BD2DataSet1";
-            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addressSetBindingSource
-            // 
-            this.addressSetBindingSource.DataMember = "AddressSet";
-            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
-            // 
             // addressSetTableAdapter
             // 
             this.addressSetTableAdapter.ClearBeforeFill = true;
             // 
-            // addressIDDataGridViewTextBoxColumn
+            // bD2DataSet5
             // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.bD2DataSet5.DataSetName = "BD2DataSet5";
+            this.bD2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // streetDataGridViewTextBoxColumn
+            // addressSetBindingSource1
             // 
-            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
-            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressSetBindingSource1.DataMember = "AddressSet";
+            this.addressSetBindingSource1.DataSource = this.bD2DataSet5;
             // 
-            // cityDataGridViewTextBoxColumn
+            // addressSetTableAdapter1
             // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressSetTableAdapter1.ClearBeforeFill = true;
             // 
-            // territoryDataGridViewTextBoxColumn
+            // addressSetBindingSource2
             // 
-            this.territoryDataGridViewTextBoxColumn.DataPropertyName = "Territory";
-            this.territoryDataGridViewTextBoxColumn.HeaderText = "Territory";
-            this.territoryDataGridViewTextBoxColumn.Name = "territoryDataGridViewTextBoxColumn";
-            this.territoryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // countryDataGridViewTextBoxColumn
-            // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // zipCodeDataGridViewTextBoxColumn
-            // 
-            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hCOIDDataGridViewTextBoxColumn
-            // 
-            this.hCOIDDataGridViewTextBoxColumn.DataPropertyName = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.HeaderText = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.Name = "hCOIDDataGridViewTextBoxColumn";
-            this.hCOIDDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hCPIDDataGridViewTextBoxColumn
-            // 
-            this.hCPIDDataGridViewTextBoxColumn.DataPropertyName = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.HeaderText = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.Name = "hCPIDDataGridViewTextBoxColumn";
-            this.hCPIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressSetBindingSource2.DataMember = "AddressSet";
+            this.addressSetBindingSource2.DataSource = this.bD2DataSet5;
             // 
             // EditHCO
             // 
@@ -406,8 +402,10 @@
             this.Text = "EditHCO";
             this.Load += new System.EventHandler(this.EditHCO_Load);
             ((System.ComponentModel.ISupportInitialize)(this.AddressView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -439,7 +437,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox namebox1;
-        private BD2DataSet1 bD2DataSet1;
         private System.Windows.Forms.BindingSource addressSetBindingSource;
         private BD2DataSet1TableAdapters.AddressSetTableAdapter addressSetTableAdapter;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
@@ -448,7 +445,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn territoryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn countryDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCodeDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.DataGridViewTextBoxColumn hCPIDDataGridViewTextBoxColumn;
+        private BD2DataSet5 bD2DataSet5;
+        private System.Windows.Forms.BindingSource addressSetBindingSource1;
+        private BD2DataSet5TableAdapters.AddressSetTableAdapter addressSetTableAdapter1;
+        private System.Windows.Forms.BindingSource addressSetBindingSource2;
     }
 }

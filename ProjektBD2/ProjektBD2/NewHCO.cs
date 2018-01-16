@@ -21,9 +21,11 @@ namespace ProjektBD2
 
         private void NewHCO_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD2DataSet5.AddressSet' table. You can move, or remove it, as needed.
+            this.addressSetTableAdapter1.Fill(this.bD2DataSet5.AddressSet);
             // TODO: This line of code loads data into the 'bD2DataSet1.AddressSet' table. You can move, or remove it, as needed.
-            this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
-            for (int i = 1; i <= 7; i++)
+            //this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
+            for (int i = 1; i <= 5; i++)
             {
                 AddressView1.Columns[i].DefaultCellStyle.BackColor = Color.LightGray;
                 AddressView1.Columns[i].DefaultCellStyle.ForeColor = Color.DarkGray;
