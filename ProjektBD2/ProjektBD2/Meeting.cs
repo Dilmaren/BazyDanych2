@@ -16,7 +16,7 @@ namespace ProjektBD2
     {
         public int MeetingID { get; set; }
         public int HCPID { get; set; }
-        public string Date { get; set; }
+        public System.DateTime Date { get; set; }
         public string Topic { get; set; }
         public int AddressID { get; set; }
         public int ProductID { get; set; }

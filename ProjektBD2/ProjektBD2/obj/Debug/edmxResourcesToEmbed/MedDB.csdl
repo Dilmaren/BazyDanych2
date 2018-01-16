@@ -128,7 +128,7 @@
     </Key>
     <Property Name="MeetingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HCPID" Type="Int32" Nullable="false" />
-    <Property Name="Date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Date" Type="DateTime" Nullable="false" />
     <NavigationProperty Name="Address1" Relationship="MedDB.MeetingAddress" FromRole="Meeting" ToRole="Address" />
     <NavigationProperty Name="HCP" Relationship="MedDB.MeetingHCP" FromRole="Meeting" ToRole="HCP" />
     <Property Name="Topic" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />

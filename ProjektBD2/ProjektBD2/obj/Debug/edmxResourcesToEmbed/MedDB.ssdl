@@ -51,7 +51,7 @@
     </Key>
     <Property Name="MeetingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HCPID" Type="int" Nullable="false" />
-    <Property Name="Date" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Date" Type="date" Nullable="false" />
     <Property Name="Topic" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AddressID" Type="int" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
