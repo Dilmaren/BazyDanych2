@@ -21,18 +21,21 @@ namespace ProjektBD2
             InitializeComponent();
             tabPage1.Text = "Address";
             tabPage2.Text = "HCO";
+            tabPage3.Text = "HCP";
             toolTip1.SetToolTip(button3, "1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA");
         }
 
         private void DBMonitor_Load(object sender, EventArgs e)
         {
+            // TODO: This line of code loads data into the 'bD2DataSet2.HCPSet' table. You can move, or remove it, as needed.
+            this.hCPSetTableAdapter.Fill(this.bD2DataSet2.HCPSet);
             // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
             this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
             // TODO: This line of code loads data into the 'bD2DataSet1.AddressSet' table. You can move, or remove it, as needed.
             this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
 
         }
-
+        //New Address Button
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
@@ -40,6 +43,15 @@ namespace ProjektBD2
             nowyszpital.Show();
         }
 
+        //New HCO Button
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            NewAddress nowyadres = new NewAddress();
+            nowyadres.Show();
+            this.Hide();
+        }
+
+        //Show Details HCO Button
         private void button2_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
@@ -101,11 +113,69 @@ namespace ProjektBD2
             }
         }
 
+        //Show Details HCP
+        private void button10_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name2", dataGridView3.CurrentRow.Cells[3].Value.ToString());
+
+                command1.CommandText = "SELECT FirstName FROM dbo.HCPSet where HCPID = @name2";
+                label35.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT MiddleName FROM dbo.HCPSet where HCPID = @name2";
+                label37.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT LastName FROM dbo.HCPSet where HCPID = @name2";
+                label39.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Gender FROM dbo.HCPSet where HCPID = @name2";
+                label43.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Birthdate FROM dbo.HCPSet where HCPID = @name2";
+                label57.Text = Convert.ToString(command1.ExecuteScalar()).Substring(0,10);
+
+                command1.CommandText = "SELECT AcademicTitle FROM dbo.HCPSet where HCPID = @name2";
+                label41.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Specialty FROM dbo.HCPSet where HCPID = @name2";
+                label46.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT KOL FROM dbo.HCPSet where HCPID = @name2";
+                if ((bool)command1.ExecuteScalar())
+                {
+                    checkBox1.Checked = true;
+                }
+
+                command1.CommandText = "SELECT PhoneNumber FROM dbo.HCPSet where HCPID = @name2";
+                label51.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Email FROM dbo.HCPSet where HCPID = @name2";
+                label53.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Name FROM dbo.HCPSet join dbo.HCOSet on dbo.HCOSet.HCOID = dbo.HCPSet.HCOID where  HCPID = @name2";
+                label55.Text = (String)command1.ExecuteScalar();
+
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+        }
+
+        //Level of treatment HELP Button
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
         }
-
+       
+        //Edit HCO Button
         private void button4_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
@@ -130,7 +200,8 @@ namespace ProjektBD2
             EditHCO edytujszpital = new EditHCO();
             edytujszpital.Show();
         }
-
+       
+        //Show Doctors HCO Button
         private void button5_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
@@ -155,13 +226,9 @@ namespace ProjektBD2
             pokazdoktorow.Show();
         }
 
-        private void button1_Click_1(object sender, EventArgs e)
-        {
-            NewAddress nowyadres = new NewAddress();
-            nowyadres.Show();
-            this.Hide();
-        }
-
+        
+       
+        //Edit Address Button
         private void button6_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
@@ -185,7 +252,8 @@ namespace ProjektBD2
             edytujadres.Show();
             this.Hide();
         }
-
+       
+        //Delete Address Button
         private void button7_Click(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
@@ -212,5 +280,7 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
+        
+        
     }
 }

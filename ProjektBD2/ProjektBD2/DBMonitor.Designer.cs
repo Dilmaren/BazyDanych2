@@ -31,8 +31,22 @@
             this.components = new System.ComponentModel.Container();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
+            this.button7 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCOIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
             this.tabPage2 = new System.Windows.Forms.TabPage();
+            this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.label32 = new System.Windows.Forms.Label();
@@ -84,32 +98,68 @@
             this.hCOSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD2DataSet = new ProjektBD2.BD2DataSet();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.label49 = new System.Windows.Forms.Label();
+            this.checkBox1 = new System.Windows.Forms.CheckBox();
+            this.label48 = new System.Windows.Forms.Label();
+            this.label47 = new System.Windows.Forms.Label();
+            this.label46 = new System.Windows.Forms.Label();
+            this.label45 = new System.Windows.Forms.Label();
+            this.label44 = new System.Windows.Forms.Label();
+            this.label43 = new System.Windows.Forms.Label();
+            this.label42 = new System.Windows.Forms.Label();
+            this.label41 = new System.Windows.Forms.Label();
+            this.label40 = new System.Windows.Forms.Label();
+            this.label39 = new System.Windows.Forms.Label();
+            this.label38 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.button8 = new System.Windows.Forms.Button();
+            this.dataGridView3 = new System.Windows.Forms.DataGridView();
+            this.firstNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.lastNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.middleNameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCPIDDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.genderDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.academicTitleDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.birthdateDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.phoneNumberDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.emailDataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.kOLDataGridViewCheckBoxColumn = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.specialtyDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.addressIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCOIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.hCPSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD2DataSet2 = new ProjektBD2.BD2DataSet2();
             this.hCOSetTableAdapter = new ProjektBD2.BD2DataSetTableAdapters.HCOSetTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
-            this.button5 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.addressIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.streetDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.cityDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCOIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.hCPIDDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
             this.addressSetTableAdapter = new ProjektBD2.BD2DataSet1TableAdapters.AddressSetTableAdapter();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
+            this.hCPSetTableAdapter = new ProjektBD2.BD2DataSet2TableAdapters.HCPSetTableAdapter();
+            this.label50 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label57 = new System.Windows.Forms.Label();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
+            this.tabPage3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hCPSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet2)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -137,6 +187,36 @@
             this.tabPage1.Text = "tabPage1";
             this.tabPage1.UseVisualStyleBackColor = true;
             // 
+            // button7
+            // 
+            this.button7.Location = new System.Drawing.Point(793, 106);
+            this.button7.Name = "button7";
+            this.button7.Size = new System.Drawing.Size(147, 25);
+            this.button7.TabIndex = 3;
+            this.button7.Text = "DELETE ADDRESS";
+            this.button7.UseVisualStyleBackColor = true;
+            this.button7.Click += new System.EventHandler(this.button7_Click);
+            // 
+            // button6
+            // 
+            this.button6.Location = new System.Drawing.Point(793, 65);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(147, 25);
+            this.button6.TabIndex = 2;
+            this.button6.Text = "EDIT ADDRESS";
+            this.button6.UseVisualStyleBackColor = true;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
+            // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(793, 22);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(147, 25);
+            this.button1.TabIndex = 1;
+            this.button1.Text = "NEW ADDRESS";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
             // dataGridView1
             // 
             this.dataGridView1.AllowUserToAddRows = false;
@@ -159,6 +239,77 @@
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(728, 460);
             this.dataGridView1.TabIndex = 0;
+            // 
+            // addressIDDataGridViewTextBoxColumn
+            // 
+            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
+            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn.Width = 85;
+            // 
+            // streetDataGridViewTextBoxColumn
+            // 
+            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
+            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
+            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
+            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
+            this.streetDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // cityDataGridViewTextBoxColumn
+            // 
+            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
+            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
+            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
+            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // zipCodeDataGridViewTextBoxColumn
+            // 
+            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
+            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
+            this.zipCodeDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // territoryDataGridViewTextBoxColumn
+            // 
+            this.territoryDataGridViewTextBoxColumn.DataPropertyName = "Territory";
+            this.territoryDataGridViewTextBoxColumn.HeaderText = "Territory";
+            this.territoryDataGridViewTextBoxColumn.Name = "territoryDataGridViewTextBoxColumn";
+            this.territoryDataGridViewTextBoxColumn.ReadOnly = true;
+            this.territoryDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // countryDataGridViewTextBoxColumn
+            // 
+            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
+            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
+            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
+            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
+            // 
+            // hCOIDDataGridViewTextBoxColumn
+            // 
+            this.hCOIDDataGridViewTextBoxColumn.DataPropertyName = "HCOID";
+            this.hCOIDDataGridViewTextBoxColumn.HeaderText = "HCOID";
+            this.hCOIDDataGridViewTextBoxColumn.Name = "hCOIDDataGridViewTextBoxColumn";
+            this.hCOIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hCOIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // hCPIDDataGridViewTextBoxColumn
+            // 
+            this.hCPIDDataGridViewTextBoxColumn.DataPropertyName = "HCPID";
+            this.hCPIDDataGridViewTextBoxColumn.HeaderText = "HCPID";
+            this.hCPIDDataGridViewTextBoxColumn.Name = "hCPIDDataGridViewTextBoxColumn";
+            this.hCPIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hCPIDDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // addressSetBindingSource
+            // 
+            this.addressSetBindingSource.DataMember = "AddressSet";
+            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
+            // 
+            // bD2DataSet1
+            // 
+            this.bD2DataSet1.DataSetName = "BD2DataSet1";
+            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -208,11 +359,21 @@
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
             // 
+            // button5
+            // 
+            this.button5.Location = new System.Drawing.Point(380, 202);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(106, 44);
+            this.button5.TabIndex = 37;
+            this.button5.Text = "Show Doctors";
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // button4
             // 
             this.button4.Location = new System.Drawing.Point(380, 64);
             this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(106, 41);
+            this.button4.Size = new System.Drawing.Size(106, 44);
             this.button4.TabIndex = 36;
             this.button4.Text = "EDIT HCO";
             this.button4.UseVisualStyleBackColor = true;
@@ -525,7 +686,7 @@
             // 
             this.button2.Location = new System.Drawing.Point(380, 148);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 39);
+            this.button2.Size = new System.Drawing.Size(106, 44);
             this.button2.TabIndex = 2;
             this.button2.Text = "Show Details";
             this.button2.UseVisualStyleBackColor = true;
@@ -560,11 +721,11 @@
             this.addressIDDataGridViewTextBoxColumn1,
             this.hCOIDDataGridViewTextBoxColumn1});
             this.dataGridView2.DataSource = this.hCOSetBindingSource;
-            this.dataGridView2.Location = new System.Drawing.Point(0, 3);
+            this.dataGridView2.Location = new System.Drawing.Point(6, 6);
             this.dataGridView2.Name = "dataGridView2";
             this.dataGridView2.ReadOnly = true;
             this.dataGridView2.RowTemplate.Height = 24;
-            this.dataGridView2.Size = new System.Drawing.Size(319, 451);
+            this.dataGridView2.Size = new System.Drawing.Size(343, 448);
             this.dataGridView2.TabIndex = 0;
             // 
             // nameDataGridViewTextBoxColumn
@@ -573,7 +734,7 @@
             this.nameDataGridViewTextBoxColumn.HeaderText = "Name";
             this.nameDataGridViewTextBoxColumn.Name = "nameDataGridViewTextBoxColumn";
             this.nameDataGridViewTextBoxColumn.ReadOnly = true;
-            this.nameDataGridViewTextBoxColumn.Width = 275;
+            this.nameDataGridViewTextBoxColumn.Width = 300;
             // 
             // rangeDataGridViewTextBoxColumn
             // 
@@ -667,6 +828,36 @@
             // 
             // tabPage3
             // 
+            this.tabPage3.Controls.Add(this.label57);
+            this.tabPage3.Controls.Add(this.label56);
+            this.tabPage3.Controls.Add(this.label55);
+            this.tabPage3.Controls.Add(this.label54);
+            this.tabPage3.Controls.Add(this.label53);
+            this.tabPage3.Controls.Add(this.label52);
+            this.tabPage3.Controls.Add(this.label51);
+            this.tabPage3.Controls.Add(this.label50);
+            this.tabPage3.Controls.Add(this.label49);
+            this.tabPage3.Controls.Add(this.checkBox1);
+            this.tabPage3.Controls.Add(this.label48);
+            this.tabPage3.Controls.Add(this.label47);
+            this.tabPage3.Controls.Add(this.label46);
+            this.tabPage3.Controls.Add(this.label45);
+            this.tabPage3.Controls.Add(this.label44);
+            this.tabPage3.Controls.Add(this.label43);
+            this.tabPage3.Controls.Add(this.label42);
+            this.tabPage3.Controls.Add(this.label41);
+            this.tabPage3.Controls.Add(this.label40);
+            this.tabPage3.Controls.Add(this.label39);
+            this.tabPage3.Controls.Add(this.label38);
+            this.tabPage3.Controls.Add(this.label37);
+            this.tabPage3.Controls.Add(this.label36);
+            this.tabPage3.Controls.Add(this.label35);
+            this.tabPage3.Controls.Add(this.label34);
+            this.tabPage3.Controls.Add(this.label33);
+            this.tabPage3.Controls.Add(this.button10);
+            this.tabPage3.Controls.Add(this.button9);
+            this.tabPage3.Controls.Add(this.button8);
+            this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
@@ -675,124 +866,429 @@
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
             // 
+            // label49
+            // 
+            this.label49.AutoSize = true;
+            this.label49.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label49.Location = new System.Drawing.Point(592, 327);
+            this.label49.Name = "label49";
+            this.label49.Size = new System.Drawing.Size(81, 17);
+            this.label49.TabIndex = 21;
+            this.label49.Text = "CONTACT";
+            // 
+            // checkBox1
+            // 
+            this.checkBox1.AutoSize = true;
+            this.checkBox1.Enabled = false;
+            this.checkBox1.Location = new System.Drawing.Point(786, 278);
+            this.checkBox1.Name = "checkBox1";
+            this.checkBox1.Size = new System.Drawing.Size(18, 17);
+            this.checkBox1.TabIndex = 20;
+            this.checkBox1.UseVisualStyleBackColor = true;
+            // 
+            // label48
+            // 
+            this.label48.AutoSize = true;
+            this.label48.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label48.Location = new System.Drawing.Point(592, 276);
+            this.label48.Name = "label48";
+            this.label48.Size = new System.Drawing.Size(188, 17);
+            this.label48.TabIndex = 19;
+            this.label48.Text = "Key Opinion Leader? (KOL):";
+            // 
+            // label47
+            // 
+            this.label47.AutoSize = true;
+            this.label47.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label47.Location = new System.Drawing.Point(589, 250);
+            this.label47.Name = "label47";
+            this.label47.Size = new System.Drawing.Size(62, 17);
+            this.label47.TabIndex = 18;
+            this.label47.Text = "OTHER";
+            // 
+            // label46
+            // 
+            this.label46.AutoSize = true;
+            this.label46.Location = new System.Drawing.Point(670, 192);
+            this.label46.Name = "label46";
+            this.label46.Size = new System.Drawing.Size(13, 17);
+            this.label46.TabIndex = 17;
+            this.label46.Text = "-";
+            // 
+            // label45
+            // 
+            this.label45.AutoSize = true;
+            this.label45.Location = new System.Drawing.Point(592, 192);
+            this.label45.Name = "label45";
+            this.label45.Size = new System.Drawing.Size(72, 17);
+            this.label45.TabIndex = 16;
+            this.label45.Text = "Speciality:";
+            // 
+            // label44
+            // 
+            this.label44.AutoSize = true;
+            this.label44.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label44.Location = new System.Drawing.Point(589, 148);
+            this.label44.Name = "label44";
+            this.label44.Size = new System.Drawing.Size(102, 17);
+            this.label44.TabIndex = 15;
+            this.label44.Text = "EDUCATION:";
+            // 
+            // label43
+            // 
+            this.label43.AutoSize = true;
+            this.label43.Location = new System.Drawing.Point(895, 64);
+            this.label43.Name = "label43";
+            this.label43.Size = new System.Drawing.Size(13, 17);
+            this.label43.TabIndex = 14;
+            this.label43.Text = "-";
+            // 
+            // label42
+            // 
+            this.label42.AutoSize = true;
+            this.label42.Location = new System.Drawing.Point(828, 64);
+            this.label42.Name = "label42";
+            this.label42.Size = new System.Drawing.Size(60, 17);
+            this.label42.TabIndex = 13;
+            this.label42.Text = "Gender:";
+            // 
+            // label41
+            // 
+            this.label41.AutoSize = true;
+            this.label41.Location = new System.Drawing.Point(702, 175);
+            this.label41.Name = "label41";
+            this.label41.Size = new System.Drawing.Size(13, 17);
+            this.label41.TabIndex = 12;
+            this.label41.Text = "-";
+            // 
+            // label40
+            // 
+            this.label40.AutoSize = true;
+            this.label40.Location = new System.Drawing.Point(592, 175);
+            this.label40.Name = "label40";
+            this.label40.Size = new System.Drawing.Size(104, 17);
+            this.label40.TabIndex = 11;
+            this.label40.Text = "Academic Title:";
+            // 
+            // label39
+            // 
+            this.label39.AutoSize = true;
+            this.label39.Location = new System.Drawing.Point(678, 98);
+            this.label39.Name = "label39";
+            this.label39.Size = new System.Drawing.Size(13, 17);
+            this.label39.TabIndex = 10;
+            this.label39.Text = "-";
+            // 
+            // label38
+            // 
+            this.label38.AutoSize = true;
+            this.label38.Location = new System.Drawing.Point(592, 98);
+            this.label38.Name = "label38";
+            this.label38.Size = new System.Drawing.Size(80, 17);
+            this.label38.TabIndex = 9;
+            this.label38.Text = "Last Name:";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Location = new System.Drawing.Point(692, 81);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(13, 17);
+            this.label37.TabIndex = 8;
+            this.label37.Text = "-";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Location = new System.Drawing.Point(592, 81);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(94, 17);
+            this.label36.TabIndex = 7;
+            this.label36.Text = "Middle Name:";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Location = new System.Drawing.Point(678, 64);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(13, 17);
+            this.label35.TabIndex = 6;
+            this.label35.Text = "-";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Location = new System.Drawing.Point(592, 64);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(80, 17);
+            this.label34.TabIndex = 5;
+            this.label34.Text = "First Name:";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label33.Location = new System.Drawing.Point(589, 25);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(192, 17);
+            this.label33.TabIndex = 4;
+            this.label33.Text = "GENERAL INFORMATION";
+            // 
+            // button10
+            // 
+            this.button10.Location = new System.Drawing.Point(380, 148);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(106, 44);
+            this.button10.TabIndex = 3;
+            this.button10.Text = "Show Details";
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            // 
+            // button9
+            // 
+            this.button9.Location = new System.Drawing.Point(380, 64);
+            this.button9.Name = "button9";
+            this.button9.Size = new System.Drawing.Size(106, 44);
+            this.button9.TabIndex = 2;
+            this.button9.Text = "EDIT HCP";
+            this.button9.UseVisualStyleBackColor = true;
+            // 
+            // button8
+            // 
+            this.button8.Location = new System.Drawing.Point(380, 14);
+            this.button8.Name = "button8";
+            this.button8.Size = new System.Drawing.Size(106, 44);
+            this.button8.TabIndex = 1;
+            this.button8.Text = "CREATE HCP";
+            this.button8.UseVisualStyleBackColor = true;
+            // 
+            // dataGridView3
+            // 
+            this.dataGridView3.AllowUserToAddRows = false;
+            this.dataGridView3.AllowUserToDeleteRows = false;
+            this.dataGridView3.AutoGenerateColumns = false;
+            this.dataGridView3.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView3.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.firstNameDataGridViewTextBoxColumn,
+            this.lastNameDataGridViewTextBoxColumn,
+            this.middleNameDataGridViewTextBoxColumn,
+            this.hCPIDDataGridViewTextBoxColumn1,
+            this.genderDataGridViewTextBoxColumn,
+            this.academicTitleDataGridViewTextBoxColumn,
+            this.birthdateDataGridViewTextBoxColumn,
+            this.phoneNumberDataGridViewTextBoxColumn1,
+            this.emailDataGridViewTextBoxColumn1,
+            this.kOLDataGridViewCheckBoxColumn,
+            this.specialtyDataGridViewTextBoxColumn,
+            this.addressIDDataGridViewTextBoxColumn2,
+            this.hCOIDDataGridViewTextBoxColumn2});
+            this.dataGridView3.DataSource = this.hCPSetBindingSource;
+            this.dataGridView3.Location = new System.Drawing.Point(6, 6);
+            this.dataGridView3.Name = "dataGridView3";
+            this.dataGridView3.ReadOnly = true;
+            this.dataGridView3.RowTemplate.Height = 24;
+            this.dataGridView3.Size = new System.Drawing.Size(343, 448);
+            this.dataGridView3.TabIndex = 0;
+            // 
+            // firstNameDataGridViewTextBoxColumn
+            // 
+            this.firstNameDataGridViewTextBoxColumn.DataPropertyName = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.HeaderText = "FirstName";
+            this.firstNameDataGridViewTextBoxColumn.Name = "firstNameDataGridViewTextBoxColumn";
+            this.firstNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.firstNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // lastNameDataGridViewTextBoxColumn
+            // 
+            this.lastNameDataGridViewTextBoxColumn.DataPropertyName = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.HeaderText = "LastName";
+            this.lastNameDataGridViewTextBoxColumn.Name = "lastNameDataGridViewTextBoxColumn";
+            this.lastNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.lastNameDataGridViewTextBoxColumn.Width = 150;
+            // 
+            // middleNameDataGridViewTextBoxColumn
+            // 
+            this.middleNameDataGridViewTextBoxColumn.DataPropertyName = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.HeaderText = "MiddleName";
+            this.middleNameDataGridViewTextBoxColumn.Name = "middleNameDataGridViewTextBoxColumn";
+            this.middleNameDataGridViewTextBoxColumn.ReadOnly = true;
+            this.middleNameDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // hCPIDDataGridViewTextBoxColumn1
+            // 
+            this.hCPIDDataGridViewTextBoxColumn1.DataPropertyName = "HCPID";
+            this.hCPIDDataGridViewTextBoxColumn1.HeaderText = "HCPID";
+            this.hCPIDDataGridViewTextBoxColumn1.Name = "hCPIDDataGridViewTextBoxColumn1";
+            this.hCPIDDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.hCPIDDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // genderDataGridViewTextBoxColumn
+            // 
+            this.genderDataGridViewTextBoxColumn.DataPropertyName = "Gender";
+            this.genderDataGridViewTextBoxColumn.HeaderText = "Gender";
+            this.genderDataGridViewTextBoxColumn.Name = "genderDataGridViewTextBoxColumn";
+            this.genderDataGridViewTextBoxColumn.ReadOnly = true;
+            this.genderDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // academicTitleDataGridViewTextBoxColumn
+            // 
+            this.academicTitleDataGridViewTextBoxColumn.DataPropertyName = "AcademicTitle";
+            this.academicTitleDataGridViewTextBoxColumn.HeaderText = "AcademicTitle";
+            this.academicTitleDataGridViewTextBoxColumn.Name = "academicTitleDataGridViewTextBoxColumn";
+            this.academicTitleDataGridViewTextBoxColumn.ReadOnly = true;
+            this.academicTitleDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // birthdateDataGridViewTextBoxColumn
+            // 
+            this.birthdateDataGridViewTextBoxColumn.DataPropertyName = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.HeaderText = "Birthdate";
+            this.birthdateDataGridViewTextBoxColumn.Name = "birthdateDataGridViewTextBoxColumn";
+            this.birthdateDataGridViewTextBoxColumn.ReadOnly = true;
+            this.birthdateDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // phoneNumberDataGridViewTextBoxColumn1
+            // 
+            this.phoneNumberDataGridViewTextBoxColumn1.DataPropertyName = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn1.HeaderText = "PhoneNumber";
+            this.phoneNumberDataGridViewTextBoxColumn1.Name = "phoneNumberDataGridViewTextBoxColumn1";
+            this.phoneNumberDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.phoneNumberDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // emailDataGridViewTextBoxColumn1
+            // 
+            this.emailDataGridViewTextBoxColumn1.DataPropertyName = "Email";
+            this.emailDataGridViewTextBoxColumn1.HeaderText = "Email";
+            this.emailDataGridViewTextBoxColumn1.Name = "emailDataGridViewTextBoxColumn1";
+            this.emailDataGridViewTextBoxColumn1.ReadOnly = true;
+            this.emailDataGridViewTextBoxColumn1.Visible = false;
+            // 
+            // kOLDataGridViewCheckBoxColumn
+            // 
+            this.kOLDataGridViewCheckBoxColumn.DataPropertyName = "KOL";
+            this.kOLDataGridViewCheckBoxColumn.HeaderText = "KOL";
+            this.kOLDataGridViewCheckBoxColumn.Name = "kOLDataGridViewCheckBoxColumn";
+            this.kOLDataGridViewCheckBoxColumn.ReadOnly = true;
+            this.kOLDataGridViewCheckBoxColumn.Visible = false;
+            // 
+            // specialtyDataGridViewTextBoxColumn
+            // 
+            this.specialtyDataGridViewTextBoxColumn.DataPropertyName = "Specialty";
+            this.specialtyDataGridViewTextBoxColumn.HeaderText = "Specialty";
+            this.specialtyDataGridViewTextBoxColumn.Name = "specialtyDataGridViewTextBoxColumn";
+            this.specialtyDataGridViewTextBoxColumn.ReadOnly = true;
+            this.specialtyDataGridViewTextBoxColumn.Visible = false;
+            // 
+            // addressIDDataGridViewTextBoxColumn2
+            // 
+            this.addressIDDataGridViewTextBoxColumn2.DataPropertyName = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn2.HeaderText = "AddressID";
+            this.addressIDDataGridViewTextBoxColumn2.Name = "addressIDDataGridViewTextBoxColumn2";
+            this.addressIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.addressIDDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // hCOIDDataGridViewTextBoxColumn2
+            // 
+            this.hCOIDDataGridViewTextBoxColumn2.DataPropertyName = "HCOID";
+            this.hCOIDDataGridViewTextBoxColumn2.HeaderText = "HCOID";
+            this.hCOIDDataGridViewTextBoxColumn2.Name = "hCOIDDataGridViewTextBoxColumn2";
+            this.hCOIDDataGridViewTextBoxColumn2.ReadOnly = true;
+            this.hCOIDDataGridViewTextBoxColumn2.Visible = false;
+            // 
+            // hCPSetBindingSource
+            // 
+            this.hCPSetBindingSource.DataMember = "HCPSet";
+            this.hCPSetBindingSource.DataSource = this.bD2DataSet2;
+            // 
+            // bD2DataSet2
+            // 
+            this.bD2DataSet2.DataSetName = "BD2DataSet2";
+            this.bD2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // hCOSetTableAdapter
             // 
             this.hCOSetTableAdapter.ClearBeforeFill = true;
-            // 
-            // button5
-            // 
-            this.button5.Location = new System.Drawing.Point(380, 202);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(106, 34);
-            this.button5.TabIndex = 37;
-            this.button5.Text = "Show Doctors";
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            // 
-            // button1
-            // 
-            this.button1.Location = new System.Drawing.Point(793, 22);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(147, 25);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "NEW ADDRESS";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click_1);
-            // 
-            // addressIDDataGridViewTextBoxColumn
-            // 
-            this.addressIDDataGridViewTextBoxColumn.DataPropertyName = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.HeaderText = "AddressID";
-            this.addressIDDataGridViewTextBoxColumn.Name = "addressIDDataGridViewTextBoxColumn";
-            this.addressIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.addressIDDataGridViewTextBoxColumn.Width = 85;
-            // 
-            // streetDataGridViewTextBoxColumn
-            // 
-            this.streetDataGridViewTextBoxColumn.DataPropertyName = "Street";
-            this.streetDataGridViewTextBoxColumn.HeaderText = "Street";
-            this.streetDataGridViewTextBoxColumn.Name = "streetDataGridViewTextBoxColumn";
-            this.streetDataGridViewTextBoxColumn.ReadOnly = true;
-            this.streetDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // cityDataGridViewTextBoxColumn
-            // 
-            this.cityDataGridViewTextBoxColumn.DataPropertyName = "City";
-            this.cityDataGridViewTextBoxColumn.HeaderText = "City";
-            this.cityDataGridViewTextBoxColumn.Name = "cityDataGridViewTextBoxColumn";
-            this.cityDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // zipCodeDataGridViewTextBoxColumn
-            // 
-            this.zipCodeDataGridViewTextBoxColumn.DataPropertyName = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.HeaderText = "ZipCode";
-            this.zipCodeDataGridViewTextBoxColumn.Name = "zipCodeDataGridViewTextBoxColumn";
-            this.zipCodeDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // territoryDataGridViewTextBoxColumn
-            // 
-            this.territoryDataGridViewTextBoxColumn.DataPropertyName = "Territory";
-            this.territoryDataGridViewTextBoxColumn.HeaderText = "Territory";
-            this.territoryDataGridViewTextBoxColumn.Name = "territoryDataGridViewTextBoxColumn";
-            this.territoryDataGridViewTextBoxColumn.ReadOnly = true;
-            this.territoryDataGridViewTextBoxColumn.Width = 150;
-            // 
-            // countryDataGridViewTextBoxColumn
-            // 
-            this.countryDataGridViewTextBoxColumn.DataPropertyName = "Country";
-            this.countryDataGridViewTextBoxColumn.HeaderText = "Country";
-            this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
-            this.countryDataGridViewTextBoxColumn.ReadOnly = true;
-            // 
-            // hCOIDDataGridViewTextBoxColumn
-            // 
-            this.hCOIDDataGridViewTextBoxColumn.DataPropertyName = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.HeaderText = "HCOID";
-            this.hCOIDDataGridViewTextBoxColumn.Name = "hCOIDDataGridViewTextBoxColumn";
-            this.hCOIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hCOIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // hCPIDDataGridViewTextBoxColumn
-            // 
-            this.hCPIDDataGridViewTextBoxColumn.DataPropertyName = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.HeaderText = "HCPID";
-            this.hCPIDDataGridViewTextBoxColumn.Name = "hCPIDDataGridViewTextBoxColumn";
-            this.hCPIDDataGridViewTextBoxColumn.ReadOnly = true;
-            this.hCPIDDataGridViewTextBoxColumn.Visible = false;
-            // 
-            // addressSetBindingSource
-            // 
-            this.addressSetBindingSource.DataMember = "AddressSet";
-            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
-            // 
-            // bD2DataSet1
-            // 
-            this.bD2DataSet1.DataSetName = "BD2DataSet1";
-            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // addressSetTableAdapter
             // 
             this.addressSetTableAdapter.ClearBeforeFill = true;
             // 
-            // button6
+            // hCPSetTableAdapter
             // 
-            this.button6.Location = new System.Drawing.Point(793, 65);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(147, 25);
-            this.button6.TabIndex = 2;
-            this.button6.Text = "EDIT ADDRESS";
-            this.button6.UseVisualStyleBackColor = true;
-            this.button6.Click += new System.EventHandler(this.button6_Click);
+            this.hCPSetTableAdapter.ClearBeforeFill = true;
             // 
-            // button7
+            // label50
             // 
-            this.button7.Location = new System.Drawing.Point(793, 106);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(147, 25);
-            this.button7.TabIndex = 3;
-            this.button7.Text = "DELETE ADDRESS";
-            this.button7.UseVisualStyleBackColor = true;
-            this.button7.Click += new System.EventHandler(this.button7_Click);
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(592, 348);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(107, 17);
+            this.label50.TabIndex = 22;
+            this.label50.Text = "Phone Number:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(705, 348);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(13, 17);
+            this.label51.TabIndex = 23;
+            this.label51.Text = "-";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label52.Location = new System.Drawing.Point(592, 365);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(46, 17);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "Email:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(644, 365);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(13, 17);
+            this.label53.TabIndex = 25;
+            this.label53.Text = "-";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label54.Location = new System.Drawing.Point(592, 382);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(79, 17);
+            this.label54.TabIndex = 26;
+            this.label54.Text = "Working in:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(677, 383);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(13, 17);
+            this.label55.TabIndex = 27;
+            this.label55.Text = "-";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(831, 85);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(64, 17);
+            this.label56.TabIndex = 28;
+            this.label56.Text = "Birthday:";
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(901, 85);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(13, 17);
+            this.label57.TabIndex = 29;
+            this.label57.Text = "-";
             // 
             // DBMonitor
             // 
@@ -806,13 +1302,18 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
+            this.tabPage3.ResumeLayout(false);
+            this.tabPage3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.hCPSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet2)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -876,6 +1377,27 @@
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.ToolTip toolTip1;
         private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.DataGridView dataGridView3;
+        private BD2DataSet2 bD2DataSet2;
+        private System.Windows.Forms.BindingSource hCPSetBindingSource;
+        private BD2DataSet2TableAdapters.HCPSetTableAdapter hCPSetTableAdapter;
+        private System.Windows.Forms.DataGridViewTextBoxColumn firstNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn lastNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn middleNameDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCPIDDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn genderDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn academicTitleDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn birthdateDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn phoneNumberDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn emailDataGridViewTextBoxColumn1;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn kOLDataGridViewCheckBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn specialtyDataGridViewTextBoxColumn;
+        private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn nameDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn rangeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn levelDataGridViewTextBoxColumn;
@@ -887,9 +1409,34 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn websiteDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn1;
-        private System.Windows.Forms.Button button5;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button7;
+        private System.Windows.Forms.Label label33;
+        private System.Windows.Forms.Button button10;
+        private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button8;
+        private System.Windows.Forms.Label label39;
+        private System.Windows.Forms.Label label38;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label43;
+        private System.Windows.Forms.Label label42;
+        private System.Windows.Forms.Label label41;
+        private System.Windows.Forms.Label label40;
+        private System.Windows.Forms.Label label44;
+        private System.Windows.Forms.Label label46;
+        private System.Windows.Forms.Label label45;
+        private System.Windows.Forms.Label label49;
+        private System.Windows.Forms.CheckBox checkBox1;
+        private System.Windows.Forms.Label label48;
+        private System.Windows.Forms.Label label47;
+        private System.Windows.Forms.Label label57;
+        private System.Windows.Forms.Label label56;
+        private System.Windows.Forms.Label label55;
+        private System.Windows.Forms.Label label54;
+        private System.Windows.Forms.Label label53;
+        private System.Windows.Forms.Label label52;
+        private System.Windows.Forms.Label label51;
+        private System.Windows.Forms.Label label50;
     }
 }
