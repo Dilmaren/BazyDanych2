@@ -30,7 +30,7 @@ namespace ProjektBD2
         public string City { get; set; }
         public string Territory { get; set; }
         public string Country { get; set; }
-        public short ZipCode { get; set; }
+        public int ZipCode { get; set; }
         public int HCOID { get; set; }
         public int HCPID { get; set; }
     

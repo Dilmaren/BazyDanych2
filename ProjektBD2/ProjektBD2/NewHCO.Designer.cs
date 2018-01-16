@@ -66,6 +66,8 @@
             this.label13 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.AddressView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
@@ -270,11 +272,11 @@
             this.hCOIDDataGridViewTextBoxColumn,
             this.hCPIDDataGridViewTextBoxColumn});
             this.AddressView1.DataSource = this.addressSetBindingSource;
-            this.AddressView1.Location = new System.Drawing.Point(13, 256);
+            this.AddressView1.Location = new System.Drawing.Point(91, 261);
             this.AddressView1.Name = "AddressView1";
             this.AddressView1.ReadOnly = true;
             this.AddressView1.RowTemplate.Height = 24;
-            this.AddressView1.Size = new System.Drawing.Size(845, 150);
+            this.AddressView1.Size = new System.Drawing.Size(643, 150);
             this.AddressView1.TabIndex = 21;
             // 
             // addressIDDataGridViewTextBoxColumn
@@ -325,6 +327,7 @@
             this.hCOIDDataGridViewTextBoxColumn.HeaderText = "HCOID";
             this.hCOIDDataGridViewTextBoxColumn.Name = "hCOIDDataGridViewTextBoxColumn";
             this.hCOIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hCOIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // hCPIDDataGridViewTextBoxColumn
             // 
@@ -332,6 +335,7 @@
             this.hCPIDDataGridViewTextBoxColumn.HeaderText = "HCPID";
             this.hCPIDDataGridViewTextBoxColumn.Name = "hCPIDDataGridViewTextBoxColumn";
             this.hCPIDDataGridViewTextBoxColumn.ReadOnly = true;
+            this.hCPIDDataGridViewTextBoxColumn.Visible = false;
             // 
             // addressSetBindingSource
             // 
@@ -376,11 +380,32 @@
             this.button2.UseVisualStyleBackColor = true;
             this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(10, 309);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 47);
+            this.button3.TabIndex = 25;
+            this.button3.Text = "NEW ADDRESS";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
+            // button4
+            // 
+            this.button4.Location = new System.Drawing.Point(10, 375);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(75, 23);
+            this.button4.TabIndex = 26;
+            this.button4.Text = "refresh list";
+            this.button4.UseVisualStyleBackColor = true;
+            // 
             // NewHCO
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1016, 440);
+            this.ClientSize = new System.Drawing.Size(835, 440);
+            this.Controls.Add(this.button4);
+            this.Controls.Add(this.button3);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.label13);
@@ -439,10 +464,12 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.DataGridView AddressView1;
         private BD2DataSet1 bD2DataSet1;
         private System.Windows.Forms.BindingSource addressSetBindingSource;
         private BD2DataSet1TableAdapters.AddressSetTableAdapter addressSetTableAdapter;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn streetDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn cityDataGridViewTextBoxColumn;
@@ -451,8 +478,8 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn zipCodeDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCPIDDataGridViewTextBoxColumn;
-        private System.Windows.Forms.Label label13;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button3;
+        public System.Windows.Forms.DataGridView AddressView1;
+        private System.Windows.Forms.Button button4;
     }
 }

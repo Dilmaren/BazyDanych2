@@ -13,6 +13,9 @@ namespace ProjektBD2
 {
     public partial class DBMonitor : Form
     {
+        public static Int32 pomoc;
+        public static String pomoc1;
+        private static SqlDataAdapter adapt;
         public DBMonitor()
         {
             InitializeComponent();
@@ -101,6 +104,113 @@ namespace ProjektBD2
         private void button3_Click(object sender, EventArgs e)
         {
             MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
+                command1.CommandText = "SELECT HCOID FROM dbo.HCOSet where NAME = @name1";
+                pomoc1 = Convert.ToString(command1.ExecuteScalar());
+                pomoc = Int32.Parse(pomoc1);
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+
+            this.Hide();
+            EditHCO edytujszpital = new EditHCO();
+            edytujszpital.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
+                command1.CommandText = "SELECT HCOID FROM dbo.HCOSet where NAME = @name1";
+                pomoc1 = Convert.ToString(command1.ExecuteScalar());
+                pomoc = Int32.Parse(pomoc1);
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+            this.Hide();
+            showEmployees pokazdoktorow = new showEmployees();
+            pokazdoktorow.Show();
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            NewAddress nowyadres = new NewAddress();
+            nowyadres.Show();
+            this.Hide();
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                command1.CommandText = "SELECT AddressID FROM dbo.AddressSet where AddressID = @name1";
+                pomoc1 = Convert.ToString(command1.ExecuteScalar());
+                pomoc = Int32.Parse(pomoc1);
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+            EditAddress edytujadres = new EditAddress();
+            edytujadres.Show();
+            this.Hide();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                command1.CommandText = "DELETE from dbo.AddressSet where AddressID = @name1";
+                command1.ExecuteScalar();
+
+                DataTable dt = new DataTable();
+                adapt = new SqlDataAdapter("select * from dbo.AddressSet", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
         }
     }
 }

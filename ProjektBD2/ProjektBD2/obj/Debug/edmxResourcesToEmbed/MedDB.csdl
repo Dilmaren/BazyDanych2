@@ -57,15 +57,15 @@
       <PropertyRef Name="HCOID" />
     </Key>
     <Property Name="HCOID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Name" Type="String" Nullable="false" />
-    <Property Name="Range" Type="String" Nullable="false" />
+    <Property Name="Name" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Range" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="Level" Type="Int16" Nullable="false" />
-    <Property Name="SpecialType" Type="String" Nullable="false" />
-    <Property Name="Beds" Type="String" Nullable="false" />
-    <Property Name="Employees" Type="String" Nullable="false" />
+    <Property Name="SpecialType" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Beds" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Employees" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" />
-    <Property Name="Website" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Website" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="HCP" Relationship="MedDB.HCOHCP" FromRole="HCO" ToRole="HCP" />
     <Property Name="AddressID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Address" Relationship="MedDB.HCOAddress" FromRole="HCO" ToRole="Address" />
@@ -76,16 +76,16 @@
       <PropertyRef Name="HCPID" />
     </Key>
     <Property Name="HCPID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="FirstName" Type="String" Nullable="false" />
-    <Property Name="MiddleName" Type="String" Nullable="false" />
-    <Property Name="LastName" Type="String" Nullable="false" />
-    <Property Name="Gender" Type="String" Nullable="false" />
-    <Property Name="AcademicTitle" Type="String" Nullable="false" />
-    <Property Name="Birthdate" Type="DateTime" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Gender" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AcademicTitle" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Birthdate" Type="DateTime" Nullable="false" Precision="3" />
     <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="KOL" Type="Boolean" Nullable="false" DefaultValue="FALSE" />
-    <Property Name="Specialty" Type="String" Nullable="false" />
+    <Property Name="Specialty" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="HCO" Relationship="MedDB.HCOHCP" FromRole="HCP" ToRole="HCO" />
     <Property Name="AddressID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingHCP" FromRole="HCP" ToRole="Meeting" />
@@ -110,11 +110,11 @@
       <PropertyRef Name="AddressID" />
     </Key>
     <Property Name="AddressID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Street" Type="String" Nullable="false" />
-    <Property Name="City" Type="String" Nullable="false" />
-    <Property Name="Territory" Type="String" Nullable="false" />
-    <Property Name="Country" Type="String" Nullable="false" />
-    <Property Name="ZipCode" Type="Int16" Nullable="false" />
+    <Property Name="Street" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Territory" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Country" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="ZipCode" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingAddress" FromRole="Address" ToRole="Meeting" />
     <NavigationProperty Name="User" Relationship="MedDB.AddressUser" FromRole="Address" ToRole="User" />
     <Property Name="HCOID" Type="Int32" Nullable="false" />
@@ -130,10 +130,10 @@
     </Key>
     <Property Name="MeetingID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="HCPID" Type="Int32" Nullable="false" />
-    <Property Name="Date" Type="String" Nullable="false" />
+    <Property Name="Date" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <NavigationProperty Name="Address1" Relationship="MedDB.MeetingAddress" FromRole="Meeting" ToRole="Address" />
     <NavigationProperty Name="HCP" Relationship="MedDB.MeetingHCP" FromRole="Meeting" ToRole="HCP" />
-    <Property Name="Topic" Type="String" Nullable="false" />
+    <Property Name="Topic" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="AddressID" Type="Int32" Nullable="false" />
     <Property Name="ProductID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="Product" Relationship="MedDB.MeetingProduct" FromRole="Meeting" ToRole="Product" />
@@ -170,13 +170,13 @@
     </Key>
     <Property Name="UserID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="Address" Relationship="MedDB.AddressUser" FromRole="User" ToRole="Address" />
-    <Property Name="FirstName" Type="String" Nullable="false" />
-    <Property Name="LastName" Type="String" Nullable="false" />
-    <Property Name="JobTitle" Type="String" Nullable="false" />
-    <Property Name="City" Type="String" Nullable="false" />
-    <Property Name="Email" Type="String" Nullable="false" />
+    <Property Name="FirstName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="LastName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="JobTitle" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="City" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Email" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="PhoneNumber" Type="Int32" Nullable="false" />
-    <Property Name="HireDate" Type="DateTime" Nullable="false" />
+    <Property Name="HireDate" Type="DateTime" Nullable="false" Precision="3" />
     <NavigationProperty Name="Meeting" Relationship="MedDB.UserMeeting" FromRole="User" ToRole="Meeting" />
     <Property Name="ManagerID" Type="Int32" Nullable="false" />
     <NavigationProperty Name="User1" Relationship="MedDB.UserUser" FromRole="User" ToRole="User1" />
@@ -192,11 +192,11 @@
     </Key>
     <Property Name="ProductID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <NavigationProperty Name="Meeting" Relationship="MedDB.MeetingProduct" FromRole="Product" ToRole="Meeting" />
-    <Property Name="ProductName" Type="String" Nullable="false" />
-    <Property Name="AntiDisease" Type="String" Nullable="false" />
-    <Property Name="Manufacturer" Type="String" Nullable="false" />
+    <Property Name="ProductName" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="AntiDisease" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <Property Name="Manufacturer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="QtyPerCase" Type="Int16" Nullable="false" />
-    <Property Name="MIngredient" Type="String" Nullable="false" />
+    <Property Name="MIngredient" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
   </EntityType>
   <Association Name="MeetingProduct">
     <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />

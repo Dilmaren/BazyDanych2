@@ -20,17 +20,17 @@ namespace ProjektBD2 {
     [global::System.ComponentModel.DesignerCategoryAttribute("code")]
     [global::System.ComponentModel.ToolboxItem(true)]
     [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedDataSetSchema")]
-    [global::System.Xml.Serialization.XmlRootAttribute("BD2DataSet1")]
+    [global::System.Xml.Serialization.XmlRootAttribute("BD2DataSet2")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.DataSet")]
-    public partial class BD2DataSet1 : global::System.Data.DataSet {
+    public partial class BD2DataSet2 : global::System.Data.DataSet {
         
-        private AddressSetDataTable tableAddressSet;
+        private HCPSetDataTable tableHCPSet;
         
         private global::System.Data.SchemaSerializationMode _schemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public BD2DataSet1() {
+        public BD2DataSet2() {
             this.BeginInit();
             this.InitClass();
             global::System.ComponentModel.CollectionChangeEventHandler schemaChangedHandler = new global::System.ComponentModel.CollectionChangeEventHandler(this.SchemaChanged);
@@ -41,7 +41,7 @@ namespace ProjektBD2 {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        protected BD2DataSet1(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+        protected BD2DataSet2(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                 base(info, context, false) {
             if ((this.IsBinarySerialized(info, context) == true)) {
                 this.InitVars(false);
@@ -54,8 +54,8 @@ namespace ProjektBD2 {
             if ((this.DetermineSchemaSerializationMode(info, context) == global::System.Data.SchemaSerializationMode.IncludeSchema)) {
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXmlSchema(new global::System.Xml.XmlTextReader(new global::System.IO.StringReader(strSchema)));
-                if ((ds.Tables["AddressSet"] != null)) {
-                    base.Tables.Add(new AddressSetDataTable(ds.Tables["AddressSet"]));
+                if ((ds.Tables["HCPSet"] != null)) {
+                    base.Tables.Add(new HCPSetDataTable(ds.Tables["HCPSet"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -79,9 +79,9 @@ namespace ProjektBD2 {
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Browsable(false)]
         [global::System.ComponentModel.DesignerSerializationVisibility(global::System.ComponentModel.DesignerSerializationVisibility.Content)]
-        public AddressSetDataTable AddressSet {
+        public HCPSetDataTable HCPSet {
             get {
-                return this.tableAddressSet;
+                return this.tableHCPSet;
             }
         }
         
@@ -127,7 +127,7 @@ namespace ProjektBD2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public override global::System.Data.DataSet Clone() {
-            BD2DataSet1 cln = ((BD2DataSet1)(base.Clone()));
+            BD2DataSet2 cln = ((BD2DataSet2)(base.Clone()));
             cln.InitVars();
             cln.SchemaSerializationMode = this.SchemaSerializationMode;
             return cln;
@@ -152,8 +152,8 @@ namespace ProjektBD2 {
                 this.Reset();
                 global::System.Data.DataSet ds = new global::System.Data.DataSet();
                 ds.ReadXml(reader);
-                if ((ds.Tables["AddressSet"] != null)) {
-                    base.Tables.Add(new AddressSetDataTable(ds.Tables["AddressSet"]));
+                if ((ds.Tables["HCPSet"] != null)) {
+                    base.Tables.Add(new HCPSetDataTable(ds.Tables["HCPSet"]));
                 }
                 this.DataSetName = ds.DataSetName;
                 this.Prefix = ds.Prefix;
@@ -188,10 +188,10 @@ namespace ProjektBD2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         internal void InitVars(bool initTable) {
-            this.tableAddressSet = ((AddressSetDataTable)(base.Tables["AddressSet"]));
+            this.tableHCPSet = ((HCPSetDataTable)(base.Tables["HCPSet"]));
             if ((initTable == true)) {
-                if ((this.tableAddressSet != null)) {
-                    this.tableAddressSet.InitVars();
+                if ((this.tableHCPSet != null)) {
+                    this.tableHCPSet.InitVars();
                 }
             }
         }
@@ -199,18 +199,18 @@ namespace ProjektBD2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitClass() {
-            this.DataSetName = "BD2DataSet1";
+            this.DataSetName = "BD2DataSet2";
             this.Prefix = "";
-            this.Namespace = "http://tempuri.org/BD2DataSet11.xsd";
+            this.Namespace = "http://tempuri.org/BD2DataSet21.xsd";
             this.EnforceConstraints = true;
             this.SchemaSerializationMode = global::System.Data.SchemaSerializationMode.IncludeSchema;
-            this.tableAddressSet = new AddressSetDataTable();
-            base.Tables.Add(this.tableAddressSet);
+            this.tableHCPSet = new HCPSetDataTable();
+            base.Tables.Add(this.tableHCPSet);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private bool ShouldSerializeAddressSet() {
+        private bool ShouldSerializeHCPSet() {
             return false;
         }
         
@@ -225,7 +225,7 @@ namespace ProjektBD2 {
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedDataSetSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
-            BD2DataSet1 ds = new BD2DataSet1();
+            BD2DataSet2 ds = new BD2DataSet2();
             global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
             global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
             global::System.Xml.Schema.XmlSchemaAny any = new global::System.Xml.Schema.XmlSchemaAny();
@@ -270,35 +270,45 @@ namespace ProjektBD2 {
         }
         
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public delegate void AddressSetRowChangeEventHandler(object sender, AddressSetRowChangeEvent e);
+        public delegate void HCPSetRowChangeEventHandler(object sender, HCPSetRowChangeEvent e);
         
         /// <summary>
         ///Represents the strongly named DataTable class.
         ///</summary>
         [global::System.Serializable()]
         [global::System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")]
-        public partial class AddressSetDataTable : global::System.Data.TypedTableBase<AddressSetRow> {
-            
-            private global::System.Data.DataColumn columnAddressID;
-            
-            private global::System.Data.DataColumn columnStreet;
-            
-            private global::System.Data.DataColumn columnCity;
-            
-            private global::System.Data.DataColumn columnTerritory;
-            
-            private global::System.Data.DataColumn columnCountry;
-            
-            private global::System.Data.DataColumn columnZipCode;
-            
-            private global::System.Data.DataColumn columnHCOID;
+        public partial class HCPSetDataTable : global::System.Data.TypedTableBase<HCPSetRow> {
             
             private global::System.Data.DataColumn columnHCPID;
             
+            private global::System.Data.DataColumn columnFirstName;
+            
+            private global::System.Data.DataColumn columnMiddleName;
+            
+            private global::System.Data.DataColumn columnLastName;
+            
+            private global::System.Data.DataColumn columnGender;
+            
+            private global::System.Data.DataColumn columnAcademicTitle;
+            
+            private global::System.Data.DataColumn columnBirthdate;
+            
+            private global::System.Data.DataColumn columnPhoneNumber;
+            
+            private global::System.Data.DataColumn columnEmail;
+            
+            private global::System.Data.DataColumn columnKOL;
+            
+            private global::System.Data.DataColumn columnSpecialty;
+            
+            private global::System.Data.DataColumn columnAddressID;
+            
+            private global::System.Data.DataColumn columnHCOID;
+            
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetDataTable() {
-                this.TableName = "AddressSet";
+            public HCPSetDataTable() {
+                this.TableName = "HCPSet";
                 this.BeginInit();
                 this.InitClass();
                 this.EndInit();
@@ -306,7 +316,7 @@ namespace ProjektBD2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal AddressSetDataTable(global::System.Data.DataTable table) {
+            internal HCPSetDataTable(global::System.Data.DataTable table) {
                 this.TableName = table.TableName;
                 if ((table.CaseSensitive != table.DataSet.CaseSensitive)) {
                     this.CaseSensitive = table.CaseSensitive;
@@ -323,9 +333,97 @@ namespace ProjektBD2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            protected AddressSetDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
+            protected HCPSetDataTable(global::System.Runtime.Serialization.SerializationInfo info, global::System.Runtime.Serialization.StreamingContext context) : 
                     base(info, context) {
                 this.InitVars();
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn HCPIDColumn {
+                get {
+                    return this.columnHCPID;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn FirstNameColumn {
+                get {
+                    return this.columnFirstName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn MiddleNameColumn {
+                get {
+                    return this.columnMiddleName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn LastNameColumn {
+                get {
+                    return this.columnLastName;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn GenderColumn {
+                get {
+                    return this.columnGender;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn AcademicTitleColumn {
+                get {
+                    return this.columnAcademicTitle;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn BirthdateColumn {
+                get {
+                    return this.columnBirthdate;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn PhoneNumberColumn {
+                get {
+                    return this.columnPhoneNumber;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn EmailColumn {
+                get {
+                    return this.columnEmail;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn KOLColumn {
+                get {
+                    return this.columnKOL;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public global::System.Data.DataColumn SpecialtyColumn {
+                get {
+                    return this.columnSpecialty;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -338,57 +436,9 @@ namespace ProjektBD2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn StreetColumn {
-                get {
-                    return this.columnStreet;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CityColumn {
-                get {
-                    return this.columnCity;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn TerritoryColumn {
-                get {
-                    return this.columnTerritory;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn CountryColumn {
-                get {
-                    return this.columnCountry;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn ZipCodeColumn {
-                get {
-                    return this.columnZipCode;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public global::System.Data.DataColumn HCOIDColumn {
                 get {
                     return this.columnHCOID;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public global::System.Data.DataColumn HCPIDColumn {
-                get {
-                    return this.columnHCPID;
                 }
             }
             
@@ -403,59 +453,64 @@ namespace ProjektBD2 {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRow this[int index] {
+            public HCPSetRow this[int index] {
                 get {
-                    return ((AddressSetRow)(this.Rows[index]));
+                    return ((HCPSetRow)(this.Rows[index]));
                 }
             }
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event AddressSetRowChangeEventHandler AddressSetRowChanging;
+            public event HCPSetRowChangeEventHandler HCPSetRowChanging;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event AddressSetRowChangeEventHandler AddressSetRowChanged;
+            public event HCPSetRowChangeEventHandler HCPSetRowChanged;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event AddressSetRowChangeEventHandler AddressSetRowDeleting;
+            public event HCPSetRowChangeEventHandler HCPSetRowDeleting;
             
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public event AddressSetRowChangeEventHandler AddressSetRowDeleted;
+            public event HCPSetRowChangeEventHandler HCPSetRowDeleted;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void AddAddressSetRow(AddressSetRow row) {
+            public void AddHCPSetRow(HCPSetRow row) {
                 this.Rows.Add(row);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRow AddAddressSetRow(string Street, string City, string Territory, string Country, int ZipCode, int HCOID, int HCPID) {
-                AddressSetRow rowAddressSetRow = ((AddressSetRow)(this.NewRow()));
+            public HCPSetRow AddHCPSetRow(string FirstName, string MiddleName, string LastName, string Gender, string AcademicTitle, System.DateTime Birthdate, int PhoneNumber, string Email, bool KOL, string Specialty, int AddressID, int HCOID) {
+                HCPSetRow rowHCPSetRow = ((HCPSetRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         null,
-                        Street,
-                        City,
-                        Territory,
-                        Country,
-                        ZipCode,
-                        HCOID,
-                        HCPID};
-                rowAddressSetRow.ItemArray = columnValuesArray;
-                this.Rows.Add(rowAddressSetRow);
-                return rowAddressSetRow;
+                        FirstName,
+                        MiddleName,
+                        LastName,
+                        Gender,
+                        AcademicTitle,
+                        Birthdate,
+                        PhoneNumber,
+                        Email,
+                        KOL,
+                        Specialty,
+                        AddressID,
+                        HCOID};
+                rowHCPSetRow.ItemArray = columnValuesArray;
+                this.Rows.Add(rowHCPSetRow);
+                return rowHCPSetRow;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRow FindByAddressID(int AddressID) {
-                return ((AddressSetRow)(this.Rows.Find(new object[] {
-                            AddressID})));
+            public HCPSetRow FindByHCPID(int HCPID) {
+                return ((HCPSetRow)(this.Rows.Find(new object[] {
+                            HCPID})));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public override global::System.Data.DataTable Clone() {
-                AddressSetDataTable cln = ((AddressSetDataTable)(base.Clone()));
+                HCPSetDataTable cln = ((HCPSetDataTable)(base.Clone()));
                 cln.InitVars();
                 return cln;
             }
@@ -463,86 +518,109 @@ namespace ProjektBD2 {
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataTable CreateInstance() {
-                return new AddressSetDataTable();
+                return new HCPSetDataTable();
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             internal void InitVars() {
-                this.columnAddressID = base.Columns["AddressID"];
-                this.columnStreet = base.Columns["Street"];
-                this.columnCity = base.Columns["City"];
-                this.columnTerritory = base.Columns["Territory"];
-                this.columnCountry = base.Columns["Country"];
-                this.columnZipCode = base.Columns["ZipCode"];
-                this.columnHCOID = base.Columns["HCOID"];
                 this.columnHCPID = base.Columns["HCPID"];
+                this.columnFirstName = base.Columns["FirstName"];
+                this.columnMiddleName = base.Columns["MiddleName"];
+                this.columnLastName = base.Columns["LastName"];
+                this.columnGender = base.Columns["Gender"];
+                this.columnAcademicTitle = base.Columns["AcademicTitle"];
+                this.columnBirthdate = base.Columns["Birthdate"];
+                this.columnPhoneNumber = base.Columns["PhoneNumber"];
+                this.columnEmail = base.Columns["Email"];
+                this.columnKOL = base.Columns["KOL"];
+                this.columnSpecialty = base.Columns["Specialty"];
+                this.columnAddressID = base.Columns["AddressID"];
+                this.columnHCOID = base.Columns["HCOID"];
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             private void InitClass() {
-                this.columnAddressID = new global::System.Data.DataColumn("AddressID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnAddressID);
-                this.columnStreet = new global::System.Data.DataColumn("Street", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnStreet);
-                this.columnCity = new global::System.Data.DataColumn("City", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCity);
-                this.columnTerritory = new global::System.Data.DataColumn("Territory", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnTerritory);
-                this.columnCountry = new global::System.Data.DataColumn("Country", typeof(string), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnCountry);
-                this.columnZipCode = new global::System.Data.DataColumn("ZipCode", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnZipCode);
-                this.columnHCOID = new global::System.Data.DataColumn("HCOID", typeof(int), null, global::System.Data.MappingType.Element);
-                base.Columns.Add(this.columnHCOID);
                 this.columnHCPID = new global::System.Data.DataColumn("HCPID", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnHCPID);
+                this.columnFirstName = new global::System.Data.DataColumn("FirstName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnFirstName);
+                this.columnMiddleName = new global::System.Data.DataColumn("MiddleName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnMiddleName);
+                this.columnLastName = new global::System.Data.DataColumn("LastName", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnLastName);
+                this.columnGender = new global::System.Data.DataColumn("Gender", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnGender);
+                this.columnAcademicTitle = new global::System.Data.DataColumn("AcademicTitle", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAcademicTitle);
+                this.columnBirthdate = new global::System.Data.DataColumn("Birthdate", typeof(global::System.DateTime), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnBirthdate);
+                this.columnPhoneNumber = new global::System.Data.DataColumn("PhoneNumber", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnPhoneNumber);
+                this.columnEmail = new global::System.Data.DataColumn("Email", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnEmail);
+                this.columnKOL = new global::System.Data.DataColumn("KOL", typeof(bool), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnKOL);
+                this.columnSpecialty = new global::System.Data.DataColumn("Specialty", typeof(string), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSpecialty);
+                this.columnAddressID = new global::System.Data.DataColumn("AddressID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnAddressID);
+                this.columnHCOID = new global::System.Data.DataColumn("HCOID", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnHCOID);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
-                                this.columnAddressID}, true));
-                this.columnAddressID.AutoIncrement = true;
-                this.columnAddressID.AutoIncrementSeed = -1;
-                this.columnAddressID.AutoIncrementStep = -1;
-                this.columnAddressID.AllowDBNull = false;
-                this.columnAddressID.ReadOnly = true;
-                this.columnAddressID.Unique = true;
-                this.columnStreet.AllowDBNull = false;
-                this.columnStreet.MaxLength = 2147483647;
-                this.columnCity.AllowDBNull = false;
-                this.columnCity.MaxLength = 2147483647;
-                this.columnTerritory.AllowDBNull = false;
-                this.columnTerritory.MaxLength = 2147483647;
-                this.columnCountry.AllowDBNull = false;
-                this.columnCountry.MaxLength = 2147483647;
-                this.columnZipCode.AllowDBNull = false;
-                this.columnHCOID.AllowDBNull = false;
+                                this.columnHCPID}, true));
+                this.columnHCPID.AutoIncrement = true;
+                this.columnHCPID.AutoIncrementSeed = -1;
+                this.columnHCPID.AutoIncrementStep = -1;
                 this.columnHCPID.AllowDBNull = false;
+                this.columnHCPID.ReadOnly = true;
+                this.columnHCPID.Unique = true;
+                this.columnFirstName.AllowDBNull = false;
+                this.columnFirstName.MaxLength = 2147483647;
+                this.columnMiddleName.AllowDBNull = false;
+                this.columnMiddleName.MaxLength = 2147483647;
+                this.columnLastName.AllowDBNull = false;
+                this.columnLastName.MaxLength = 2147483647;
+                this.columnGender.AllowDBNull = false;
+                this.columnGender.MaxLength = 2147483647;
+                this.columnAcademicTitle.AllowDBNull = false;
+                this.columnAcademicTitle.MaxLength = 2147483647;
+                this.columnBirthdate.AllowDBNull = false;
+                this.columnPhoneNumber.AllowDBNull = false;
+                this.columnEmail.AllowDBNull = false;
+                this.columnEmail.MaxLength = 2147483647;
+                this.columnKOL.AllowDBNull = false;
+                this.columnSpecialty.AllowDBNull = false;
+                this.columnSpecialty.MaxLength = 2147483647;
+                this.columnAddressID.AllowDBNull = false;
+                this.columnHCOID.AllowDBNull = false;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRow NewAddressSetRow() {
-                return ((AddressSetRow)(this.NewRow()));
+            public HCPSetRow NewHCPSetRow() {
+                return ((HCPSetRow)(this.NewRow()));
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Data.DataRow NewRowFromBuilder(global::System.Data.DataRowBuilder builder) {
-                return new AddressSetRow(builder);
+                return new HCPSetRow(builder);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override global::System.Type GetRowType() {
-                return typeof(AddressSetRow);
+                return typeof(HCPSetRow);
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanged(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanged(e);
-                if ((this.AddressSetRowChanged != null)) {
-                    this.AddressSetRowChanged(this, new AddressSetRowChangeEvent(((AddressSetRow)(e.Row)), e.Action));
+                if ((this.HCPSetRowChanged != null)) {
+                    this.HCPSetRowChanged(this, new HCPSetRowChangeEvent(((HCPSetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -550,8 +628,8 @@ namespace ProjektBD2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowChanging(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowChanging(e);
-                if ((this.AddressSetRowChanging != null)) {
-                    this.AddressSetRowChanging(this, new AddressSetRowChangeEvent(((AddressSetRow)(e.Row)), e.Action));
+                if ((this.HCPSetRowChanging != null)) {
+                    this.HCPSetRowChanging(this, new HCPSetRowChangeEvent(((HCPSetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -559,8 +637,8 @@ namespace ProjektBD2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleted(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleted(e);
-                if ((this.AddressSetRowDeleted != null)) {
-                    this.AddressSetRowDeleted(this, new AddressSetRowChangeEvent(((AddressSetRow)(e.Row)), e.Action));
+                if ((this.HCPSetRowDeleted != null)) {
+                    this.HCPSetRowDeleted(this, new HCPSetRowChangeEvent(((HCPSetRow)(e.Row)), e.Action));
                 }
             }
             
@@ -568,14 +646,14 @@ namespace ProjektBD2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             protected override void OnRowDeleting(global::System.Data.DataRowChangeEventArgs e) {
                 base.OnRowDeleting(e);
-                if ((this.AddressSetRowDeleting != null)) {
-                    this.AddressSetRowDeleting(this, new AddressSetRowChangeEvent(((AddressSetRow)(e.Row)), e.Action));
+                if ((this.HCPSetRowDeleting != null)) {
+                    this.HCPSetRowDeleting(this, new HCPSetRowChangeEvent(((HCPSetRow)(e.Row)), e.Action));
                 }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public void RemoveAddressSetRow(AddressSetRow row) {
+            public void RemoveHCPSetRow(HCPSetRow row) {
                 this.Rows.Remove(row);
             }
             
@@ -584,7 +662,7 @@ namespace ProjektBD2 {
             public static global::System.Xml.Schema.XmlSchemaComplexType GetTypedTableSchema(global::System.Xml.Schema.XmlSchemaSet xs) {
                 global::System.Xml.Schema.XmlSchemaComplexType type = new global::System.Xml.Schema.XmlSchemaComplexType();
                 global::System.Xml.Schema.XmlSchemaSequence sequence = new global::System.Xml.Schema.XmlSchemaSequence();
-                BD2DataSet1 ds = new BD2DataSet1();
+                BD2DataSet2 ds = new BD2DataSet2();
                 global::System.Xml.Schema.XmlSchemaAny any1 = new global::System.Xml.Schema.XmlSchemaAny();
                 any1.Namespace = "http://www.w3.org/2001/XMLSchema";
                 any1.MinOccurs = new decimal(0);
@@ -602,7 +680,7 @@ namespace ProjektBD2 {
                 type.Attributes.Add(attribute1);
                 global::System.Xml.Schema.XmlSchemaAttribute attribute2 = new global::System.Xml.Schema.XmlSchemaAttribute();
                 attribute2.Name = "tableTypeName";
-                attribute2.FixedValue = "AddressSetDataTable";
+                attribute2.FixedValue = "HCPSetDataTable";
                 type.Attributes.Add(attribute2);
                 type.Particle = sequence;
                 global::System.Xml.Schema.XmlSchema dsSchema = ds.GetSchemaSerializable();
@@ -646,80 +724,146 @@ namespace ProjektBD2 {
         /// <summary>
         ///Represents strongly named DataRow class.
         ///</summary>
-        public partial class AddressSetRow : global::System.Data.DataRow {
+        public partial class HCPSetRow : global::System.Data.DataRow {
             
-            private AddressSetDataTable tableAddressSet;
+            private HCPSetDataTable tableHCPSet;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            internal AddressSetRow(global::System.Data.DataRowBuilder rb) : 
+            internal HCPSetRow(global::System.Data.DataRowBuilder rb) : 
                     base(rb) {
-                this.tableAddressSet = ((AddressSetDataTable)(this.Table));
+                this.tableHCPSet = ((HCPSetDataTable)(this.Table));
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int HCPID {
+                get {
+                    return ((int)(this[this.tableHCPSet.HCPIDColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.HCPIDColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string FirstName {
+                get {
+                    return ((string)(this[this.tableHCPSet.FirstNameColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.FirstNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string MiddleName {
+                get {
+                    return ((string)(this[this.tableHCPSet.MiddleNameColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.MiddleNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string LastName {
+                get {
+                    return ((string)(this[this.tableHCPSet.LastNameColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.LastNameColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Gender {
+                get {
+                    return ((string)(this[this.tableHCPSet.GenderColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.GenderColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string AcademicTitle {
+                get {
+                    return ((string)(this[this.tableHCPSet.AcademicTitleColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.AcademicTitleColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public System.DateTime Birthdate {
+                get {
+                    return ((global::System.DateTime)(this[this.tableHCPSet.BirthdateColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.BirthdateColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public int PhoneNumber {
+                get {
+                    return ((int)(this[this.tableHCPSet.PhoneNumberColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.PhoneNumberColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Email {
+                get {
+                    return ((string)(this[this.tableHCPSet.EmailColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.EmailColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public bool KOL {
+                get {
+                    return ((bool)(this[this.tableHCPSet.KOLColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.KOLColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+            public string Specialty {
+                get {
+                    return ((string)(this[this.tableHCPSet.SpecialtyColumn]));
+                }
+                set {
+                    this[this.tableHCPSet.SpecialtyColumn] = value;
+                }
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int AddressID {
                 get {
-                    return ((int)(this[this.tableAddressSet.AddressIDColumn]));
+                    return ((int)(this[this.tableHCPSet.AddressIDColumn]));
                 }
                 set {
-                    this[this.tableAddressSet.AddressIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Street {
-                get {
-                    return ((string)(this[this.tableAddressSet.StreetColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.StreetColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string City {
-                get {
-                    return ((string)(this[this.tableAddressSet.CityColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.CityColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Territory {
-                get {
-                    return ((string)(this[this.tableAddressSet.TerritoryColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.TerritoryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public string Country {
-                get {
-                    return ((string)(this[this.tableAddressSet.CountryColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.CountryColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int ZipCode {
-                get {
-                    return ((int)(this[this.tableAddressSet.ZipCodeColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.ZipCodeColumn] = value;
+                    this[this.tableHCPSet.AddressIDColumn] = value;
                 }
             }
             
@@ -727,21 +871,10 @@ namespace ProjektBD2 {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
             public int HCOID {
                 get {
-                    return ((int)(this[this.tableAddressSet.HCOIDColumn]));
+                    return ((int)(this[this.tableHCPSet.HCOIDColumn]));
                 }
                 set {
-                    this[this.tableAddressSet.HCOIDColumn] = value;
-                }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public int HCPID {
-                get {
-                    return ((int)(this[this.tableAddressSet.HCPIDColumn]));
-                }
-                set {
-                    this[this.tableAddressSet.HCPIDColumn] = value;
+                    this[this.tableHCPSet.HCOIDColumn] = value;
                 }
             }
         }
@@ -750,22 +883,22 @@ namespace ProjektBD2 {
         ///Row event argument class
         ///</summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public class AddressSetRowChangeEvent : global::System.EventArgs {
+        public class HCPSetRowChangeEvent : global::System.EventArgs {
             
-            private AddressSetRow eventRow;
+            private HCPSetRow eventRow;
             
             private global::System.Data.DataRowAction eventAction;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRowChangeEvent(AddressSetRow row, global::System.Data.DataRowAction action) {
+            public HCPSetRowChangeEvent(HCPSetRow row, global::System.Data.DataRowAction action) {
                 this.eventRow = row;
                 this.eventAction = action;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-            public AddressSetRow Row {
+            public HCPSetRow Row {
                 get {
                     return this.eventRow;
                 }
@@ -781,7 +914,7 @@ namespace ProjektBD2 {
         }
     }
 }
-namespace ProjektBD2.BD2DataSet1TableAdapters {
+namespace ProjektBD2.BD2DataSet2TableAdapters {
     
     
     /// <summary>
@@ -793,7 +926,7 @@ namespace ProjektBD2.BD2DataSet1TableAdapters {
     [global::System.ComponentModel.DesignerAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterDesigner, Microsoft.VSDesigner" +
         ", Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a")]
     [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-    public partial class AddressSetTableAdapter : global::System.ComponentModel.Component {
+    public partial class HCPSetTableAdapter : global::System.ComponentModel.Component {
         
         private global::System.Data.SqlClient.SqlDataAdapter _adapter;
         
@@ -807,7 +940,7 @@ namespace ProjektBD2.BD2DataSet1TableAdapters {
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public AddressSetTableAdapter() {
+        public HCPSetTableAdapter() {
             this.ClearBeforeFill = true;
         }
         
@@ -904,55 +1037,75 @@ namespace ProjektBD2.BD2DataSet1TableAdapters {
             this._adapter = new global::System.Data.SqlClient.SqlDataAdapter();
             global::System.Data.Common.DataTableMapping tableMapping = new global::System.Data.Common.DataTableMapping();
             tableMapping.SourceTable = "Table";
-            tableMapping.DataSetTable = "AddressSet";
-            tableMapping.ColumnMappings.Add("AddressID", "AddressID");
-            tableMapping.ColumnMappings.Add("Street", "Street");
-            tableMapping.ColumnMappings.Add("City", "City");
-            tableMapping.ColumnMappings.Add("Territory", "Territory");
-            tableMapping.ColumnMappings.Add("Country", "Country");
-            tableMapping.ColumnMappings.Add("ZipCode", "ZipCode");
-            tableMapping.ColumnMappings.Add("HCOID", "HCOID");
+            tableMapping.DataSetTable = "HCPSet";
             tableMapping.ColumnMappings.Add("HCPID", "HCPID");
+            tableMapping.ColumnMappings.Add("FirstName", "FirstName");
+            tableMapping.ColumnMappings.Add("MiddleName", "MiddleName");
+            tableMapping.ColumnMappings.Add("LastName", "LastName");
+            tableMapping.ColumnMappings.Add("Gender", "Gender");
+            tableMapping.ColumnMappings.Add("AcademicTitle", "AcademicTitle");
+            tableMapping.ColumnMappings.Add("Birthdate", "Birthdate");
+            tableMapping.ColumnMappings.Add("PhoneNumber", "PhoneNumber");
+            tableMapping.ColumnMappings.Add("Email", "Email");
+            tableMapping.ColumnMappings.Add("KOL", "KOL");
+            tableMapping.ColumnMappings.Add("Specialty", "Specialty");
+            tableMapping.ColumnMappings.Add("AddressID", "AddressID");
+            tableMapping.ColumnMappings.Add("HCOID", "HCOID");
             this._adapter.TableMappings.Add(tableMapping);
             this._adapter.DeleteCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.DeleteCommand.Connection = this.Connection;
-            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[AddressSet] WHERE (([AddressID] = @Original_AddressID) AND ([Z" +
-                "ipCode] = @Original_ZipCode) AND ([HCOID] = @Original_HCOID) AND ([HCPID] = @Ori" +
-                "ginal_HCPID))";
+            this._adapter.DeleteCommand.CommandText = "DELETE FROM [dbo].[HCPSet] WHERE (([HCPID] = @Original_HCPID) AND ([Birthdate] = " +
+                "@Original_Birthdate) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([KOL] = @O" +
+                "riginal_KOL) AND ([AddressID] = @Original_AddressID) AND ([HCOID] = @Original_HC" +
+                "OID))";
             this._adapter.DeleteCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZipCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZipCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KOL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.DeleteCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.InsertCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.InsertCommand.Connection = this.Connection;
-            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[AddressSet] ([Street], [City], [Territory], [Country], [ZipCode], [HCOID], [HCPID]) VALUES (@Street, @City, @Territory, @Country, @ZipCode, @HCOID, @HCPID);
-SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM AddressSet WHERE (AddressID = SCOPE_IDENTITY())";
+            this._adapter.InsertCommand.CommandText = @"INSERT INTO [dbo].[HCPSet] ([FirstName], [MiddleName], [LastName], [Gender], [AcademicTitle], [Birthdate], [PhoneNumber], [Email], [KOL], [Specialty], [AddressID], [HCOID]) VALUES (@FirstName, @MiddleName, @LastName, @Gender, @AcademicTitle, @Birthdate, @PhoneNumber, @Email, @KOL, @Specialty, @AddressID, @HCOID);
+SELECT HCPID, FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, PhoneNumber, Email, KOL, Specialty, AddressID, HCOID FROM HCPSet WHERE (HCPID = SCOPE_IDENTITY())";
             this._adapter.InsertCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Street", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Territory", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Territory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Country", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZipCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZipCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KOL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.InsertCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HCPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand = new global::System.Data.SqlClient.SqlCommand();
             this._adapter.UpdateCommand.Connection = this.Connection;
-            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[AddressSet] SET [Street] = @Street, [City] = @City, [Territory] = @Territory, [Country] = @Country, [ZipCode] = @ZipCode, [HCOID] = @HCOID, [HCPID] = @HCPID WHERE (([AddressID] = @Original_AddressID) AND ([ZipCode] = @Original_ZipCode) AND ([HCOID] = @Original_HCOID) AND ([HCPID] = @Original_HCPID));
-SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM AddressSet WHERE (AddressID = @AddressID)";
+            this._adapter.UpdateCommand.CommandText = @"UPDATE [dbo].[HCPSet] SET [FirstName] = @FirstName, [MiddleName] = @MiddleName, [LastName] = @LastName, [Gender] = @Gender, [AcademicTitle] = @AcademicTitle, [Birthdate] = @Birthdate, [PhoneNumber] = @PhoneNumber, [Email] = @Email, [KOL] = @KOL, [Specialty] = @Specialty, [AddressID] = @AddressID, [HCOID] = @HCOID WHERE (([HCPID] = @Original_HCPID) AND ([Birthdate] = @Original_Birthdate) AND ([PhoneNumber] = @Original_PhoneNumber) AND ([KOL] = @Original_KOL) AND ([AddressID] = @Original_AddressID) AND ([HCOID] = @Original_HCOID));
+SELECT HCPID, FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, PhoneNumber, Email, KOL, Specialty, AddressID, HCOID FROM HCPSet WHERE (HCPID = @HCPID)";
             this._adapter.UpdateCommand.CommandType = global::System.Data.CommandType.Text;
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Street", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Street", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@City", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "City", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Territory", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Territory", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Country", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Country", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@ZipCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZipCode", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@FirstName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "FirstName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@MiddleName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "MiddleName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@LastName", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "LastName", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Gender", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Gender", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AcademicTitle", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AcademicTitle", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Birthdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@PhoneNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Email", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Email", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@KOL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOL", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Specialty", global::System.Data.SqlDbType.NVarChar, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Specialty", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HCPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_ZipCode", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "ZipCode", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
             this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCPID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
-            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@AddressID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_Birthdate", global::System.Data.SqlDbType.DateTime, 0, global::System.Data.ParameterDirection.Input, 0, 0, "Birthdate", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_PhoneNumber", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "PhoneNumber", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_KOL", global::System.Data.SqlDbType.Bit, 0, global::System.Data.ParameterDirection.Input, 0, 0, "KOL", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_AddressID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "AddressID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Original_HCOID", global::System.Data.SqlDbType.Int, 0, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Original, false, null, "", "", ""));
+            this._adapter.UpdateCommand.Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@HCPID", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -965,19 +1118,40 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         private void InitCommandCollection() {
-            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
+            this._commandCollection = new global::System.Data.SqlClient.SqlCommand[4];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM db" +
-                "o.AddressSet";
+            this._commandCollection[0].CommandText = "SELECT HCPID, FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, " +
+                "PhoneNumber, Email, KOL, Specialty, AddressID, HCOID FROM dbo.HCPSet";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[1].Connection = this.Connection;
+            this._commandCollection[1].CommandText = @"SELECT dbo.HCPSet.HCPID, dbo.HCPSet.FirstName, dbo.HCPSet.MiddleName, dbo.HCPSet.LastName, dbo.HCPSet.Gender, dbo.HCPSet.AcademicTitle, dbo.HCPSet.Birthdate, dbo.HCPSet.PhoneNumber, dbo.HCPSet.Email, KOL, dbo.HCPSet.Specialty, dbo.HCPSet.AddressID, dbo.HCPSet.HCOID FROM dbo.HCPSet
+join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCPSet.AddressID
+WHERE dbo.HCPSet.HCPID = @Param";
+            this._commandCollection[1].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[1].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@Param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[2] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[2].Connection = this.Connection;
+            this._commandCollection[2].CommandText = "SELECT HCPID, FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, " +
+                "PhoneNumber, Email, KOL, Specialty, AddressID, HCOID FROM dbo.HCPSet WHERE HCPID" +
+                "=@parametr1";
+            this._commandCollection[2].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[2].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@parametr1", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "HCPID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
+            this._commandCollection[3] = new global::System.Data.SqlClient.SqlCommand();
+            this._commandCollection[3].Connection = this.Connection;
+            this._commandCollection[3].CommandText = "SELECT HCPID, FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, " +
+                "PhoneNumber, Email, KOL, Specialty, AddressID, HCOID FROM dbo.HCPSet WHERE HCOID" +
+                " = @param";
+            this._commandCollection[3].CommandType = global::System.Data.CommandType.Text;
+            this._commandCollection[3].Parameters.Add(new global::System.Data.SqlClient.SqlParameter("@param", global::System.Data.SqlDbType.Int, 4, global::System.Data.ParameterDirection.Input, 0, 0, "HCOID", global::System.Data.DataRowVersion.Current, false, null, "", "", ""));
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, true)]
-        public virtual int Fill(BD2DataSet1.AddressSetDataTable dataTable) {
+        public virtual int Fill(BD2DataSet2.HCPSetDataTable dataTable) {
             this.Adapter.SelectCommand = this.CommandCollection[0];
             if ((this.ClearBeforeFill == true)) {
                 dataTable.Clear();
@@ -990,9 +1164,9 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Select, true)]
-        public virtual BD2DataSet1.AddressSetDataTable GetData() {
+        public virtual BD2DataSet2.HCPSetDataTable GetData() {
             this.Adapter.SelectCommand = this.CommandCollection[0];
-            BD2DataSet1.AddressSetDataTable dataTable = new BD2DataSet1.AddressSetDataTable();
+            BD2DataSet2.HCPSetDataTable dataTable = new BD2DataSet2.HCPSetDataTable();
             this.Adapter.Fill(dataTable);
             return dataTable;
         }
@@ -1000,15 +1174,57 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BD2DataSet1.AddressSetDataTable dataTable) {
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FillBy(BD2DataSet2.HCPSetDataTable dataTable, int Param) {
+            this.Adapter.SelectCommand = this.CommandCollection[1];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(Param));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int FILTR(BD2DataSet2.HCPSetDataTable dataTable, int parametr1) {
+            this.Adapter.SelectCommand = this.CommandCollection[2];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(parametr1));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Fill, false)]
+        public virtual int Filtruj(BD2DataSet2.HCPSetDataTable dataTable, int param) {
+            this.Adapter.SelectCommand = this.CommandCollection[3];
+            this.Adapter.SelectCommand.Parameters[0].Value = ((int)(param));
+            if ((this.ClearBeforeFill == true)) {
+                dataTable.Clear();
+            }
+            int returnValue = this.Adapter.Fill(dataTable);
+            return returnValue;
+        }
+        
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
+        [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
+        public virtual int Update(BD2DataSet2.HCPSetDataTable dataTable) {
             return this.Adapter.Update(dataTable);
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
-        public virtual int Update(BD2DataSet1 dataSet) {
-            return this.Adapter.Update(dataSet, "AddressSet");
+        public virtual int Update(BD2DataSet2 dataSet) {
+            return this.Adapter.Update(dataSet, "HCPSet");
         }
         
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1030,11 +1246,13 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Delete, true)]
-        public virtual int Delete(int Original_AddressID, int Original_ZipCode, int Original_HCOID, int Original_HCPID) {
-            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_AddressID));
-            this.Adapter.DeleteCommand.Parameters[1].Value = ((int)(Original_ZipCode));
-            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_HCOID));
-            this.Adapter.DeleteCommand.Parameters[3].Value = ((int)(Original_HCPID));
+        public virtual int Delete(int Original_HCPID, System.DateTime Original_Birthdate, int Original_PhoneNumber, bool Original_KOL, int Original_AddressID, int Original_HCOID) {
+            this.Adapter.DeleteCommand.Parameters[0].Value = ((int)(Original_HCPID));
+            this.Adapter.DeleteCommand.Parameters[1].Value = ((System.DateTime)(Original_Birthdate));
+            this.Adapter.DeleteCommand.Parameters[2].Value = ((int)(Original_PhoneNumber));
+            this.Adapter.DeleteCommand.Parameters[3].Value = ((bool)(Original_KOL));
+            this.Adapter.DeleteCommand.Parameters[4].Value = ((int)(Original_AddressID));
+            this.Adapter.DeleteCommand.Parameters[5].Value = ((int)(Original_HCOID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.DeleteCommand.Connection.State;
             if (((this.Adapter.DeleteCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1055,34 +1273,54 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Insert, true)]
-        public virtual int Insert(string Street, string City, string Territory, string Country, int ZipCode, int HCOID, int HCPID) {
-            if ((Street == null)) {
-                throw new global::System.ArgumentNullException("Street");
+        public virtual int Insert(string FirstName, string MiddleName, string LastName, string Gender, string AcademicTitle, System.DateTime Birthdate, int PhoneNumber, string Email, bool KOL, string Specialty, int AddressID, int HCOID) {
+            if ((FirstName == null)) {
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(Street));
+                this.Adapter.InsertCommand.Parameters[0].Value = ((string)(FirstName));
             }
-            if ((City == null)) {
-                throw new global::System.ArgumentNullException("City");
-            }
-            else {
-                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(City));
-            }
-            if ((Territory == null)) {
-                throw new global::System.ArgumentNullException("Territory");
+            if ((MiddleName == null)) {
+                throw new global::System.ArgumentNullException("MiddleName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(Territory));
+                this.Adapter.InsertCommand.Parameters[1].Value = ((string)(MiddleName));
             }
-            if ((Country == null)) {
-                throw new global::System.ArgumentNullException("Country");
+            if ((LastName == null)) {
+                throw new global::System.ArgumentNullException("LastName");
             }
             else {
-                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Country));
+                this.Adapter.InsertCommand.Parameters[2].Value = ((string)(LastName));
             }
-            this.Adapter.InsertCommand.Parameters[4].Value = ((int)(ZipCode));
-            this.Adapter.InsertCommand.Parameters[5].Value = ((int)(HCOID));
-            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(HCPID));
+            if ((Gender == null)) {
+                throw new global::System.ArgumentNullException("Gender");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[3].Value = ((string)(Gender));
+            }
+            if ((AcademicTitle == null)) {
+                throw new global::System.ArgumentNullException("AcademicTitle");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[4].Value = ((string)(AcademicTitle));
+            }
+            this.Adapter.InsertCommand.Parameters[5].Value = ((System.DateTime)(Birthdate));
+            this.Adapter.InsertCommand.Parameters[6].Value = ((int)(PhoneNumber));
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[7].Value = ((string)(Email));
+            }
+            this.Adapter.InsertCommand.Parameters[8].Value = ((bool)(KOL));
+            if ((Specialty == null)) {
+                throw new global::System.ArgumentNullException("Specialty");
+            }
+            else {
+                this.Adapter.InsertCommand.Parameters[9].Value = ((string)(Specialty));
+            }
+            this.Adapter.InsertCommand.Parameters[10].Value = ((int)(AddressID));
+            this.Adapter.InsertCommand.Parameters[11].Value = ((int)(HCOID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.InsertCommand.Connection.State;
             if (((this.Adapter.InsertCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1103,39 +1341,80 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Street, string City, string Territory, string Country, int ZipCode, int HCOID, int HCPID, int Original_AddressID, int Original_ZipCode, int Original_HCOID, int Original_HCPID, int AddressID) {
-            if ((Street == null)) {
-                throw new global::System.ArgumentNullException("Street");
+        public virtual int Update(
+                    string FirstName, 
+                    string MiddleName, 
+                    string LastName, 
+                    string Gender, 
+                    string AcademicTitle, 
+                    System.DateTime Birthdate, 
+                    int PhoneNumber, 
+                    string Email, 
+                    bool KOL, 
+                    string Specialty, 
+                    int AddressID, 
+                    int HCOID, 
+                    int Original_HCPID, 
+                    System.DateTime Original_Birthdate, 
+                    int Original_PhoneNumber, 
+                    bool Original_KOL, 
+                    int Original_AddressID, 
+                    int Original_HCOID, 
+                    int HCPID) {
+            if ((FirstName == null)) {
+                throw new global::System.ArgumentNullException("FirstName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(Street));
+                this.Adapter.UpdateCommand.Parameters[0].Value = ((string)(FirstName));
             }
-            if ((City == null)) {
-                throw new global::System.ArgumentNullException("City");
-            }
-            else {
-                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(City));
-            }
-            if ((Territory == null)) {
-                throw new global::System.ArgumentNullException("Territory");
+            if ((MiddleName == null)) {
+                throw new global::System.ArgumentNullException("MiddleName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(Territory));
+                this.Adapter.UpdateCommand.Parameters[1].Value = ((string)(MiddleName));
             }
-            if ((Country == null)) {
-                throw new global::System.ArgumentNullException("Country");
+            if ((LastName == null)) {
+                throw new global::System.ArgumentNullException("LastName");
             }
             else {
-                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Country));
+                this.Adapter.UpdateCommand.Parameters[2].Value = ((string)(LastName));
             }
-            this.Adapter.UpdateCommand.Parameters[4].Value = ((int)(ZipCode));
-            this.Adapter.UpdateCommand.Parameters[5].Value = ((int)(HCOID));
-            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(HCPID));
-            this.Adapter.UpdateCommand.Parameters[7].Value = ((int)(Original_AddressID));
-            this.Adapter.UpdateCommand.Parameters[8].Value = ((int)(Original_ZipCode));
-            this.Adapter.UpdateCommand.Parameters[9].Value = ((int)(Original_HCOID));
-            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(Original_HCPID));
-            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(AddressID));
+            if ((Gender == null)) {
+                throw new global::System.ArgumentNullException("Gender");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[3].Value = ((string)(Gender));
+            }
+            if ((AcademicTitle == null)) {
+                throw new global::System.ArgumentNullException("AcademicTitle");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[4].Value = ((string)(AcademicTitle));
+            }
+            this.Adapter.UpdateCommand.Parameters[5].Value = ((System.DateTime)(Birthdate));
+            this.Adapter.UpdateCommand.Parameters[6].Value = ((int)(PhoneNumber));
+            if ((Email == null)) {
+                throw new global::System.ArgumentNullException("Email");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[7].Value = ((string)(Email));
+            }
+            this.Adapter.UpdateCommand.Parameters[8].Value = ((bool)(KOL));
+            if ((Specialty == null)) {
+                throw new global::System.ArgumentNullException("Specialty");
+            }
+            else {
+                this.Adapter.UpdateCommand.Parameters[9].Value = ((string)(Specialty));
+            }
+            this.Adapter.UpdateCommand.Parameters[10].Value = ((int)(AddressID));
+            this.Adapter.UpdateCommand.Parameters[11].Value = ((int)(HCOID));
+            this.Adapter.UpdateCommand.Parameters[12].Value = ((int)(Original_HCPID));
+            this.Adapter.UpdateCommand.Parameters[13].Value = ((System.DateTime)(Original_Birthdate));
+            this.Adapter.UpdateCommand.Parameters[14].Value = ((int)(Original_PhoneNumber));
+            this.Adapter.UpdateCommand.Parameters[15].Value = ((bool)(Original_KOL));
+            this.Adapter.UpdateCommand.Parameters[16].Value = ((int)(Original_AddressID));
+            this.Adapter.UpdateCommand.Parameters[17].Value = ((int)(Original_HCOID));
+            this.Adapter.UpdateCommand.Parameters[18].Value = ((int)(HCPID));
             global::System.Data.ConnectionState previousConnectionState = this.Adapter.UpdateCommand.Connection.State;
             if (((this.Adapter.UpdateCommand.Connection.State & global::System.Data.ConnectionState.Open) 
                         != global::System.Data.ConnectionState.Open)) {
@@ -1156,8 +1435,26 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
         [global::System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter")]
         [global::System.ComponentModel.DataObjectMethodAttribute(global::System.ComponentModel.DataObjectMethodType.Update, true)]
-        public virtual int Update(string Street, string City, string Territory, string Country, int ZipCode, int HCOID, int HCPID, int Original_AddressID, int Original_ZipCode, int Original_HCOID, int Original_HCPID) {
-            return this.Update(Street, City, Territory, Country, ZipCode, HCOID, HCPID, Original_AddressID, Original_ZipCode, Original_HCOID, Original_HCPID, Original_AddressID);
+        public virtual int Update(
+                    string FirstName, 
+                    string MiddleName, 
+                    string LastName, 
+                    string Gender, 
+                    string AcademicTitle, 
+                    System.DateTime Birthdate, 
+                    int PhoneNumber, 
+                    string Email, 
+                    bool KOL, 
+                    string Specialty, 
+                    int AddressID, 
+                    int HCOID, 
+                    int Original_HCPID, 
+                    System.DateTime Original_Birthdate, 
+                    int Original_PhoneNumber, 
+                    bool Original_KOL, 
+                    int Original_AddressID, 
+                    int Original_HCOID) {
+            return this.Update(FirstName, MiddleName, LastName, Gender, AcademicTitle, Birthdate, PhoneNumber, Email, KOL, Specialty, AddressID, HCOID, Original_HCPID, Original_Birthdate, Original_PhoneNumber, Original_KOL, Original_AddressID, Original_HCOID, Original_HCPID);
         }
     }
     
@@ -1173,7 +1470,7 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         
         private UpdateOrderOption _updateOrder;
         
-        private AddressSetTableAdapter _addressSetTableAdapter;
+        private HCPSetTableAdapter _hCPSetTableAdapter;
         
         private bool _backupDataSetBeforeUpdate;
         
@@ -1195,12 +1492,12 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         [global::System.ComponentModel.EditorAttribute("Microsoft.VSDesigner.DataSource.Design.TableAdapterManagerPropertyEditor, Microso" +
             "ft.VSDesigner, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3" +
             "a", "System.Drawing.Design.UITypeEditor")]
-        public AddressSetTableAdapter AddressSetTableAdapter {
+        public HCPSetTableAdapter HCPSetTableAdapter {
             get {
-                return this._addressSetTableAdapter;
+                return this._hCPSetTableAdapter;
             }
             set {
-                this._addressSetTableAdapter = value;
+                this._hCPSetTableAdapter = value;
             }
         }
         
@@ -1223,9 +1520,9 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
                 if ((this._connection != null)) {
                     return this._connection;
                 }
-                if (((this._addressSetTableAdapter != null) 
-                            && (this._addressSetTableAdapter.Connection != null))) {
-                    return this._addressSetTableAdapter.Connection;
+                if (((this._hCPSetTableAdapter != null) 
+                            && (this._hCPSetTableAdapter.Connection != null))) {
+                    return this._hCPSetTableAdapter.Connection;
                 }
                 return null;
             }
@@ -1240,7 +1537,7 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         public int TableAdapterInstanceCount {
             get {
                 int count = 0;
-                if ((this._addressSetTableAdapter != null)) {
+                if ((this._hCPSetTableAdapter != null)) {
                     count = (count + 1);
                 }
                 return count;
@@ -1252,14 +1549,14 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateUpdatedRows(BD2DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateUpdatedRows(BD2DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._addressSetTableAdapter != null)) {
-                global::System.Data.DataRow[] updatedRows = dataSet.AddressSet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
+            if ((this._hCPSetTableAdapter != null)) {
+                global::System.Data.DataRow[] updatedRows = dataSet.HCPSet.Select(null, null, global::System.Data.DataViewRowState.ModifiedCurrent);
                 updatedRows = this.GetRealUpdatedRows(updatedRows, allAddedRows);
                 if (((updatedRows != null) 
                             && (0 < updatedRows.Length))) {
-                    result = (result + this._addressSetTableAdapter.Update(updatedRows));
+                    result = (result + this._hCPSetTableAdapter.Update(updatedRows));
                     allChangedRows.AddRange(updatedRows);
                 }
             }
@@ -1271,13 +1568,13 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateInsertedRows(BD2DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
+        private int UpdateInsertedRows(BD2DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allAddedRows) {
             int result = 0;
-            if ((this._addressSetTableAdapter != null)) {
-                global::System.Data.DataRow[] addedRows = dataSet.AddressSet.Select(null, null, global::System.Data.DataViewRowState.Added);
+            if ((this._hCPSetTableAdapter != null)) {
+                global::System.Data.DataRow[] addedRows = dataSet.HCPSet.Select(null, null, global::System.Data.DataViewRowState.Added);
                 if (((addedRows != null) 
                             && (0 < addedRows.Length))) {
-                    result = (result + this._addressSetTableAdapter.Update(addedRows));
+                    result = (result + this._hCPSetTableAdapter.Update(addedRows));
                     allAddedRows.AddRange(addedRows);
                 }
             }
@@ -1289,13 +1586,13 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        private int UpdateDeletedRows(BD2DataSet1 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
+        private int UpdateDeletedRows(BD2DataSet2 dataSet, global::System.Collections.Generic.List<global::System.Data.DataRow> allChangedRows) {
             int result = 0;
-            if ((this._addressSetTableAdapter != null)) {
-                global::System.Data.DataRow[] deletedRows = dataSet.AddressSet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
+            if ((this._hCPSetTableAdapter != null)) {
+                global::System.Data.DataRow[] deletedRows = dataSet.HCPSet.Select(null, null, global::System.Data.DataViewRowState.Deleted);
                 if (((deletedRows != null) 
                             && (0 < deletedRows.Length))) {
-                    result = (result + this._addressSetTableAdapter.Update(deletedRows));
+                    result = (result + this._hCPSetTableAdapter.Update(deletedRows));
                     allChangedRows.AddRange(deletedRows);
                 }
             }
@@ -1331,15 +1628,15 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
         ///</summary>
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "15.0.0.0")]
-        public virtual int UpdateAll(BD2DataSet1 dataSet) {
+        public virtual int UpdateAll(BD2DataSet2 dataSet) {
             if ((dataSet == null)) {
                 throw new global::System.ArgumentNullException("dataSet");
             }
             if ((dataSet.HasChanges() == false)) {
                 return 0;
             }
-            if (((this._addressSetTableAdapter != null) 
-                        && (this.MatchTableAdapterConnection(this._addressSetTableAdapter.Connection) == false))) {
+            if (((this._hCPSetTableAdapter != null) 
+                        && (this.MatchTableAdapterConnection(this._hCPSetTableAdapter.Connection) == false))) {
                 throw new global::System.ArgumentException("All TableAdapters managed by a TableAdapterManager must use the same connection s" +
                         "tring.");
             }
@@ -1375,13 +1672,13 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
             try {
                 // ---- Prepare for update -----------
                 //
-                if ((this._addressSetTableAdapter != null)) {
-                    revertConnections.Add(this._addressSetTableAdapter, this._addressSetTableAdapter.Connection);
-                    this._addressSetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
-                    this._addressSetTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
-                    if (this._addressSetTableAdapter.Adapter.AcceptChangesDuringUpdate) {
-                        this._addressSetTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
-                        adaptersWithAcceptChangesDuringUpdate.Add(this._addressSetTableAdapter.Adapter);
+                if ((this._hCPSetTableAdapter != null)) {
+                    revertConnections.Add(this._hCPSetTableAdapter, this._hCPSetTableAdapter.Connection);
+                    this._hCPSetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(workConnection));
+                    this._hCPSetTableAdapter.Transaction = ((global::System.Data.SqlClient.SqlTransaction)(workTransaction));
+                    if (this._hCPSetTableAdapter.Adapter.AcceptChangesDuringUpdate) {
+                        this._hCPSetTableAdapter.Adapter.AcceptChangesDuringUpdate = false;
+                        adaptersWithAcceptChangesDuringUpdate.Add(this._hCPSetTableAdapter.Adapter);
                     }
                 }
                 // 
@@ -1442,9 +1739,9 @@ SELECT AddressID, Street, City, Territory, Country, ZipCode, HCOID, HCPID FROM A
                 if (workConnOpened) {
                     workConnection.Close();
                 }
-                if ((this._addressSetTableAdapter != null)) {
-                    this._addressSetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._addressSetTableAdapter]));
-                    this._addressSetTableAdapter.Transaction = null;
+                if ((this._hCPSetTableAdapter != null)) {
+                    this._hCPSetTableAdapter.Connection = ((global::System.Data.SqlClient.SqlConnection)(revertConnections[this._hCPSetTableAdapter]));
+                    this._hCPSetTableAdapter.Transaction = null;
                 }
                 if ((0 < adaptersWithAcceptChangesDuringUpdate.Count)) {
                     global::System.Data.Common.DataAdapter[] adapters = new System.Data.Common.DataAdapter[adaptersWithAcceptChangesDuringUpdate.Count];

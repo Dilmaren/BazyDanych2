@@ -13,6 +13,7 @@ namespace ProjektBD2
 {
     public partial class NewHCO : Form
     {
+        private static SqlDataAdapter adapt;
         public NewHCO()
         {
             InitializeComponent();
@@ -33,7 +34,7 @@ namespace ProjektBD2
 
         private void button1_Click(object sender, EventArgs e)
         {
-            label13.Text = AddressView1.CurrentCell.Value.ToString();
+            label13.Text = AddressView1.CurrentRow.Cells[0].Value.ToString();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -67,5 +68,23 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+
+            NewAddress nowyadres5 = new NewAddress();
+            nowyadres5.Show();
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
     }
+
+ 
+    
 }
+    
+
