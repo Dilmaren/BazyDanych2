@@ -132,6 +132,12 @@
     <Compile Include="NewHCO.Designer.cs">
       <DependentUpon>NewHCO.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewHCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewHCP.Designer.cs">
+      <DependentUpon>NewHCP.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewHCO.resx">
       <DependentUpon>NewHCO.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewHCP.resx">
+      <DependentUpon>NewHCP.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>

@@ -51,6 +51,14 @@ namespace ProjektBD2
             this.Hide();
         }
 
+        //New HCP Button
+        private void button8_Click(object sender, EventArgs e)
+        {
+            NewHCP nowylekarz = new NewHCP();
+            nowylekarz.Show();
+            this.Hide();
+        }
+
         //Show Details HCO Button
         private void button2_Click(object sender, EventArgs e)
         {
@@ -280,7 +288,6 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
-        
-        
+
     }
 }

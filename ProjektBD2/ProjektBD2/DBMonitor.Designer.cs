@@ -1061,6 +1061,7 @@
             this.button8.TabIndex = 1;
             this.button8.Text = "CREATE HCP";
             this.button8.UseVisualStyleBackColor = true;
+            this.button8.Click += new System.EventHandler(this.button8_Click);
             // 
             // dataGridView3
             // 
