@@ -15,6 +15,9 @@ namespace ProjektBD2
 {
     public partial class UserMonitor : Form
     {
+
+        private static SqlDataAdapter adapt;
+
         public static int pomoc;
         public UserMonitor()
         {
@@ -97,6 +100,42 @@ namespace ProjektBD2
             this.Hide();
             NewUser nowyuzytkownik = new NewUser();
             nowyuzytkownik.Show();
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            pomoc = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            EditUser edytujuzytkownika = new EditUser();
+            edytujuzytkownika.Show();
+            this.Hide();
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@userid", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                command1.CommandText = "DELETE from dbo.UserSet where UserID = @userid";
+                command1.ExecuteScalar();
+
+                command1.CommandText = "DELETE from dbo.UserCredentialsSet where UserID = @userid";
+                command1.ExecuteScalar();
+
+                DataTable dt = new DataTable();
+                adapt = new SqlDataAdapter("select UserID, FirstName, LastName, JobTitle from dbo.UserSet", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
         }
     }
 }
