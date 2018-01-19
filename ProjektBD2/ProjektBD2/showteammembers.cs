@@ -7,36 +7,35 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace ProjektBD2
 {
-    public partial class MeetingHistory : Form
+    public partial class showteammembers : Form
     {
+
         private DataTable dataTable = new DataTable();
         private BindingSource SBind = new BindingSource();
-        public MeetingHistory()
+
+        public showteammembers()
         {
             InitializeComponent();
         }
 
-        private void MeetingHistory_Load(object sender, EventArgs e)
+        private void showteammembers_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
-                string query = "SELECT MeetingSet.MeetingID, MeetingSet.Date, MeetingSet.Topic, ProductSet.ProductName, UserSet.FirstName, UserSet.LastName FROM MeetingSet JOIN ProductSet ON MeetingSet.ProductID = ProductSet.ProductID JOIN  UserSet ON MeetingSet.UserID = UserSet.UserID WHERE HCPID = @param";
+                string query = "select distinct u1.FirstName, u1.LastName, u1.Username, u1.Email, u1.PhoneNumber from UserSet u1, UserSet u2 WHERE u1.UserID <> u2.UserID AND u1.ManagerID = @param";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@param", DBMonitor.pomoc);
+                cmd.Parameters.AddWithValue("@param", UserMonitor.pomoc);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dataTable);
-                //SBind.DataSource = dataTable;
                 dataGridView1.DataSource = dataTable;
 
-               // da.Dispose();
             }
             catch (SqlException er)
             {
@@ -49,8 +48,6 @@ namespace ProjektBD2
         private void button1_Click(object sender, EventArgs e)
         {
             this.Hide();
-            DBMonitor powrot = new DBMonitor();
-            powrot.Show();
         }
     }
 }

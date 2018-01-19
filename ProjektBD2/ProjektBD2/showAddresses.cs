@@ -7,36 +7,31 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data;
 using System.Data.SqlClient;
 
 namespace ProjektBD2
 {
-    public partial class MeetingHistory : Form
+    public partial class showAddresses : Form
     {
         private DataTable dataTable = new DataTable();
-        private BindingSource SBind = new BindingSource();
-        public MeetingHistory()
+        public showAddresses()
         {
             InitializeComponent();
         }
 
-        private void MeetingHistory_Load(object sender, EventArgs e)
+        private void showAddresses_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
-                string query = "SELECT MeetingSet.MeetingID, MeetingSet.Date, MeetingSet.Topic, ProductSet.ProductName, UserSet.FirstName, UserSet.LastName FROM MeetingSet JOIN ProductSet ON MeetingSet.ProductID = ProductSet.ProductID JOIN  UserSet ON MeetingSet.UserID = UserSet.UserID WHERE HCPID = @param";
+                string query = "SELECT AddressID, Street, City, Territory, Country, ZipCode FROM dbo.AddressSet";
                 SqlCommand cmd = new SqlCommand(query, conn);
-                cmd.Parameters.AddWithValue("@param", DBMonitor.pomoc);
                 SqlDataAdapter da = new SqlDataAdapter(cmd);
                 da.Fill(dataTable);
-                //SBind.DataSource = dataTable;
                 dataGridView1.DataSource = dataTable;
 
-               // da.Dispose();
             }
             catch (SqlException er)
             {
@@ -48,8 +43,9 @@ namespace ProjektBD2
 
         private void button1_Click(object sender, EventArgs e)
         {
+            NewUser.AddressID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
             this.Hide();
-            DBMonitor powrot = new DBMonitor();
+            NewUser powrot = new NewUser();
             powrot.Show();
         }
     }

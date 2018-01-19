@@ -31,5 +31,6 @@ namespace ProjektBD2
         public virtual DbSet<Meeting> MeetingSet { get; set; }
         public virtual DbSet<User> UserSet { get; set; }
         public virtual DbSet<Product> ProductSet { get; set; }
+        public virtual DbSet<UserCredentialsSet> UserCredentialsSet1 { get; set; }
     }
 }

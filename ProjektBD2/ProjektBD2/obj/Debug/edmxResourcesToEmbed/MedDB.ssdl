@@ -67,6 +67,14 @@
     <Property Name="QtyPerCase" Type="smallint" Nullable="false" />
     <Property Name="MIngredient" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+  <EntityType Name="UserCredentialsSet">
+    <Key>
+      <PropertyRef Name="UserCredentialsID" />
+    </Key>
+    <Property Name="UserCredentialsID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
+  </EntityType>
   <EntityType Name="UserSet">
     <Key>
       <PropertyRef Name="UserID" />
@@ -80,6 +88,7 @@
     <Property Name="HireDate" Type="datetime" Nullable="false" />
     <Property Name="ManagerID" Type="int" />
     <Property Name="Address_AddressID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" />
   </EntityType>
   <Association Name="FK_AddressUser">
     <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
@@ -189,12 +198,25 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_UserUserCredentials">
+    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
+    <End Role="UserCredentialsSet" Type="Self.UserCredentialsSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="UserSet">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="UserCredentialsSet">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="MedDBStoreContainer">
     <EntitySet Name="AddressSet" EntityType="Self.AddressSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HCOSet" EntityType="Self.HCOSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="HCPSet" EntityType="Self.HCPSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="MeetingSet" EntityType="Self.MeetingSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="ProductSet" EntityType="Self.ProductSet" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="UserCredentialsSet" EntityType="Self.UserCredentialsSet" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_AddressUser" Association="Self.FK_AddressUser">
       <End Role="AddressSet" EntitySet="AddressSet" />
@@ -231,6 +253,10 @@
     <AssociationSet Name="FK_UserMeeting" Association="Self.FK_UserMeeting">
       <End Role="UserSet" EntitySet="UserSet" />
       <End Role="MeetingSet" EntitySet="MeetingSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUserCredentials" Association="Self.FK_UserUserCredentials">
+      <End Role="UserSet" EntitySet="UserSet" />
+      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

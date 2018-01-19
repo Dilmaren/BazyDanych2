@@ -90,6 +90,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD2DataSet5.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD2DataSet6.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2DataSet6.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -168,19 +173,58 @@
     <Compile Include="NewHCP.Designer.cs">
       <DependentUpon>NewHCP.cs</DependentUpon>
     </Compile>
+    <Compile Include="NewUser.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewUser.Designer.cs">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </Compile>
     <Compile Include="Product.cs">
       <DependentUpon>Model2.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="setPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="setPassword.Designer.cs">
+      <DependentUpon>setPassword.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showAddresses.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showAddresses.Designer.cs">
+      <DependentUpon>showAddresses.cs</DependentUpon>
+    </Compile>
     <Compile Include="showEmployees.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="showEmployees.Designer.cs">
       <DependentUpon>showEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="showManagers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showManagers.Designer.cs">
+      <DependentUpon>showManagers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="showteammembers.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="showteammembers.Designer.cs">
+      <DependentUpon>showteammembers.cs</DependentUpon>
+    </Compile>
     <Compile Include="User.cs">
       <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserCredentialsSet.cs">
+      <DependentUpon>Model2.tt</DependentUpon>
+    </Compile>
+    <Compile Include="UserMonitor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UserMonitor.Designer.cs">
+      <DependentUpon>UserMonitor.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="DBMonitor.resx">
       <DependentUpon>DBMonitor.cs</DependentUpon>
@@ -209,6 +253,9 @@
     <EmbeddedResource Include="NewHCP.resx">
       <DependentUpon>NewHCP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="NewUser.resx">
+      <DependentUpon>NewUser.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -218,8 +265,23 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="setPassword.resx">
+      <DependentUpon>setPassword.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showAddresses.resx">
+      <DependentUpon>showAddresses.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="showEmployees.resx">
       <DependentUpon>showEmployees.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showManagers.resx">
+      <DependentUpon>showManagers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="showteammembers.resx">
+      <DependentUpon>showteammembers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UserMonitor.resx">
+      <DependentUpon>UserMonitor.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="MedDB.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
@@ -290,6 +352,17 @@
     </None>
     <None Include="BD2DataSet5.xss">
       <DependentUpon>BD2DataSet5.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet6.xsc">
+      <DependentUpon>BD2DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet6.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD2DataSet6.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="BD2DataSet6.xss">
+      <DependentUpon>BD2DataSet6.xsd</DependentUpon>
     </None>
     <None Include="MedDB.edmx.diagram">
       <DependentUpon>MedDB.edmx</DependentUpon>

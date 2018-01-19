@@ -20,6 +20,8 @@
         <AssociationConnector Association="MedDB.HCOAddress1" />
         <AssociationConnector Association="MedDB.HCPAddress1" />
         <AssociationConnector Association="MedDB.FK_UserUser" />
+        <EntityTypeShape EntityType="MedDB.UserCredentialsSet" Width="1.5" PointX="9.25" PointY="6.625" />
+        <AssociationConnector Association="MedDB.FK_UserUserCredentials" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

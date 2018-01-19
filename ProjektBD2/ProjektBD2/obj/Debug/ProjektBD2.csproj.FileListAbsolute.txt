@@ -20,4 +20,10 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditAddress
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewHCP.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCP.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.MeetingHistory.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.UserMonitor.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showteammembers.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewUser.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showManagers.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showAddresses.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.setPassword.resources
