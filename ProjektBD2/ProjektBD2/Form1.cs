@@ -13,6 +13,8 @@ namespace ProjektBD2
 {
     public partial class Form1 : Form
     {
+        
+        public static int loggedUserID;
         public Form1()
         {
             InitializeComponent();
@@ -71,7 +73,9 @@ namespace ProjektBD2
                     command1.Parameters.AddWithValue("@param3", textBox1.Text.ToString());
                     fullname = fullname + " " + Convert.ToString(command1.ExecuteScalar());
                     MessageBox.Show("Login successful. Welcome, " + fullname, "SIGN IN INFO");
-
+                    command1.CommandText = "SELECT UserID FROM dbo.UserSet WHERE Username = @param5";
+                    command1.Parameters.AddWithValue("@param5", textBox1.Text.ToString());
+                    loggedUserID = Convert.ToInt32(command1.ExecuteScalar());
                     command1.CommandText = "SELECT JobTitle FROM dbo.UserSet WHERE Username = @param4";
                     command1.Parameters.AddWithValue("@param4", textBox1.Text.ToString());
                     switch ((String)command1.ExecuteScalar())
@@ -95,6 +99,12 @@ namespace ProjektBD2
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
+        }
+
+        private void button2_Click_1(object sender, EventArgs e)
+        {
+            MeetingModule modulspotkan = new MeetingModule();
+            modulspotkan.Show();
         }
     }
 }

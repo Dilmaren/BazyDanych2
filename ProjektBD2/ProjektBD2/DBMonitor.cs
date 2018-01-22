@@ -317,7 +317,6 @@ namespace ProjektBD2
         private void button11_Click(object sender, EventArgs e)
         {
             pomoc = Convert.ToInt32(dataGridView3.CurrentRow.Cells[3].Value.ToString());
-            MessageBox.Show(Convert.ToString(pomoc), "info");
             this.Hide();
             MeetingHistory historiaspotkan = new MeetingHistory();
             historiaspotkan.Show();

@@ -95,6 +95,11 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>BD2DataSet6.xsd</DependentUpon>
     </Compile>
+    <Compile Include="BD2DataSet7.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BD2DataSet7.xsd</DependentUpon>
+    </Compile>
     <Compile Include="DBMonitor.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -118,6 +123,12 @@
     </Compile>
     <Compile Include="EditHCP.Designer.cs">
       <DependentUpon>EditHCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EditPassword.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EditPassword.Designer.cs">
+      <DependentUpon>EditPassword.cs</DependentUpon>
     </Compile>
     <Compile Include="EditUser.cs">
       <SubType>Form</SubType>
@@ -151,6 +162,12 @@
     <Compile Include="MeetingHistory.Designer.cs">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </Compile>
+    <Compile Include="MeetingModule.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MeetingModule.Designer.cs">
+      <DependentUpon>MeetingModule.cs</DependentUpon>
+    </Compile>
     <Compile Include="Model2.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -178,6 +195,12 @@
     </Compile>
     <Compile Include="NewHCP.Designer.cs">
       <DependentUpon>NewHCP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="NewMeeting.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="NewMeeting.Designer.cs">
+      <DependentUpon>NewMeeting.cs</DependentUpon>
     </Compile>
     <Compile Include="NewUser.cs">
       <SubType>Form</SubType>
@@ -208,11 +231,23 @@
     <Compile Include="showEmployees.Designer.cs">
       <DependentUpon>showEmployees.cs</DependentUpon>
     </Compile>
+    <Compile Include="ShowHCP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowHCP.Designer.cs">
+      <DependentUpon>ShowHCP.cs</DependentUpon>
+    </Compile>
     <Compile Include="showManagers.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="showManagers.Designer.cs">
       <DependentUpon>showManagers.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ShowProduct.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ShowProduct.Designer.cs">
+      <DependentUpon>ShowProduct.cs</DependentUpon>
     </Compile>
     <Compile Include="showteammembers.cs">
       <SubType>Form</SubType>
@@ -244,6 +279,9 @@
     <EmbeddedResource Include="EditHCP.resx">
       <DependentUpon>EditHCP.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="EditPassword.resx">
+      <DependentUpon>EditPassword.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EditUser.resx">
       <DependentUpon>EditUser.cs</DependentUpon>
     </EmbeddedResource>
@@ -253,6 +291,9 @@
     <EmbeddedResource Include="MeetingHistory.resx">
       <DependentUpon>MeetingHistory.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="MeetingModule.resx">
+      <DependentUpon>MeetingModule.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="NewAddress.resx">
       <DependentUpon>NewAddress.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +302,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="NewHCP.resx">
       <DependentUpon>NewHCP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="NewMeeting.resx">
+      <DependentUpon>NewMeeting.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="NewUser.resx">
       <DependentUpon>NewUser.cs</DependentUpon>
@@ -283,8 +327,14 @@
     <EmbeddedResource Include="showEmployees.resx">
       <DependentUpon>showEmployees.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ShowHCP.resx">
+      <DependentUpon>ShowHCP.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="showManagers.resx">
       <DependentUpon>showManagers.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ShowProduct.resx">
+      <DependentUpon>ShowProduct.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="showteammembers.resx">
       <DependentUpon>showteammembers.cs</DependentUpon>
@@ -372,6 +422,17 @@
     </None>
     <None Include="BD2DataSet6.xss">
       <DependentUpon>BD2DataSet6.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet7.xsc">
+      <DependentUpon>BD2DataSet7.xsd</DependentUpon>
+    </None>
+    <None Include="BD2DataSet7.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>BD2DataSet7.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="BD2DataSet7.xss">
+      <DependentUpon>BD2DataSet7.xsd</DependentUpon>
     </None>
     <None Include="MedDB.edmx.diagram">
       <DependentUpon>MedDB.edmx</DependentUpon>

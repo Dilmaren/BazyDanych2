@@ -17,7 +17,6 @@ namespace ProjektBD2
     {
 
         private static SqlDataAdapter adapt;
-
         public static int pomoc;
         public UserMonitor()
         {
@@ -136,6 +135,13 @@ namespace ProjektBD2
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            pomoc = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
+            EditPassword edytujhaslo = new EditPassword();
+            edytujhaslo.Show();
         }
     }
 }
