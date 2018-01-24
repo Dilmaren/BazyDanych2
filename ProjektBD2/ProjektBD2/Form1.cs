@@ -80,11 +80,11 @@ namespace ProjektBD2
                     command1.Parameters.AddWithValue("@param4", textBox1.Text.ToString());
                     switch ((String)command1.ExecuteScalar())
                     {
-                        case "SYSTEM ADMIN": { button3.Enabled = true; button2.Enabled = true; button1.Enabled = true; break; }
-                        case "LOCAL ADMIN": { button1.Enabled = true; button2.Enabled = false;  button3.Enabled = true; break;  }
-                        case "Medical Representative": { button1.Enabled = true; button2.Enabled = true; button3.Enabled = false;  break; }
-                        case "Medical Representative Manager": { button1.Enabled = true; button2.Enabled = true; button3.Enabled = false; break; }
-                        default: { button2.Enabled = false; button1.Enabled = false; button3.Enabled = false; break; }
+                        case "SYSTEM ADMIN": { button3.Enabled = true; button2.Enabled = true; button1.Enabled = true; button5.Enabled = true;  break; }
+                        case "LOCAL ADMIN": { button1.Enabled = true; button2.Enabled = false;  button3.Enabled = true; button5.Enabled = false; break;  }
+                        case "Medical Representative": { button1.Enabled = true; button2.Enabled = true; button3.Enabled = false; button5.Enabled = true; break; }
+                        case "Medical Representative Manager": { button1.Enabled = true; button2.Enabled = true; button3.Enabled = false; button5.Enabled = true; break; }
+                        default: { button2.Enabled = false; button1.Enabled = false; button3.Enabled = false; button5.Enabled = false; break; }
                     }
                 }
                 else
@@ -105,6 +105,12 @@ namespace ProjektBD2
         {
             MeetingModule modulspotkan = new MeetingModule();
             modulspotkan.Show();
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            ProductCatalog katalogproduktow = new ProductCatalog();
+            katalogproduktow.ShowDialog();
         }
     }
 }

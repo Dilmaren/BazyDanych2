@@ -33,3 +33,6 @@ E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.MeetingModu
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewMeeting.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.ShowHCP.resources
 E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.ShowProduct.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.ProductCatalog.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.NewProduct.resources
+E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditProduct.resources

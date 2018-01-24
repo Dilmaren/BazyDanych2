@@ -322,5 +322,10 @@ namespace ProjektBD2
             historiaspotkan.Show();
 
         }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+        }
     }
 }

@@ -41,8 +41,8 @@
             this.zipCodeDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.territoryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.countryDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
+            this.addressSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.bD2DataSet5 = new ProjektBD2.BD2DataSet5();
             this.tabPage2 = new System.Windows.Forms.TabPage();
             this.button5 = new System.Windows.Forms.Button();
             this.button4 = new System.Windows.Forms.Button();
@@ -96,6 +96,15 @@
             this.hCOSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD2DataSet = new ProjektBD2.BD2DataSet();
             this.tabPage3 = new System.Windows.Forms.TabPage();
+            this.button11 = new System.Windows.Forms.Button();
+            this.label57 = new System.Windows.Forms.Label();
+            this.label56 = new System.Windows.Forms.Label();
+            this.label55 = new System.Windows.Forms.Label();
+            this.label54 = new System.Windows.Forms.Label();
+            this.label53 = new System.Windows.Forms.Label();
+            this.label52 = new System.Windows.Forms.Label();
+            this.label51 = new System.Windows.Forms.Label();
+            this.label50 = new System.Windows.Forms.Label();
             this.label49 = new System.Windows.Forms.Label();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.label48 = new System.Windows.Forms.Label();
@@ -133,27 +142,19 @@
             this.hCOIDDataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.hCPSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bD2DataSet2 = new ProjektBD2.BD2DataSet2();
+            this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bD2DataSet1 = new ProjektBD2.BD2DataSet1();
             this.hCOSetTableAdapter = new ProjektBD2.BD2DataSetTableAdapters.HCOSetTableAdapter();
             this.toolTip1 = new System.Windows.Forms.ToolTip(this.components);
             this.addressSetTableAdapter = new ProjektBD2.BD2DataSet1TableAdapters.AddressSetTableAdapter();
             this.hCPSetTableAdapter = new ProjektBD2.BD2DataSet2TableAdapters.HCPSetTableAdapter();
-            this.label50 = new System.Windows.Forms.Label();
-            this.label51 = new System.Windows.Forms.Label();
-            this.label52 = new System.Windows.Forms.Label();
-            this.label53 = new System.Windows.Forms.Label();
-            this.label54 = new System.Windows.Forms.Label();
-            this.label55 = new System.Windows.Forms.Label();
-            this.label56 = new System.Windows.Forms.Label();
-            this.label57 = new System.Windows.Forms.Label();
-            this.button11 = new System.Windows.Forms.Button();
-            this.bD2DataSet5 = new ProjektBD2.BD2DataSet5();
-            this.addressSetBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.addressSetTableAdapter1 = new ProjektBD2.BD2DataSet5TableAdapters.AddressSetTableAdapter();
+            this.button12 = new System.Windows.Forms.Button();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).BeginInit();
             this.tabPage2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource)).BeginInit();
@@ -162,8 +163,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCPSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
@@ -171,7 +172,7 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(12, 41);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
             this.tabControl1.Size = new System.Drawing.Size(1010, 489);
@@ -287,15 +288,15 @@
             this.countryDataGridViewTextBoxColumn.Name = "countryDataGridViewTextBoxColumn";
             this.countryDataGridViewTextBoxColumn.ReadOnly = true;
             // 
-            // addressSetBindingSource
+            // addressSetBindingSource1
             // 
-            this.addressSetBindingSource.DataMember = "AddressSet";
-            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
+            this.addressSetBindingSource1.DataMember = "AddressSet";
+            this.addressSetBindingSource1.DataSource = this.bD2DataSet5;
             // 
-            // bD2DataSet1
+            // bD2DataSet5
             // 
-            this.bD2DataSet1.DataSetName = "BD2DataSet1";
-            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            this.bD2DataSet5.DataSetName = "BD2DataSet5";
+            this.bD2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // tabPage2
             // 
@@ -340,7 +341,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1002, 460);
+            this.tabPage2.Size = new System.Drawing.Size(1002, 485);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -848,10 +849,94 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1002, 460);
+            this.tabPage3.Size = new System.Drawing.Size(1002, 485);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
+            // 
+            // button11
+            // 
+            this.button11.Location = new System.Drawing.Point(380, 211);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(106, 56);
+            this.button11.TabIndex = 30;
+            this.button11.Text = "Show Meeting History";
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
+            // 
+            // label57
+            // 
+            this.label57.AutoSize = true;
+            this.label57.Location = new System.Drawing.Point(862, 88);
+            this.label57.Name = "label57";
+            this.label57.Size = new System.Drawing.Size(13, 17);
+            this.label57.TabIndex = 29;
+            this.label57.Text = "-";
+            // 
+            // label56
+            // 
+            this.label56.AutoSize = true;
+            this.label56.Location = new System.Drawing.Point(792, 88);
+            this.label56.Name = "label56";
+            this.label56.Size = new System.Drawing.Size(64, 17);
+            this.label56.TabIndex = 28;
+            this.label56.Text = "Birthday:";
+            // 
+            // label55
+            // 
+            this.label55.AutoSize = true;
+            this.label55.Location = new System.Drawing.Point(638, 386);
+            this.label55.Name = "label55";
+            this.label55.Size = new System.Drawing.Size(13, 17);
+            this.label55.TabIndex = 27;
+            this.label55.Text = "-";
+            // 
+            // label54
+            // 
+            this.label54.AutoSize = true;
+            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
+            this.label54.Location = new System.Drawing.Point(553, 385);
+            this.label54.Name = "label54";
+            this.label54.Size = new System.Drawing.Size(79, 17);
+            this.label54.TabIndex = 26;
+            this.label54.Text = "Working in:";
+            // 
+            // label53
+            // 
+            this.label53.AutoSize = true;
+            this.label53.Location = new System.Drawing.Point(605, 368);
+            this.label53.Name = "label53";
+            this.label53.Size = new System.Drawing.Size(13, 17);
+            this.label53.TabIndex = 25;
+            this.label53.Text = "-";
+            // 
+            // label52
+            // 
+            this.label52.AutoSize = true;
+            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
+            this.label52.Location = new System.Drawing.Point(553, 368);
+            this.label52.Name = "label52";
+            this.label52.Size = new System.Drawing.Size(46, 17);
+            this.label52.TabIndex = 24;
+            this.label52.Text = "Email:";
+            // 
+            // label51
+            // 
+            this.label51.AutoSize = true;
+            this.label51.Location = new System.Drawing.Point(666, 351);
+            this.label51.Name = "label51";
+            this.label51.Size = new System.Drawing.Size(13, 17);
+            this.label51.TabIndex = 23;
+            this.label51.Text = "-";
+            // 
+            // label50
+            // 
+            this.label50.AutoSize = true;
+            this.label50.Location = new System.Drawing.Point(553, 351);
+            this.label50.Name = "label50";
+            this.label50.Size = new System.Drawing.Size(107, 17);
+            this.label50.TabIndex = 22;
+            this.label50.Text = "Phone Number:";
             // 
             // label49
             // 
@@ -1193,6 +1278,16 @@
             this.bD2DataSet2.DataSetName = "BD2DataSet2";
             this.bD2DataSet2.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
+            // addressSetBindingSource
+            // 
+            this.addressSetBindingSource.DataMember = "AddressSet";
+            this.addressSetBindingSource.DataSource = this.bD2DataSet1;
+            // 
+            // bD2DataSet1
+            // 
+            this.bD2DataSet1.DataSetName = "BD2DataSet1";
+            this.bD2DataSet1.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
+            // 
             // hCOSetTableAdapter
             // 
             this.hCOSetTableAdapter.ClearBeforeFill = true;
@@ -1205,109 +1300,26 @@
             // 
             this.hCPSetTableAdapter.ClearBeforeFill = true;
             // 
-            // label50
-            // 
-            this.label50.AutoSize = true;
-            this.label50.Location = new System.Drawing.Point(553, 351);
-            this.label50.Name = "label50";
-            this.label50.Size = new System.Drawing.Size(107, 17);
-            this.label50.TabIndex = 22;
-            this.label50.Text = "Phone Number:";
-            // 
-            // label51
-            // 
-            this.label51.AutoSize = true;
-            this.label51.Location = new System.Drawing.Point(666, 351);
-            this.label51.Name = "label51";
-            this.label51.Size = new System.Drawing.Size(13, 17);
-            this.label51.TabIndex = 23;
-            this.label51.Text = "-";
-            // 
-            // label52
-            // 
-            this.label52.AutoSize = true;
-            this.label52.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(238)));
-            this.label52.Location = new System.Drawing.Point(553, 368);
-            this.label52.Name = "label52";
-            this.label52.Size = new System.Drawing.Size(46, 17);
-            this.label52.TabIndex = 24;
-            this.label52.Text = "Email:";
-            // 
-            // label53
-            // 
-            this.label53.AutoSize = true;
-            this.label53.Location = new System.Drawing.Point(605, 368);
-            this.label53.Name = "label53";
-            this.label53.Size = new System.Drawing.Size(13, 17);
-            this.label53.TabIndex = 25;
-            this.label53.Text = "-";
-            // 
-            // label54
-            // 
-            this.label54.AutoSize = true;
-            this.label54.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F);
-            this.label54.Location = new System.Drawing.Point(553, 385);
-            this.label54.Name = "label54";
-            this.label54.Size = new System.Drawing.Size(79, 17);
-            this.label54.TabIndex = 26;
-            this.label54.Text = "Working in:";
-            // 
-            // label55
-            // 
-            this.label55.AutoSize = true;
-            this.label55.Location = new System.Drawing.Point(638, 386);
-            this.label55.Name = "label55";
-            this.label55.Size = new System.Drawing.Size(13, 17);
-            this.label55.TabIndex = 27;
-            this.label55.Text = "-";
-            // 
-            // label56
-            // 
-            this.label56.AutoSize = true;
-            this.label56.Location = new System.Drawing.Point(792, 88);
-            this.label56.Name = "label56";
-            this.label56.Size = new System.Drawing.Size(64, 17);
-            this.label56.TabIndex = 28;
-            this.label56.Text = "Birthday:";
-            // 
-            // label57
-            // 
-            this.label57.AutoSize = true;
-            this.label57.Location = new System.Drawing.Point(862, 88);
-            this.label57.Name = "label57";
-            this.label57.Size = new System.Drawing.Size(13, 17);
-            this.label57.TabIndex = 29;
-            this.label57.Text = "-";
-            // 
-            // button11
-            // 
-            this.button11.Location = new System.Drawing.Point(380, 211);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(106, 56);
-            this.button11.TabIndex = 30;
-            this.button11.Text = "Show Meeting History";
-            this.button11.UseVisualStyleBackColor = true;
-            this.button11.Click += new System.EventHandler(this.button11_Click);
-            // 
-            // bD2DataSet5
-            // 
-            this.bD2DataSet5.DataSetName = "BD2DataSet5";
-            this.bD2DataSet5.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // addressSetBindingSource1
-            // 
-            this.addressSetBindingSource1.DataMember = "AddressSet";
-            this.addressSetBindingSource1.DataSource = this.bD2DataSet5;
-            // 
             // addressSetTableAdapter1
             // 
             this.addressSetTableAdapter1.ClearBeforeFill = true;
+            // 
+            // button12
+            // 
+            this.button12.Location = new System.Drawing.Point(12, 12);
+            this.button12.Name = "button12";
+            this.button12.Size = new System.Drawing.Size(75, 23);
+            this.button12.TabIndex = 1;
+            this.button12.Text = "BACK";
+            this.button12.UseVisualStyleBackColor = true;
+            this.button12.Click += new System.EventHandler(this.button12_Click);
             // 
             // DBMonitor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1034, 513);
+            this.ClientSize = new System.Drawing.Size(1034, 533);
+            this.Controls.Add(this.button12);
             this.Controls.Add(this.tabControl1);
             this.Name = "DBMonitor";
             this.Text = "DBMonitor";
@@ -1315,8 +1327,8 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).EndInit();
             this.tabPage2.ResumeLayout(false);
             this.tabPage2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView2)).EndInit();
@@ -1327,8 +1339,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCPSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -1455,5 +1467,6 @@
         private BD2DataSet5 bD2DataSet5;
         private System.Windows.Forms.BindingSource addressSetBindingSource1;
         private BD2DataSet5TableAdapters.AddressSetTableAdapter addressSetTableAdapter1;
+        private System.Windows.Forms.Button button12;
     }
 }

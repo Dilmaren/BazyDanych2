@@ -35,6 +35,7 @@
             this.addressSetBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.addressSetTableAdapter = new ProjektBD2.BD2DataSet1TableAdapters.AddressSetTableAdapter();
             this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource)).BeginInit();
@@ -86,11 +87,22 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(562, 377);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 36);
+            this.button2.TabIndex = 3;
+            this.button2.Text = "BACK";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // MeetingModule
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(894, 425);
+            this.ClientSize = new System.Drawing.Size(673, 425);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.label1);
@@ -113,5 +125,6 @@
         private System.Windows.Forms.BindingSource addressSetBindingSource;
         private BD2DataSet1TableAdapters.AddressSetTableAdapter addressSetTableAdapter;
         private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
