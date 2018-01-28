@@ -61,6 +61,7 @@
             // 
             // button1
             // 
+            this.button1.Enabled = false;
             this.button1.Location = new System.Drawing.Point(12, 99);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(105, 53);
@@ -71,6 +72,7 @@
             // 
             // button2
             // 
+            this.button2.Enabled = false;
             this.button2.Location = new System.Drawing.Point(12, 179);
             this.button2.Name = "button2";
             this.button2.Size = new System.Drawing.Size(105, 53);
@@ -81,6 +83,7 @@
             // 
             // button3
             // 
+            this.button3.Enabled = false;
             this.button3.Location = new System.Drawing.Point(240, 179);
             this.button3.Name = "button3";
             this.button3.Size = new System.Drawing.Size(105, 53);
@@ -134,6 +137,7 @@
             // 
             // button5
             // 
+            this.button5.Enabled = false;
             this.button5.Location = new System.Drawing.Point(240, 99);
             this.button5.Name = "button5";
             this.button5.Size = new System.Drawing.Size(105, 53);
@@ -157,7 +161,7 @@
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
             this.Name = "Form1";
-            this.Text = "Form1";
+            this.Text = "myRep";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet)).EndInit();
