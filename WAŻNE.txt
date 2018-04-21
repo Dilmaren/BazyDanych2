@@ -3,7 +3,10 @@
 
 2. Nie korzystamy z bazy danych na serwerze więc pamiętaj aby zmienić Connection String w:
 NewHCO.cs --> zmienna conn (okolice linii 43)
+<<<<<<< HEAD
+=======
 DBMonitor.cs --> zmienna conn (okolice linii 43)
+>>>>>>> Bartek
 
 Connection String można znaleźć w View-> Server Explorer -> PPM na swoje połączenie - Properties i tam będzie gotowe do skopiowania i podmienienia w kodzie
 

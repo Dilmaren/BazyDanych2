@@ -42,8 +42,9 @@ namespace ProjektBD2
             String commandText = "INSERT INTO UserSet VALUES(@firstname, @lastname, @jobtitle, @email, @phonenumber, @hiredate, @managerid, @addressid, @username)";
             String commandText2 = "select count(*) from UserSet where Username = @param2";
 
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {

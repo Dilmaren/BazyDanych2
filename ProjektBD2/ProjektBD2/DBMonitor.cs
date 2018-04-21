@@ -61,6 +61,7 @@ namespace ProjektBD2
             this.Hide();
         }
 
+<<<<<<< HEAD
         //Show Details HCO Button
         private void button2_Click(object sender, EventArgs e)
         {
@@ -73,6 +74,8 @@ namespace ProjektBD2
             
         }
 
+=======
+>>>>>>> 0c254124e19341c6af8ac0428cd7e9ba2240c8fa
         //Level of treatment HELP Button
         private void button3_Click(object sender, EventArgs e)
         {
@@ -82,8 +85,9 @@ namespace ProjektBD2
         //Edit Address Button
         private void button6_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -107,8 +111,9 @@ namespace ProjektBD2
         //Edit HCO Button
         private void button4_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -133,8 +138,9 @@ namespace ProjektBD2
         //Edit HCP Button
         private void button9_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -157,8 +163,9 @@ namespace ProjektBD2
         //Show Doctors HCO Button
         private void button5_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -182,8 +189,9 @@ namespace ProjektBD2
         //Delete Address Button
         private void button7_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -224,8 +232,14 @@ namespace ProjektBD2
 
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+<<<<<<< HEAD
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+=======
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = sConnection;
+>>>>>>> 0c254124e19341c6af8ac0428cd7e9ba2240c8fa
             conn.Open();
             try
             {
@@ -274,6 +288,10 @@ namespace ProjektBD2
                 command1.CommandText = "Select Country from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
                 label20.Text = Convert.ToString(command1.ExecuteScalar());
 
+<<<<<<< HEAD
+=======
+                conn.Close();
+>>>>>>> 0c254124e19341c6af8ac0428cd7e9ba2240c8fa
 
             }
             catch (SqlException er)
@@ -282,7 +300,10 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
+<<<<<<< HEAD
 
+=======
+>>>>>>> 0c254124e19341c6af8ac0428cd7e9ba2240c8fa
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
