@@ -21,7 +21,8 @@ namespace ProjektBD2
         private void EditProduct_Load(object sender, EventArgs e)
         {
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+           // conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
@@ -66,7 +67,8 @@ namespace ProjektBD2
         {
             String commandText = "UPDATE ProductSet SET ProductName=@productname, AntiDisease=@ad, Manufacturer=@manufacturer, QtyPerCase=@qty, MIngredient=@mi WHERE ProductID=@param";
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString; 
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {

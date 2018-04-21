@@ -17,7 +17,8 @@ namespace ProjektBD2
         {
             InitializeComponent();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
@@ -87,7 +88,8 @@ namespace ProjektBD2
         {
             String commandText = "UPDATE HCOSet SET Name=@Name, Range=@Range, Level=@Level, SpecialType=@SpecialType, Beds=@Beds, Employees=@Employees, PhoneNumber=@PhoneNumber, Email=@Email, Website=@Website, AddressID=@AddressID WHERE HCOID=@param";
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {

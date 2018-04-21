@@ -35,7 +35,8 @@ namespace ProjektBD2
         {
             String commandText = "INSERT INTO HCPSet VALUES(@firstname, @middlename, @lastname, @gender, @academictitle, @birthdate, @phonenumber, @email, @kol, @specialty, @addressid, @hcoid)";
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {

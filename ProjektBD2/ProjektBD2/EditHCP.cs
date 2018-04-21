@@ -20,7 +20,8 @@ namespace ProjektBD2
             textBox1.Text = "test";
 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
@@ -89,7 +90,8 @@ namespace ProjektBD2
         {
             String commandText = "UPDATE HCPSet SET FirstName=@firstname, MiddleName=@middlename, LastName=@lastname, Gender=@gender, AcademicTitle=@academictitle, Birthdate=@birthdate, PhoneNumber=@phonenumber, Email=@email, KOL=@kol, Specialty=@specialty, AddressID=@addressid, HCOID=@hcoid WHERE HCPID=@param";
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+          //  conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {

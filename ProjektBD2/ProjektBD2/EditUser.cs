@@ -17,7 +17,8 @@ namespace ProjektBD2
         {
             InitializeComponent();
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+           // conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
@@ -63,7 +64,8 @@ namespace ProjektBD2
         {
             String commandText = "UPDATE UserSet SET FirstName=@firstname, LastName=@lastname, JobTitle=@jobtitle, Email=@email, PhoneNumber=@phonenumber, HireDate=@hiredate, ManagerID=@managerid, Address_AddressID=@addressid, Username=@username WHERE UserID=@param";
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = Properties.Settings.Default.BD2ConnectionString;
+            //conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
