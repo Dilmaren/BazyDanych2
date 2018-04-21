@@ -23,12 +23,12 @@ Tabela: HCP (Healthcare Professional - lekarz/doktor)
 			FirstName - 
 			MiddleName - 
 			LastName -
-			Gender - 
-			AcademicTitle - tytuł naukowy   lek. med. (lekarz medycyny)
+			AcademicTitle - tytuł naukowy   lek. med. (lekarz medycyny) 
 											lek. dent. (lekarz dentysta)
 											dr n. med. (doktor nauk medycznych)
 											dr hab n. med. (doktor habilitowany nauk medycznych)
 											prof. dr hab (profesor doktor habilitowany) 
+			Gender -
 			Birthdate (DateTime) - 
 			PhoneNumber - 
 			Email - 
