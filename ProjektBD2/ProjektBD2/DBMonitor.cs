@@ -61,126 +61,6 @@ namespace ProjektBD2
             this.Hide();
         }
 
-        //Show Details HCO Button
-        private void button2_Click(object sender, EventArgs e)
-        {
-            string sConnection = Properties.Settings.Default.BD2ConnectionString; 
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = sConnection;
-            conn.Open();
-            try
-            {
-                SqlCommand command1 = new SqlCommand("",conn);
-                command1.CommandType = CommandType.Text;
-                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
-                command1.CommandText = "SELECT Name FROM dbo.HCOSet where NAME = @name1";
-                label3.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Range FROM dbo.HCOSet where NAME = @name1";
-                label5.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Level FROM dbo.HCOSet where NAME = @name1";
-                label7.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT SpecialType FROM dbo.HCOSet where NAME = @name1";
-                label9.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT Beds FROM dbo.HCOSet where NAME = @name1";
-                label24.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT Employees FROM dbo.HCOSet where NAME = @name1";
-                label25.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT PhoneNumber FROM dbo.HCOSet where NAME = @name1";
-                label30.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT Email FROM dbo.HCOSet where NAME = @name1";
-                label31.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT Website FROM dbo.HCOSet where NAME = @name1";
-                label32.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "Select Street from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
-                label16.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "Select City from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
-                label17.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "Select ZipCode from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
-                label18.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "Select Territory from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
-                label19.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "Select Country from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
-                label20.Text = Convert.ToString(command1.ExecuteScalar());
-
-
-            }
-            catch (SqlException er)
-            {
-                String text = "There was an error reported by SQL Server, " + er.Message;
-                MessageBox.Show(text, "ERROR");
-            }
-        }
-
-        //Show Details HCP
-        private void button10_Click(object sender, EventArgs e)
-        {
-            string sConnection = Properties.Settings.Default.BD2ConnectionString;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = sConnection;
-            conn.Open();
-            try
-            {
-                SqlCommand command1 = new SqlCommand("", conn);
-                command1.CommandType = CommandType.Text;
-                command1.Parameters.AddWithValue("@name2", dataGridView3.CurrentRow.Cells[3].Value.ToString());
-
-                command1.CommandText = "SELECT FirstName FROM dbo.HCPSet where HCPID = @name2";
-                label35.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT MiddleName FROM dbo.HCPSet where HCPID = @name2";
-                label37.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT LastName FROM dbo.HCPSet where HCPID = @name2";
-                label39.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Gender FROM dbo.HCPSet where HCPID = @name2";
-                label43.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Birthdate FROM dbo.HCPSet where HCPID = @name2";
-                label57.Text = Convert.ToString(command1.ExecuteScalar()).Substring(0,10);
-
-                command1.CommandText = "SELECT AcademicTitle FROM dbo.HCPSet where HCPID = @name2";
-                label41.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Specialty FROM dbo.HCPSet where HCPID = @name2";
-                label46.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT KOL FROM dbo.HCPSet where HCPID = @name2";
-                if ((bool)command1.ExecuteScalar())
-                {
-                    checkBox1.Checked = true;
-                }
-
-                command1.CommandText = "SELECT PhoneNumber FROM dbo.HCPSet where HCPID = @name2";
-                label51.Text = Convert.ToString(command1.ExecuteScalar());
-
-                command1.CommandText = "SELECT Email FROM dbo.HCPSet where HCPID = @name2";
-                label53.Text = (String)command1.ExecuteScalar();
-
-                command1.CommandText = "SELECT Name FROM dbo.HCPSet join dbo.HCOSet on dbo.HCOSet.HCOID = dbo.HCPSet.HCOID where  HCPID = @name2";
-                label55.Text = (String)command1.ExecuteScalar();
-
-            }
-            catch (SqlException er)
-            {
-                String text = "There was an error reported by SQL Server, " + er.Message;
-                MessageBox.Show(text, "ERROR");
-            }
-        }
-
         //Level of treatment HELP Button
         private void button3_Click(object sender, EventArgs e)
         {
@@ -333,6 +213,124 @@ namespace ProjektBD2
         private void button12_Click(object sender, EventArgs e)
         {
             this.Hide();
+        }
+
+        private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = sConnection;
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView2.CurrentCell.Value.ToString());
+                command1.CommandText = "SELECT Name FROM dbo.HCOSet where NAME = @name1";
+                label3.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Range FROM dbo.HCOSet where NAME = @name1";
+                label5.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Level FROM dbo.HCOSet where NAME = @name1";
+                label7.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT SpecialType FROM dbo.HCOSet where NAME = @name1";
+                label9.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Beds FROM dbo.HCOSet where NAME = @name1";
+                label24.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Employees FROM dbo.HCOSet where NAME = @name1";
+                label25.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT PhoneNumber FROM dbo.HCOSet where NAME = @name1";
+                label30.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Email FROM dbo.HCOSet where NAME = @name1";
+                label31.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Website FROM dbo.HCOSet where NAME = @name1";
+                label32.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "Select Street from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
+                label16.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "Select City from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
+                label17.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "Select ZipCode from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
+                label18.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "Select Territory from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
+                label19.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "Select Country from dbo.HCOSet join dbo.AddressSet on dbo.AddressSet.AddressID = dbo.HCOSet.AddressID where NAME = @name1";
+                label20.Text = Convert.ToString(command1.ExecuteScalar());
+
+                conn.Close();
+
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+        }
+        private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = sConnection;
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name2", dataGridView3.CurrentRow.Cells[3].Value.ToString());
+
+                command1.CommandText = "SELECT FirstName FROM dbo.HCPSet where HCPID = @name2";
+                label35.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT MiddleName FROM dbo.HCPSet where HCPID = @name2";
+                label37.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT LastName FROM dbo.HCPSet where HCPID = @name2";
+                label39.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Gender FROM dbo.HCPSet where HCPID = @name2";
+                label43.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Birthdate FROM dbo.HCPSet where HCPID = @name2";
+                label57.Text = Convert.ToString(command1.ExecuteScalar()).Substring(0, 10);
+
+                command1.CommandText = "SELECT AcademicTitle FROM dbo.HCPSet where HCPID = @name2";
+                label41.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Specialty FROM dbo.HCPSet where HCPID = @name2";
+                label46.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT KOL FROM dbo.HCPSet where HCPID = @name2";
+                if ((bool)command1.ExecuteScalar())
+                {
+                    checkBox1.Checked = true;
+                }
+
+                command1.CommandText = "SELECT PhoneNumber FROM dbo.HCPSet where HCPID = @name2";
+                label51.Text = Convert.ToString(command1.ExecuteScalar());
+
+                command1.CommandText = "SELECT Email FROM dbo.HCPSet where HCPID = @name2";
+                label53.Text = (String)command1.ExecuteScalar();
+
+                command1.CommandText = "SELECT Name FROM dbo.HCPSet join dbo.HCOSet on dbo.HCOSet.HCOID = dbo.HCPSet.HCOID where  HCPID = @name2";
+                label55.Text = (String)command1.ExecuteScalar();
+
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
         }
     }
 }
