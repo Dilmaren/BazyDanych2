@@ -2,8 +2,8 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 01/07/2018 14:55:41
--- Generated from EDMX file: E:\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\MedDB.edmx
+-- Date Created: 04/21/2018 12:41:36
+-- Generated from EDMX file: E:\BD2\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\MedDB.edmx
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
@@ -17,61 +17,70 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_HCOHCP]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCOHCP];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MeetingAddress]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingAddress];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MeetingHCP]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingHCP];
-GO
 IF OBJECT_ID(N'[dbo].[FK_AddressUser]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_AddressUser];
-GO
-IF OBJECT_ID(N'[dbo].[FK_MeetingProduct]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingProduct];
-GO
-IF OBJECT_ID(N'[dbo].[FK_UserMeeting]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_UserMeeting];
-GO
-IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
 GO
 IF OBJECT_ID(N'[dbo].[FK_HCOAddress]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress];
 GO
-IF OBJECT_ID(N'[dbo].[FK_UserUser]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_UserUser];
-GO
 IF OBJECT_ID(N'[dbo].[FK_HCOAddress1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress1];
 GO
+IF OBJECT_ID(N'[dbo].[FK_HCOHCP]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCOHCP];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
+GO
 IF OBJECT_ID(N'[dbo].[FK_HCPAddress1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MeetingHCP]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingHCP];
+GO
+IF OBJECT_ID(N'[dbo].[FK_MeetingProduct]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingProduct];
+GO
+IF OBJECT_ID(N'[dbo].[FK_Sample_ProductSet]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[Sample] DROP CONSTRAINT [FK_Sample_ProductSet];
+GO
+IF OBJECT_ID(N'[MedDBStoreContainer].[FK_SampleStorage_Sample]', 'F') IS NOT NULL
+    ALTER TABLE [MedDBStoreContainer].[SampleStorage] DROP CONSTRAINT [FK_SampleStorage_Sample];
+GO
+IF OBJECT_ID(N'[MedDBStoreContainer].[FK_SampleStorage_UserSet]', 'F') IS NOT NULL
+    ALTER TABLE [MedDBStoreContainer].[SampleStorage] DROP CONSTRAINT [FK_SampleStorage_UserSet];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserMeeting]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_UserMeeting];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
+IF OBJECT_ID(N'[dbo].[AddressSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AddressSet];
+GO
 IF OBJECT_ID(N'[dbo].[HCOSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[HCOSet];
 GO
 IF OBJECT_ID(N'[dbo].[HCPSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[HCPSet];
 GO
-IF OBJECT_ID(N'[dbo].[AddressSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AddressSet];
-GO
 IF OBJECT_ID(N'[dbo].[MeetingSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MeetingSet];
+GO
+IF OBJECT_ID(N'[dbo].[ProductSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[ProductSet];
+GO
+IF OBJECT_ID(N'[dbo].[Sample]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[Sample];
 GO
 IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[UserSet];
 GO
-IF OBJECT_ID(N'[dbo].[ProductSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[ProductSet];
+IF OBJECT_ID(N'[MedDBStoreContainer].[SampleStorage]', 'U') IS NOT NULL
+    DROP TABLE [MedDBStoreContainer].[SampleStorage];
 GO
 
 -- --------------------------------------------------
@@ -119,9 +128,7 @@ CREATE TABLE [dbo].[AddressSet] (
     [City] nvarchar(max)  NOT NULL,
     [Territory] nvarchar(max)  NOT NULL,
     [Country] nvarchar(max)  NOT NULL,
-    [ZipCode] smallint  NOT NULL,
-    [HCOID] int  NOT NULL,
-    [HCPID] int  NOT NULL
+    [ZipCode] int  NOT NULL
 );
 GO
 
@@ -129,9 +136,8 @@ GO
 CREATE TABLE [dbo].[MeetingSet] (
     [MeetingID] int IDENTITY(1,1) NOT NULL,
     [HCPID] int  NOT NULL,
-    [Date] nvarchar(max)  NOT NULL,
+    [Date] datetime  NOT NULL,
     [Topic] nvarchar(max)  NOT NULL,
-    [AddressID] int  NOT NULL,
     [ProductID] int  NOT NULL,
     [UserID] int  NOT NULL
 );
@@ -143,11 +149,12 @@ CREATE TABLE [dbo].[UserSet] (
     [FirstName] nvarchar(max)  NOT NULL,
     [LastName] nvarchar(max)  NOT NULL,
     [JobTitle] nvarchar(max)  NOT NULL,
-    [City] nvarchar(max)  NOT NULL,
     [Email] nvarchar(max)  NOT NULL,
     [PhoneNumber] int  NOT NULL,
     [HireDate] datetime  NOT NULL,
-    [ManagerID] int  NOT NULL,
+    [ManagerID] int  NULL,
+    [AddressID] int  NOT NULL,
+    [Username] nvarchar(max)  NULL,
     [Address_AddressID] int  NOT NULL
 );
 GO
@@ -160,6 +167,29 @@ CREATE TABLE [dbo].[ProductSet] (
     [Manufacturer] nvarchar(max)  NOT NULL,
     [QtyPerCase] smallint  NOT NULL,
     [MIngredient] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'UserCredentialsSet'
+CREATE TABLE [dbo].[UserCredentialsSet] (
+    [UserCredentialsID] int IDENTITY(1,1) NOT NULL,
+    [UserID] int  NOT NULL,
+    [Password] nvarchar(max)  NOT NULL
+);
+GO
+
+-- Creating table 'Sample'
+CREATE TABLE [dbo].[Sample] (
+    [SampleID] int  NOT NULL,
+    [ProductID] int  NULL
+);
+GO
+
+-- Creating table 'SampleStorage'
+CREATE TABLE [dbo].[SampleStorage] (
+    [UserID] int  NOT NULL,
+    [SampleID] int  NOT NULL,
+    [Qty] int  NOT NULL
 );
 GO
 
@@ -203,6 +233,24 @@ ADD CONSTRAINT [PK_ProductSet]
     PRIMARY KEY CLUSTERED ([ProductID] ASC);
 GO
 
+-- Creating primary key on [UserCredentialsID] in table 'UserCredentialsSet'
+ALTER TABLE [dbo].[UserCredentialsSet]
+ADD CONSTRAINT [PK_UserCredentialsSet]
+    PRIMARY KEY CLUSTERED ([UserCredentialsID] ASC);
+GO
+
+-- Creating primary key on [SampleID] in table 'Sample'
+ALTER TABLE [dbo].[Sample]
+ADD CONSTRAINT [PK_Sample]
+    PRIMARY KEY CLUSTERED ([SampleID] ASC);
+GO
+
+-- Creating primary key on [UserID], [SampleID], [Qty] in table 'SampleStorage'
+ALTER TABLE [dbo].[SampleStorage]
+ADD CONSTRAINT [PK_SampleStorage]
+    PRIMARY KEY CLUSTERED ([UserID], [SampleID], [Qty] ASC);
+GO
+
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -222,21 +270,6 @@ ON [dbo].[HCPSet]
     ([HCOID]);
 GO
 
--- Creating foreign key on [AddressID] in table 'MeetingSet'
-ALTER TABLE [dbo].[MeetingSet]
-ADD CONSTRAINT [FK_MeetingAddress]
-    FOREIGN KEY ([AddressID])
-    REFERENCES [dbo].[AddressSet]
-        ([AddressID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_MeetingAddress'
-CREATE INDEX [IX_FK_MeetingAddress]
-ON [dbo].[MeetingSet]
-    ([AddressID]);
-GO
-
 -- Creating foreign key on [HCPID] in table 'MeetingSet'
 ALTER TABLE [dbo].[MeetingSet]
 ADD CONSTRAINT [FK_MeetingHCP]
@@ -252,10 +285,10 @@ ON [dbo].[MeetingSet]
     ([HCPID]);
 GO
 
--- Creating foreign key on [Address_AddressID] in table 'UserSet'
+-- Creating foreign key on [AddressID] in table 'UserSet'
 ALTER TABLE [dbo].[UserSet]
 ADD CONSTRAINT [FK_AddressUser]
-    FOREIGN KEY ([Address_AddressID])
+    FOREIGN KEY ([AddressID])
     REFERENCES [dbo].[AddressSet]
         ([AddressID])
     ON DELETE NO ACTION ON UPDATE NO ACTION;
@@ -264,7 +297,7 @@ GO
 -- Creating non-clustered index for FOREIGN KEY 'FK_AddressUser'
 CREATE INDEX [IX_FK_AddressUser]
 ON [dbo].[UserSet]
-    ([Address_AddressID]);
+    ([AddressID]);
 GO
 
 -- Creating foreign key on [ProductID] in table 'MeetingSet'
@@ -327,21 +360,6 @@ ON [dbo].[HCOSet]
     ([AddressID]);
 GO
 
--- Creating foreign key on [ManagerID] in table 'UserSet'
-ALTER TABLE [dbo].[UserSet]
-ADD CONSTRAINT [FK_UserUser]
-    FOREIGN KEY ([ManagerID])
-    REFERENCES [dbo].[UserSet]
-        ([UserID])
-    ON DELETE NO ACTION ON UPDATE NO ACTION;
-GO
-
--- Creating non-clustered index for FOREIGN KEY 'FK_UserUser'
-CREATE INDEX [IX_FK_UserUser]
-ON [dbo].[UserSet]
-    ([ManagerID]);
-GO
-
 -- Creating foreign key on [AddressID] in table 'HCOSet'
 ALTER TABLE [dbo].[HCOSet]
 ADD CONSTRAINT [FK_HCOAddress1]
@@ -370,6 +388,90 @@ GO
 CREATE INDEX [IX_FK_HCPAddress1]
 ON [dbo].[HCPSet]
     ([AddressID]);
+GO
+
+-- Creating foreign key on [ManagerID] in table 'UserSet'
+ALTER TABLE [dbo].[UserSet]
+ADD CONSTRAINT [FK_UserUser]
+    FOREIGN KEY ([ManagerID])
+    REFERENCES [dbo].[UserSet]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserUser'
+CREATE INDEX [IX_FK_UserUser]
+ON [dbo].[UserSet]
+    ([ManagerID]);
+GO
+
+-- Creating foreign key on [UserID] in table 'UserCredentialsSet'
+ALTER TABLE [dbo].[UserCredentialsSet]
+ADD CONSTRAINT [FK_UserUserCredentials]
+    FOREIGN KEY ([UserID])
+    REFERENCES [dbo].[UserSet]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_UserUserCredentials'
+CREATE INDEX [IX_FK_UserUserCredentials]
+ON [dbo].[UserCredentialsSet]
+    ([UserID]);
+GO
+
+-- Creating foreign key on [Address_AddressID] in table 'UserSet'
+ALTER TABLE [dbo].[UserSet]
+ADD CONSTRAINT [FK_AddressUser]
+    FOREIGN KEY ([Address_AddressID])
+    REFERENCES [dbo].[AddressSet]
+        ([AddressID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_AddressUser'
+CREATE INDEX [IX_FK_AddressUser]
+ON [dbo].[UserSet]
+    ([Address_AddressID]);
+GO
+
+-- Creating foreign key on [ProductID] in table 'Sample'
+ALTER TABLE [dbo].[Sample]
+ADD CONSTRAINT [FK_Sample_ProductSet]
+    FOREIGN KEY ([ProductID])
+    REFERENCES [dbo].[ProductSet]
+        ([ProductID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_Sample_ProductSet'
+CREATE INDEX [IX_FK_Sample_ProductSet]
+ON [dbo].[Sample]
+    ([ProductID]);
+GO
+
+-- Creating foreign key on [SampleID] in table 'SampleStorage'
+ALTER TABLE [dbo].[SampleStorage]
+ADD CONSTRAINT [FK_SampleStorage_Sample]
+    FOREIGN KEY ([SampleID])
+    REFERENCES [dbo].[Sample]
+        ([SampleID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
+GO
+
+-- Creating non-clustered index for FOREIGN KEY 'FK_SampleStorage_Sample'
+CREATE INDEX [IX_FK_SampleStorage_Sample]
+ON [dbo].[SampleStorage]
+    ([SampleID]);
+GO
+
+-- Creating foreign key on [UserID] in table 'SampleStorage'
+ALTER TABLE [dbo].[SampleStorage]
+ADD CONSTRAINT [FK_SampleStorage_UserSet]
+    FOREIGN KEY ([UserID])
+    REFERENCES [dbo].[UserSet]
+        ([UserID])
+    ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
 -- --------------------------------------------------

@@ -64,8 +64,6 @@
     <EntitySetMapping Name="UserSet">
       <EntityTypeMapping TypeName="IsTypeOf(MedDB.User)">
         <MappingFragment StoreEntitySet="UserSet">
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="AddressID" ColumnName="Address_AddressID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -74,6 +72,9 @@
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="HireDate" ColumnName="HireDate" />
           <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
+          <ScalarProperty Name="Address_AddressID" ColumnName="Address_AddressID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -89,12 +90,29 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="UserCredentialsSet1">
-      <EntityTypeMapping TypeName="MedDB.UserCredentialsSet">
+    <EntitySetMapping Name="UserCredentialsSet">
+      <EntityTypeMapping TypeName="IsTypeOf(MedDB.UserCredentialsSet)">
         <MappingFragment StoreEntitySet="UserCredentialsSet">
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="UserCredentialsID" ColumnName="UserCredentialsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Sample">
+      <EntityTypeMapping TypeName="IsTypeOf(MedDB.Sample)">
+        <MappingFragment StoreEntitySet="Sample">
+          <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+          <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="SampleStorage">
+      <EntityTypeMapping TypeName="IsTypeOf(MedDB.SampleStorage)">
+        <MappingFragment StoreEntitySet="SampleStorage">
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="SampleID" ColumnName="SampleID" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

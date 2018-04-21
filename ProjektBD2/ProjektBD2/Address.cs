@@ -22,6 +22,7 @@ namespace ProjektBD2
             this.HCO = new HashSet<HCO>();
             this.HCO1 = new HashSet<HCO>();
             this.HCP1 = new HashSet<HCP>();
+            this.UserSet = new HashSet<User>();
         }
     
         public int AddressID { get; set; }
@@ -41,5 +42,7 @@ namespace ProjektBD2
         public virtual ICollection<HCO> HCO1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<HCP> HCP1 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<User> UserSet { get; set; }
     }
 }

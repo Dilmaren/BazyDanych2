@@ -12,25 +12,19 @@ namespace ProjektBD2
     using System;
     using System.Collections.Generic;
     
-    public partial class Product
+    public partial class Sample
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Product()
+        public Sample()
         {
-            this.Meeting = new HashSet<Meeting>();
-            this.Sample = new HashSet<Sample>();
+            this.SampleStorage = new HashSet<SampleStorage>();
         }
     
-        public int ProductID { get; set; }
-        public string ProductName { get; set; }
-        public string AntiDisease { get; set; }
-        public string Manufacturer { get; set; }
-        public short QtyPerCase { get; set; }
-        public string MIngredient { get; set; }
+        public int SampleID { get; set; }
+        public Nullable<int> ProductID { get; set; }
     
+        public virtual Product ProductSet { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Meeting> Meeting { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Sample> Sample { get; set; }
+        public virtual ICollection<SampleStorage> SampleStorage { get; set; }
     }
 }

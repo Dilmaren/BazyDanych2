@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="2158fd52444248a8bf425660f7878eae" Name="Diagram1" ZoomLevel="82" DisplayType="true" >
+      <Diagram DiagramId="2158fd52444248a8bf425660f7878eae" Name="Diagram1" ZoomLevel="52" DisplayType="true" >
         <EntityTypeShape EntityType="MedDB.HCO" Width="1.875" PointX="0.5" PointY="0.5" />
         <EntityTypeShape EntityType="MedDB.HCP" Width="1.875" PointX="3.25" PointY="0.5" />
         <AssociationConnector Association="MedDB.HCOHCP" ManuallyRouted="false" >
@@ -22,6 +22,12 @@
         <AssociationConnector Association="MedDB.FK_UserUser" />
         <EntityTypeShape EntityType="MedDB.UserCredentialsSet" Width="2.125" PointX="9" PointY="4.625" />
         <AssociationConnector Association="MedDB.FK_UserUserCredentials" />
+        <AssociationConnector Association="MedDB.FK_AddressUser" />
+        <EntityTypeShape EntityType="MedDB.Sample" Width="1.5" PointX="13.625" PointY="0.625" />
+        <AssociationConnector Association="MedDB.FK_Sample_ProductSet" />
+        <EntityTypeShape EntityType="MedDB.SampleStorage" Width="1.5" PointX="15.125" PointY="4" />
+        <AssociationConnector Association="MedDB.FK_SampleStorage_Sample" />
+        <AssociationConnector Association="MedDB.FK_SampleStorage_UserSet" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

@@ -47,10 +47,28 @@
       <End Role="User" EntitySet="UserSet" />
       <End Role="User1" EntitySet="UserSet" />
     </AssociationSet>
-    <EntitySet Name="UserCredentialsSet1" EntityType="MedDB.UserCredentialsSet" />
+    <EntitySet Name="UserCredentialsSet" EntityType="MedDB.UserCredentialsSet" />
     <AssociationSet Name="FK_UserUserCredentials" Association="MedDB.FK_UserUserCredentials">
+      <End EntitySet="UserSet" Role="User" />
+      <End EntitySet="UserCredentialsSet" Role="UserCredentialsSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressUser" Association="MedDB.FK_AddressUser">
+      <End Role="Address" EntitySet="AddressSet" />
       <End Role="User" EntitySet="UserSet" />
-      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet1" />
+    </AssociationSet>
+    <EntitySet Name="Sample" EntityType="MedDB.Sample" />
+    <AssociationSet Name="FK_Sample_ProductSet" Association="MedDB.FK_Sample_ProductSet">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="Sample" EntitySet="Sample" />
+    </AssociationSet>
+    <EntitySet Name="SampleStorage" EntityType="MedDB.SampleStorage" />
+    <AssociationSet Name="FK_SampleStorage_Sample" Association="MedDB.FK_SampleStorage_Sample">
+      <End Role="Sample" EntitySet="Sample" />
+      <End Role="SampleStorage" EntitySet="SampleStorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SampleStorage_UserSet" Association="MedDB.FK_SampleStorage_UserSet">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="SampleStorage" EntitySet="SampleStorage" />
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="HCO">
@@ -121,6 +139,7 @@
     <NavigationProperty Name="HCO" Relationship="MedDB.HCOAddress" FromRole="Address" ToRole="HCO" />
     <NavigationProperty Name="HCO1" Relationship="MedDB.HCOAddress1" FromRole="Address" ToRole="HCO" />
     <NavigationProperty Name="HCP1" Relationship="MedDB.HCPAddress1" FromRole="Address" ToRole="HCP" />
+    <NavigationProperty Name="UserSet" Relationship="MedDB.FK_AddressUser" FromRole="Address" ToRole="User" />
   </EntityType>
   <EntityType Name="Meeting">
     <Key>
@@ -167,6 +186,9 @@
     <NavigationProperty Name="UserSet2" Relationship="MedDB.FK_UserUser" FromRole="User1" ToRole="User" />
     <NavigationProperty Name="UserCredentialsSet" Relationship="MedDB.FK_UserUserCredentials" FromRole="User" ToRole="UserCredentialsSet" />
     <Property Name="Username" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="Address_AddressID" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="AddressSet" Relationship="MedDB.FK_AddressUser" FromRole="User" ToRole="Address" />
+    <NavigationProperty Name="SampleStorage" Relationship="MedDB.FK_SampleStorage_UserSet" FromRole="User" ToRole="SampleStorage" />
   </EntityType>
   <Association Name="AddressUser">
     <End Type="MedDB.Address" Multiplicity="1" Role="Address" />
@@ -191,6 +213,7 @@
     <Property Name="Manufacturer" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
     <Property Name="QtyPerCase" Type="Int16" Nullable="false" />
     <Property Name="MIngredient" Type="String" Nullable="false" MaxLength="Max" Unicode="true" FixedLength="false" />
+    <NavigationProperty Name="Sample" Relationship="MedDB.FK_Sample_ProductSet" FromRole="Product" ToRole="Sample" />
   </EntityType>
   <Association Name="MeetingProduct">
     <End Type="MedDB.Meeting" Role="Meeting" Multiplicity="*" />
@@ -286,13 +309,82 @@
     <NavigationProperty Name="UserSet" Relationship="MedDB.FK_UserUserCredentials" FromRole="UserCredentialsSet" ToRole="User" />
   </EntityType>
   <Association Name="FK_UserUserCredentials">
-    <End Type="MedDB.User" Role="User" Multiplicity="1" />
-    <End Type="MedDB.UserCredentialsSet" Role="UserCredentialsSet" Multiplicity="*" />
+    <End Type="MedDB.User" Multiplicity="1" Role="User" />
+    <End Type="MedDB.UserCredentialsSet" Multiplicity="*" Role="UserCredentialsSet" />
     <ReferentialConstraint>
       <Principal Role="User">
         <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="UserCredentialsSet">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_AddressUser">
+    <End Type="MedDB.Address" Role="Address" Multiplicity="1" />
+    <End Type="MedDB.User" Role="User" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Address_AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="Sample">
+    <Key>
+      <PropertyRef Name="SampleID" />
+    </Key>
+    <Property Name="SampleID" Type="Int32" Nullable="false" />
+    <Property Name="ProductID" Type="Int32" />
+    <NavigationProperty Name="ProductSet" Relationship="MedDB.FK_Sample_ProductSet" FromRole="Sample" ToRole="Product" />
+    <NavigationProperty Name="SampleStorage" Relationship="MedDB.FK_SampleStorage_Sample" FromRole="Sample" ToRole="SampleStorage" />
+  </EntityType>
+  <Association Name="FK_Sample_ProductSet">
+    <End Type="MedDB.Product" Role="Product" Multiplicity="0..1" />
+    <End Type="MedDB.Sample" Role="Sample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Sample">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityType Name="SampleStorage">
+    <Key>
+      <PropertyRef Name="UserID" />
+      <PropertyRef Name="SampleID" />
+      <PropertyRef Name="Qty" />
+    </Key>
+    <Property Name="UserID" Type="Int32" Nullable="false" />
+    <Property Name="SampleID" Type="Int32" Nullable="false" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="Sample" Relationship="MedDB.FK_SampleStorage_Sample" FromRole="SampleStorage" ToRole="Sample" />
+    <NavigationProperty Name="UserSet" Relationship="MedDB.FK_SampleStorage_UserSet" FromRole="SampleStorage" ToRole="User" />
+  </EntityType>
+  <Association Name="FK_SampleStorage_Sample">
+    <End Type="MedDB.Sample" Role="Sample" Multiplicity="1" />
+    <End Type="MedDB.SampleStorage" Role="SampleStorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sample">
+        <PropertyRef Name="SampleID" />
+      </Principal>
+      <Dependent Role="SampleStorage">
+        <PropertyRef Name="SampleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SampleStorage_UserSet">
+    <End Type="MedDB.User" Role="User" Multiplicity="1" />
+    <End Type="MedDB.SampleStorage" Role="SampleStorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="SampleStorage">
         <PropertyRef Name="UserID" />
       </Dependent>
     </ReferentialConstraint>

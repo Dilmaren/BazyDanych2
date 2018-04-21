@@ -20,6 +20,7 @@ namespace ProjektBD2
             this.Meeting = new HashSet<Meeting>();
             this.UserSet1 = new HashSet<User>();
             this.UserCredentialsSet = new HashSet<UserCredentialsSet>();
+            this.SampleStorage = new HashSet<SampleStorage>();
         }
     
         public int UserID { get; set; }
@@ -32,6 +33,7 @@ namespace ProjektBD2
         public Nullable<int> ManagerID { get; set; }
         public int AddressID { get; set; }
         public string Username { get; set; }
+        public int Address_AddressID { get; set; }
     
         public virtual Address Address { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
@@ -41,5 +43,8 @@ namespace ProjektBD2
         public virtual User UserSet2 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<UserCredentialsSet> UserCredentialsSet { get; set; }
+        public virtual Address AddressSet { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<SampleStorage> SampleStorage { get; set; }
     }
 }

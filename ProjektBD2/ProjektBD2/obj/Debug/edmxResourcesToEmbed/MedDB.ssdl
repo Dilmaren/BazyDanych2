@@ -1,16 +1,76 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
-<Schema Namespace="MedDB.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
-  <EntityType Name="AddressSet">
-    <Key>
-      <PropertyRef Name="AddressID" />
-    </Key>
-    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Territory" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="ZipCode" Type="int" Nullable="false" />
-  </EntityType>
+<Schema Namespace="MedDB.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2012" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityContainer Name="MedDBStoreContainer">
+    <EntitySet Name="HCOSet" EntityType="MedDB.Store.HCOSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="HCPSet" EntityType="MedDB.Store.HCPSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="AddressSet" EntityType="MedDB.Store.AddressSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="MeetingSet" EntityType="MedDB.Store.MeetingSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserSet" EntityType="MedDB.Store.UserSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="ProductSet" EntityType="MedDB.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="UserCredentialsSet" EntityType="MedDB.Store.UserCredentialsSet" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="Sample" EntityType="MedDB.Store.Sample" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="SampleStorage" EntityType="MedDB.Store.SampleStorage" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="HCOHCP" Association="MedDB.Store.HCOHCP">
+      <End Role="HCO" EntitySet="HCOSet" />
+      <End Role="HCP" EntitySet="HCPSet" />
+    </AssociationSet>
+    <AssociationSet Name="MeetingHCP" Association="MedDB.Store.MeetingHCP">
+      <End Role="Meeting" EntitySet="MeetingSet" />
+      <End Role="HCP" EntitySet="HCPSet" />
+    </AssociationSet>
+    <AssociationSet Name="AddressUser" Association="MedDB.Store.AddressUser">
+      <End Role="Address" EntitySet="AddressSet" />
+      <End Role="User" EntitySet="UserSet" />
+    </AssociationSet>
+    <AssociationSet Name="MeetingProduct" Association="MedDB.Store.MeetingProduct">
+      <End Role="Meeting" EntitySet="MeetingSet" />
+      <End Role="Product" EntitySet="ProductSet" />
+    </AssociationSet>
+    <AssociationSet Name="UserMeeting" Association="MedDB.Store.UserMeeting">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="Meeting" EntitySet="MeetingSet" />
+    </AssociationSet>
+    <AssociationSet Name="HCPAddress" Association="MedDB.Store.HCPAddress">
+      <End Role="HCP" EntitySet="HCPSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="HCOAddress" Association="MedDB.Store.HCOAddress">
+      <End Role="HCO" EntitySet="HCOSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="HCOAddress1" Association="MedDB.Store.HCOAddress1">
+      <End Role="HCO" EntitySet="HCOSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="HCPAddress1" Association="MedDB.Store.HCPAddress1">
+      <End Role="HCP" EntitySet="HCPSet" />
+      <End Role="Address" EntitySet="AddressSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUser" Association="MedDB.Store.FK_UserUser">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="User1" EntitySet="UserSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_UserUserCredentials" Association="MedDB.Store.FK_UserUserCredentials">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_AddressUser" Association="MedDB.Store.FK_AddressUser">
+      <End Role="Address" EntitySet="AddressSet" />
+      <End Role="User" EntitySet="UserSet" />
+    </AssociationSet>
+    <AssociationSet Name="FK_Sample_ProductSet" Association="MedDB.Store.FK_Sample_ProductSet">
+      <End Role="Product" EntitySet="ProductSet" />
+      <End Role="Sample" EntitySet="Sample" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SampleStorage_Sample" Association="MedDB.Store.FK_SampleStorage_Sample">
+      <End Role="Sample" EntitySet="Sample" />
+      <End Role="SampleStorage" EntitySet="SampleStorage" />
+    </AssociationSet>
+    <AssociationSet Name="FK_SampleStorage_UserSet" Association="MedDB.Store.FK_SampleStorage_UserSet">
+      <End Role="User" EntitySet="UserSet" />
+      <End Role="SampleStorage" EntitySet="SampleStorage" />
+    </AssociationSet>
+  </EntityContainer>
   <EntityType Name="HCOSet">
     <Key>
       <PropertyRef Name="HCOID" />
@@ -40,10 +100,21 @@
     <Property Name="Birthdate" Type="datetime" Nullable="false" />
     <Property Name="PhoneNumber" Type="int" Nullable="false" />
     <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="KOL" Type="bit" Nullable="false" />
+    <Property Name="KOL" Type="bit" Nullable="false" DefaultValue="false" />
     <Property Name="Specialty" Type="nvarchar(max)" Nullable="false" />
     <Property Name="AddressID" Type="int" Nullable="false" />
     <Property Name="HCOID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="AddressSet">
+    <Key>
+      <PropertyRef Name="AddressID" />
+    </Key>
+    <Property Name="AddressID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Street" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="City" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Territory" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Country" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="ZipCode" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="MeetingSet">
     <Key>
@@ -51,10 +122,26 @@
     </Key>
     <Property Name="MeetingID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="HCPID" Type="int" Nullable="false" />
-    <Property Name="Date" Type="date" Nullable="false" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
     <Property Name="Topic" Type="nvarchar(max)" Nullable="false" />
     <Property Name="ProductID" Type="int" Nullable="false" />
     <Property Name="UserID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="UserSet">
+    <Key>
+      <PropertyRef Name="UserID" />
+    </Key>
+    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="JobTitle" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
+    <Property Name="PhoneNumber" Type="int" Nullable="false" />
+    <Property Name="HireDate" Type="datetime" Nullable="false" />
+    <Property Name="ManagerID" Type="int" Nullable="true" />
+    <Property Name="AddressID" Type="int" Nullable="false" />
+    <Property Name="Username" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Address_AddressID" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="ProductSet">
     <Key>
@@ -75,134 +162,148 @@
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="UserSet">
+  <EntityType Name="Sample">
+    <Key>
+      <PropertyRef Name="SampleID" />
+    </Key>
+    <Property Name="SampleID" Type="int" Nullable="false" />
+    <Property Name="ProductID" Type="int" Nullable="true" />
+  </EntityType>
+  <EntityType Name="SampleStorage">
     <Key>
       <PropertyRef Name="UserID" />
+      <PropertyRef Name="SampleID" />
+      <PropertyRef Name="Qty" />
     </Key>
-    <Property Name="UserID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="FirstName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="LastName" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="JobTitle" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="Email" Type="nvarchar(max)" Nullable="false" />
-    <Property Name="PhoneNumber" Type="int" Nullable="false" />
-    <Property Name="HireDate" Type="datetime" Nullable="false" />
-    <Property Name="ManagerID" Type="int" />
-    <Property Name="Address_AddressID" Type="int" Nullable="false" />
-    <Property Name="Username" Type="nvarchar(max)" />
+    <Property Name="UserID" Type="int" Nullable="false" />
+    <Property Name="SampleID" Type="int" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
   </EntityType>
-  <Association Name="FK_AddressUser">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="UserSet" Type="Self.UserSet" Multiplicity="*" />
+  <Association Name="HCOHCP">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="1" />
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="UserSet">
-        <PropertyRef Name="Address_AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HCOAddress">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="HCOSet" Type="Self.HCOSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="HCOSet">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HCOAddress1">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="HCOSet" Type="Self.HCOSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="HCOSet">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HCOHCP">
-    <End Role="HCOSet" Type="Self.HCOSet" Multiplicity="1" />
-    <End Role="HCPSet" Type="Self.HCPSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HCOSet">
+      <Principal Role="HCO">
         <PropertyRef Name="HCOID" />
       </Principal>
-      <Dependent Role="HCPSet">
+      <Dependent Role="HCP">
         <PropertyRef Name="HCOID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_HCPAddress">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="HCPSet" Type="Self.HCPSet" Multiplicity="*" />
+  <Association Name="MeetingHCP">
+    <End Role="Meeting" Type="MedDB.Store.MeetingSet" Multiplicity="*" />
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="1" />
     <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="HCPSet">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_HCPAddress1">
-    <End Role="AddressSet" Type="Self.AddressSet" Multiplicity="1" />
-    <End Role="HCPSet" Type="Self.HCPSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="AddressSet">
-        <PropertyRef Name="AddressID" />
-      </Principal>
-      <Dependent Role="HCPSet">
-        <PropertyRef Name="AddressID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_MeetingHCP">
-    <End Role="HCPSet" Type="Self.HCPSet" Multiplicity="1" />
-    <End Role="MeetingSet" Type="Self.MeetingSet" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="HCPSet">
+      <Principal Role="HCP">
         <PropertyRef Name="HCPID" />
       </Principal>
-      <Dependent Role="MeetingSet">
+      <Dependent Role="Meeting">
         <PropertyRef Name="HCPID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_MeetingProduct">
-    <End Role="ProductSet" Type="Self.ProductSet" Multiplicity="1" />
-    <End Role="MeetingSet" Type="Self.MeetingSet" Multiplicity="*" />
+  <Association Name="AddressUser">
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="ProductSet">
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="MeetingProduct">
+    <End Role="Meeting" Type="MedDB.Store.MeetingSet" Multiplicity="*" />
+    <End Role="Product" Type="MedDB.Store.ProductSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
         <PropertyRef Name="ProductID" />
       </Principal>
-      <Dependent Role="MeetingSet">
+      <Dependent Role="Meeting">
         <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK_UserMeeting">
-    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
-    <End Role="MeetingSet" Type="Self.MeetingSet" Multiplicity="*" />
+  <Association Name="UserMeeting">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+    <End Role="Meeting" Type="MedDB.Store.MeetingSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UserSet">
+      <Principal Role="User">
         <PropertyRef Name="UserID" />
       </Principal>
-      <Dependent Role="MeetingSet">
+      <Dependent Role="Meeting">
         <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCPAddress">
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCP">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCOAddress">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCO">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCOAddress1">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCO">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCPAddress1">
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCP">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUser">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="0..1" />
+    <End Role="User1" Type="MedDB.Store.UserSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ManagerID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
   <Association Name="FK_UserUserCredentials">
-    <End Role="UserSet" Type="Self.UserSet" Multiplicity="1" />
-    <End Role="UserCredentialsSet" Type="Self.UserCredentialsSet" Multiplicity="*" />
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+    <End Role="UserCredentialsSet" Type="MedDB.Store.UserCredentialsSet" Multiplicity="*" />
     <ReferentialConstraint>
-      <Principal Role="UserSet">
+      <Principal Role="User">
         <PropertyRef Name="UserID" />
       </Principal>
       <Dependent Role="UserCredentialsSet">
@@ -210,53 +311,52 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="MedDBStoreContainer">
-    <EntitySet Name="AddressSet" EntityType="Self.AddressSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HCOSet" EntityType="Self.HCOSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="HCPSet" EntityType="Self.HCPSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="MeetingSet" EntityType="Self.MeetingSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="ProductSet" EntityType="Self.ProductSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserCredentialsSet" EntityType="Self.UserCredentialsSet" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="UserSet" EntityType="Self.UserSet" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_AddressUser" Association="Self.FK_AddressUser">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="UserSet" EntitySet="UserSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HCOAddress" Association="Self.FK_HCOAddress">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="HCOSet" EntitySet="HCOSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HCOAddress1" Association="Self.FK_HCOAddress1">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="HCOSet" EntitySet="HCOSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HCOHCP" Association="Self.FK_HCOHCP">
-      <End Role="HCOSet" EntitySet="HCOSet" />
-      <End Role="HCPSet" EntitySet="HCPSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HCPAddress" Association="Self.FK_HCPAddress">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="HCPSet" EntitySet="HCPSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_HCPAddress1" Association="Self.FK_HCPAddress1">
-      <End Role="AddressSet" EntitySet="AddressSet" />
-      <End Role="HCPSet" EntitySet="HCPSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MeetingHCP" Association="Self.FK_MeetingHCP">
-      <End Role="HCPSet" EntitySet="HCPSet" />
-      <End Role="MeetingSet" EntitySet="MeetingSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_MeetingProduct" Association="Self.FK_MeetingProduct">
-      <End Role="ProductSet" EntitySet="ProductSet" />
-      <End Role="MeetingSet" EntitySet="MeetingSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserMeeting" Association="Self.FK_UserMeeting">
-      <End Role="UserSet" EntitySet="UserSet" />
-      <End Role="MeetingSet" EntitySet="MeetingSet" />
-    </AssociationSet>
-    <AssociationSet Name="FK_UserUserCredentials" Association="Self.FK_UserUserCredentials">
-      <End Role="UserSet" EntitySet="UserSet" />
-      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet" />
-    </AssociationSet>
-  </EntityContainer>
+  <Association Name="FK_AddressUser">
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="User">
+        <PropertyRef Name="Address_AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_Sample_ProductSet">
+    <End Role="Product" Type="MedDB.Store.ProductSet" Multiplicity="0..1" />
+    <End Role="Sample" Type="MedDB.Store.Sample" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Sample">
+        <PropertyRef Name="ProductID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SampleStorage_Sample">
+    <End Role="Sample" Type="MedDB.Store.Sample" Multiplicity="1" />
+    <End Role="SampleStorage" Type="MedDB.Store.SampleStorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Sample">
+        <PropertyRef Name="SampleID" />
+      </Principal>
+      <Dependent Role="SampleStorage">
+        <PropertyRef Name="SampleID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_SampleStorage_UserSet">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+    <End Role="SampleStorage" Type="MedDB.Store.SampleStorage" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="SampleStorage">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
 </Schema>
