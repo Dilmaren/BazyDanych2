@@ -79,7 +79,6 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
             this.createHCO_button = new System.Windows.Forms.Button();
             this.dataGridView2 = new System.Windows.Forms.DataGridView();
             this.nameDataGridViewTextBoxColumn = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -123,7 +122,6 @@
             this.label35 = new System.Windows.Forms.Label();
             this.label34 = new System.Windows.Forms.Label();
             this.label33 = new System.Windows.Forms.Label();
-            this.button10 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.dataGridView3 = new System.Windows.Forms.DataGridView();
@@ -335,13 +333,12 @@
             this.tabPage2.Controls.Add(this.label3);
             this.tabPage2.Controls.Add(this.label2);
             this.tabPage2.Controls.Add(this.label1);
-            this.tabPage2.Controls.Add(this.button2);
             this.tabPage2.Controls.Add(this.createHCO_button);
             this.tabPage2.Controls.Add(this.dataGridView2);
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(1002, 485);
+            this.tabPage2.Size = new System.Drawing.Size(1002, 460);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "tabPage2";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -669,16 +666,6 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "GENERAL INFORMATION";
             // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(380, 148);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(106, 44);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Show Details";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
             // createHCO_button
             // 
             this.createHCO_button.Location = new System.Drawing.Point(380, 14);
@@ -714,6 +701,7 @@
             this.dataGridView2.RowTemplate.Height = 24;
             this.dataGridView2.Size = new System.Drawing.Size(343, 448);
             this.dataGridView2.TabIndex = 0;
+            this.dataGridView2.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView2_CellClick);
             // 
             // nameDataGridViewTextBoxColumn
             // 
@@ -842,14 +830,13 @@
             this.tabPage3.Controls.Add(this.label35);
             this.tabPage3.Controls.Add(this.label34);
             this.tabPage3.Controls.Add(this.label33);
-            this.tabPage3.Controls.Add(this.button10);
             this.tabPage3.Controls.Add(this.button9);
             this.tabPage3.Controls.Add(this.button8);
             this.tabPage3.Controls.Add(this.dataGridView3);
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(1002, 485);
+            this.tabPage3.Size = new System.Drawing.Size(1002, 460);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "tabPage3";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -1106,16 +1093,6 @@
             this.label33.TabIndex = 4;
             this.label33.Text = "GENERAL INFORMATION";
             // 
-            // button10
-            // 
-            this.button10.Location = new System.Drawing.Point(380, 148);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(106, 44);
-            this.button10.TabIndex = 3;
-            this.button10.Text = "Show Details";
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            // 
             // button9
             // 
             this.button9.Location = new System.Drawing.Point(380, 64);
@@ -1163,6 +1140,7 @@
             this.dataGridView3.RowTemplate.Height = 24;
             this.dataGridView3.Size = new System.Drawing.Size(343, 448);
             this.dataGridView3.TabIndex = 0;
+            this.dataGridView3.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView3_CellClick);
             // 
             // firstNameDataGridViewTextBoxColumn
             // 
@@ -1368,7 +1346,6 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button createHCO_button;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -1435,7 +1412,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn addressIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn hCOIDDataGridViewTextBoxColumn1;
         private System.Windows.Forms.Label label33;
-        private System.Windows.Forms.Button button10;
         private System.Windows.Forms.Button button9;
         private System.Windows.Forms.Button button8;
         private System.Windows.Forms.Label label39;
