@@ -16,8 +16,9 @@ namespace ProjektBD2
         public EditAddress()
         {
             InitializeComponent();
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
 
             try
@@ -51,8 +52,9 @@ namespace ProjektBD2
     private void button1_Click(object sender, EventArgs e)
         {
             String commandText = "UPDATE AddressSet SET Street=@street, City=@city, Territory=@territory, Country=@country, ZipCode=@zipcode WHERE AddressID=@param";
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {

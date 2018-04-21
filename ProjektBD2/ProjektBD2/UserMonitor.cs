@@ -32,8 +32,9 @@ namespace ProjektBD2
         //Show Details Button
         private void button4_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -111,8 +112,9 @@ namespace ProjektBD2
 
         private void button3_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {

@@ -64,8 +64,9 @@ namespace ProjektBD2
         //Show Details HCO Button
         private void button2_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString; 
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -126,8 +127,9 @@ namespace ProjektBD2
         //Show Details HCP
         private void button10_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -188,8 +190,9 @@ namespace ProjektBD2
         //Edit Address Button
         private void button6_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -213,8 +216,9 @@ namespace ProjektBD2
         //Edit HCO Button
         private void button4_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -239,8 +243,9 @@ namespace ProjektBD2
         //Edit HCP Button
         private void button9_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -263,8 +268,9 @@ namespace ProjektBD2
         //Show Doctors HCO Button
         private void button5_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
@@ -288,8 +294,9 @@ namespace ProjektBD2
         //Delete Address Button
         private void button7_Click(object sender, EventArgs e)
         {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
+            conn.ConnectionString = sConnection;
             conn.Open();
             try
             {
