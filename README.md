@@ -1,4 +1,4 @@
-# BazyDanych2
-Projekt - PUT - Bazy Danych 2
+# Projekt Zespołowy
+Projekt - PUT - PROJEKT ZESPOŁOWY
 
 Zarządzanie medyczną bazą danych
