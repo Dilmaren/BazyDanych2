@@ -63,9 +63,8 @@ namespace ProjektBD2
             {
                 String commandText = "INSERT INTO UserCredentialsSet VALUES(@uid,@pw)";
                 String commandText2 = "SELECT UserID FROM UserSet WHERE Username = @param";
-                string sConnection = Properties.Settings.Default.BD2ConnectionString;
                 SqlConnection conn = new SqlConnection();
-                conn.ConnectionString = sConnection;
+                conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
                 conn.Open();
                 try
                 {

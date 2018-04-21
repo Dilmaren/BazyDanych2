@@ -16,9 +16,8 @@ namespace ProjektBD2
         public EditHCO()
         {
             InitializeComponent();
-            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = sConnection;
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
@@ -87,9 +86,8 @@ namespace ProjektBD2
         private void button2_Click(object sender, EventArgs e)
         {
             String commandText = "UPDATE HCOSet SET Name=@Name, Range=@Range, Level=@Level, SpecialType=@SpecialType, Beds=@Beds, Employees=@Employees, PhoneNumber=@PhoneNumber, Email=@Email, Website=@Website, AddressID=@AddressID WHERE HCOID=@param";
-            string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = sConnection;
+            conn.ConnectionString = "Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=True";
             conn.Open();
             try
             {
