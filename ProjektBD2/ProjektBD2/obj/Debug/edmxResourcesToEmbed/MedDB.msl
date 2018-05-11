@@ -64,8 +64,6 @@
     <EntitySetMapping Name="UserSet">
       <EntityTypeMapping TypeName="IsTypeOf(MedDB.User)">
         <MappingFragment StoreEntitySet="UserSet">
-          <ScalarProperty Name="Username" ColumnName="Username" />
-          <ScalarProperty Name="AddressID" ColumnName="Address_AddressID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="FirstName" ColumnName="FirstName" />
           <ScalarProperty Name="LastName" ColumnName="LastName" />
@@ -74,6 +72,8 @@
           <ScalarProperty Name="PhoneNumber" ColumnName="PhoneNumber" />
           <ScalarProperty Name="HireDate" ColumnName="HireDate" />
           <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
+          <ScalarProperty Name="AddressID" ColumnName="AddressID" />
+          <ScalarProperty Name="Username" ColumnName="Username" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -90,11 +90,11 @@
       </EntityTypeMapping>
     </EntitySetMapping>
     <EntitySetMapping Name="UserCredentialsSet1">
-      <EntityTypeMapping TypeName="MedDB.UserCredentialsSet">
-        <MappingFragment StoreEntitySet="UserCredentialsSet">
-          <ScalarProperty Name="Password" ColumnName="Password" />
-          <ScalarProperty Name="UserID" ColumnName="UserID" />
+      <EntityTypeMapping TypeName="IsTypeOf(MedDB.UserCredentialsSet)">
+        <MappingFragment StoreEntitySet="UserCredentialsSet1">
           <ScalarProperty Name="UserCredentialsID" ColumnName="UserCredentialsID" />
+          <ScalarProperty Name="UserID" ColumnName="UserID" />
+          <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
