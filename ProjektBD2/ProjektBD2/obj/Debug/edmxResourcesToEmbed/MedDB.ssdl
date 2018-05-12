@@ -7,9 +7,13 @@
     <EntitySet Name="MeetingSet" EntityType="MedDB.Store.MeetingSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserSet" EntityType="MedDB.Store.UserSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProductSet" EntityType="MedDB.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+<<<<<<< HEAD
     <EntitySet Name="UserCredentialsSet" EntityType="MedDB.Store.UserCredentialsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sample" EntityType="MedDB.Store.Sample" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SampleStorage" EntityType="MedDB.Store.SampleStorage" store:Type="Tables" Schema="dbo" />
+=======
+    <EntitySet Name="UserCredentialsSet1" EntityType="MedDB.Store.UserCredentialsSet1" store:Type="Tables" Schema="dbo" />
+>>>>>>> gui
     <AssociationSet Name="HCOHCP" Association="MedDB.Store.HCOHCP">
       <End Role="HCO" EntitySet="HCOSet" />
       <End Role="HCP" EntitySet="HCPSet" />
@@ -52,6 +56,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_UserUserCredentials" Association="MedDB.Store.FK_UserUserCredentials">
       <End Role="User" EntitySet="UserSet" />
+<<<<<<< HEAD
       <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet" />
     </AssociationSet>
     <AssociationSet Name="FK_AddressUser" Association="MedDB.Store.FK_AddressUser">
@@ -69,6 +74,9 @@
     <AssociationSet Name="FK_SampleStorage_UserSet" Association="MedDB.Store.FK_SampleStorage_UserSet">
       <End Role="User" EntitySet="UserSet" />
       <End Role="SampleStorage" EntitySet="SampleStorage" />
+=======
+      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet1" />
+>>>>>>> gui
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="HCOSet">
@@ -141,7 +149,10 @@
     <Property Name="ManagerID" Type="int" Nullable="true" />
     <Property Name="AddressID" Type="int" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="true" />
+<<<<<<< HEAD
     <Property Name="Address_AddressID" Type="int" Nullable="false" />
+=======
+>>>>>>> gui
   </EntityType>
   <EntityType Name="ProductSet">
     <Key>
@@ -154,7 +165,7 @@
     <Property Name="QtyPerCase" Type="smallint" Nullable="false" />
     <Property Name="MIngredient" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
-  <EntityType Name="UserCredentialsSet">
+  <EntityType Name="UserCredentialsSet1">
     <Key>
       <PropertyRef Name="UserCredentialsID" />
     </Key>
@@ -162,6 +173,7 @@
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+<<<<<<< HEAD
   <EntityType Name="Sample">
     <Key>
       <PropertyRef Name="SampleID" />
@@ -179,6 +191,8 @@
     <Property Name="SampleID" Type="int" Nullable="false" />
     <Property Name="Qty" Type="int" Nullable="false" />
   </EntityType>
+=======
+>>>>>>> gui
   <Association Name="HCOHCP">
     <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="1" />
     <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
@@ -197,6 +211,7 @@
     <ReferentialConstraint>
       <Principal Role="HCP">
         <PropertyRef Name="HCPID" />
+<<<<<<< HEAD
       </Principal>
       <Dependent Role="Meeting">
         <PropertyRef Name="HCPID" />
@@ -242,15 +257,31 @@
   <Association Name="HCPAddress">
     <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
     <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+=======
+      </Principal>
+      <Dependent Role="Meeting">
+        <PropertyRef Name="HCPID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="AddressUser">
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="*" />
+>>>>>>> gui
     <ReferentialConstraint>
       <Principal Role="Address">
         <PropertyRef Name="AddressID" />
       </Principal>
+<<<<<<< HEAD
       <Dependent Role="HCP">
+=======
+      <Dependent Role="User">
+>>>>>>> gui
         <PropertyRef Name="AddressID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
   <Association Name="HCOAddress">
     <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
     <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
@@ -271,11 +302,32 @@
         <PropertyRef Name="AddressID" />
       </Principal>
       <Dependent Role="HCO">
-        <PropertyRef Name="AddressID" />
+=======
+  <Association Name="MeetingProduct">
+    <End Role="Meeting" Type="MedDB.Store.MeetingSet" Multiplicity="*" />
+    <End Role="Product" Type="MedDB.Store.ProductSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Product">
+        <PropertyRef Name="ProductID" />
+      </Principal>
+      <Dependent Role="Meeting">
+        <PropertyRef Name="ProductID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="HCPAddress1">
+  <Association Name="UserMeeting">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+    <End Role="Meeting" Type="MedDB.Store.MeetingSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="Meeting">
+        <PropertyRef Name="UserID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCPAddress">
     <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
     <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
     <ReferentialConstraint>
@@ -283,10 +335,33 @@
         <PropertyRef Name="AddressID" />
       </Principal>
       <Dependent Role="HCP">
+>>>>>>> gui
         <PropertyRef Name="AddressID" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
+  <Association Name="HCPAddress1">
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
+=======
+  <Association Name="HCOAddress">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
+>>>>>>> gui
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+<<<<<<< HEAD
+      <Dependent Role="HCP">
+=======
+      <Dependent Role="HCO">
+>>>>>>> gui
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+<<<<<<< HEAD
   <Association Name="FK_UserUser">
     <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="0..1" />
     <End Role="User1" Type="MedDB.Store.UserSet" Multiplicity="*" />
@@ -350,6 +425,47 @@
   <Association Name="FK_SampleStorage_UserSet">
     <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
     <End Role="SampleStorage" Type="MedDB.Store.SampleStorage" Multiplicity="*" />
+=======
+  <Association Name="HCOAddress1">
+    <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCO">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="HCPAddress1">
+    <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
+    <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="Address">
+        <PropertyRef Name="AddressID" />
+      </Principal>
+      <Dependent Role="HCP">
+        <PropertyRef Name="AddressID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUser">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="0..1" />
+    <End Role="User1" Type="MedDB.Store.UserSet" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="User">
+        <PropertyRef Name="UserID" />
+      </Principal>
+      <Dependent Role="User1">
+        <PropertyRef Name="ManagerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_UserUserCredentials">
+    <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+    <End Role="UserCredentialsSet" Type="MedDB.Store.UserCredentialsSet1" Multiplicity="*" />
+>>>>>>> gui
     <ReferentialConstraint>
       <Principal Role="User">
         <PropertyRef Name="UserID" />

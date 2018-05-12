@@ -12,9 +12,13 @@
     <EntitySet Name="MeetingSet" EntityType="MedDB.Store.MeetingSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="UserSet" EntityType="MedDB.Store.UserSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="ProductSet" EntityType="MedDB.Store.ProductSet" store:Type="Tables" Schema="dbo" />
+<<<<<<< HEAD
     <EntitySet Name="UserCredentialsSet" EntityType="MedDB.Store.UserCredentialsSet" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="Sample" EntityType="MedDB.Store.Sample" store:Type="Tables" Schema="dbo" />
     <EntitySet Name="SampleStorage" EntityType="MedDB.Store.SampleStorage" store:Type="Tables" Schema="dbo" />
+=======
+    <EntitySet Name="UserCredentialsSet1" EntityType="MedDB.Store.UserCredentialsSet1" store:Type="Tables" Schema="dbo" />
+>>>>>>> gui
     <AssociationSet Name="HCOHCP" Association="MedDB.Store.HCOHCP">
       <End Role="HCO" EntitySet="HCOSet" />
       <End Role="HCP" EntitySet="HCPSet" />
@@ -57,6 +61,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_UserUserCredentials" Association="MedDB.Store.FK_UserUserCredentials">
       <End Role="User" EntitySet="UserSet" />
+<<<<<<< HEAD
       <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet" />
     </AssociationSet>
     <AssociationSet Name="FK_AddressUser" Association="MedDB.Store.FK_AddressUser">
@@ -74,6 +79,9 @@
     <AssociationSet Name="FK_SampleStorage_UserSet" Association="MedDB.Store.FK_SampleStorage_UserSet">
       <End Role="User" EntitySet="UserSet" />
       <End Role="SampleStorage" EntitySet="SampleStorage" />
+=======
+      <End Role="UserCredentialsSet" EntitySet="UserCredentialsSet1" />
+>>>>>>> gui
     </AssociationSet>
   </EntityContainer>
   <EntityType Name="HCOSet">
@@ -146,7 +154,10 @@
     <Property Name="ManagerID" Type="int" Nullable="true" />
     <Property Name="AddressID" Type="int" Nullable="false" />
     <Property Name="Username" Type="nvarchar(max)" Nullable="true" />
+<<<<<<< HEAD
     <Property Name="Address_AddressID" Type="int" Nullable="false" />
+=======
+>>>>>>> gui
   </EntityType>
   <EntityType Name="ProductSet">
     <Key>
@@ -159,7 +170,11 @@
     <Property Name="QtyPerCase" Type="smallint" Nullable="false" />
     <Property Name="MIngredient" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+<<<<<<< HEAD
   <EntityType Name="UserCredentialsSet">
+=======
+  <EntityType Name="UserCredentialsSet1">
+>>>>>>> gui
     <Key>
       <PropertyRef Name="UserCredentialsID" />
     </Key>
@@ -167,6 +182,7 @@
     <Property Name="UserID" Type="int" Nullable="false" />
     <Property Name="Password" Type="nvarchar(max)" Nullable="false" />
   </EntityType>
+<<<<<<< HEAD
   <EntityType Name="Sample">
     <Key>
       <PropertyRef Name="SampleID" />
@@ -184,6 +200,8 @@
     <Property Name="SampleID" Type="int" Nullable="false" />
     <Property Name="Qty" Type="int" Nullable="false" />
   </EntityType>
+=======
+>>>>>>> gui
   <Association Name="HCOHCP">
     <End Role="HCO" Type="MedDB.Store.HCOSet" Multiplicity="1" />
     <End Role="HCP" Type="MedDB.Store.HCPSet" Multiplicity="*" />
@@ -306,7 +324,11 @@
   </Association>
   <Association Name="FK_UserUserCredentials">
     <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="1" />
+<<<<<<< HEAD
     <End Role="UserCredentialsSet" Type="MedDB.Store.UserCredentialsSet" Multiplicity="*" />
+=======
+    <End Role="UserCredentialsSet" Type="MedDB.Store.UserCredentialsSet1" Multiplicity="*" />
+>>>>>>> gui
     <ReferentialConstraint>
       <Principal Role="User">
         <PropertyRef Name="UserID" />
@@ -316,6 +338,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+<<<<<<< HEAD
   <Association Name="FK_AddressUser">
     <End Role="Address" Type="MedDB.Store.AddressSet" Multiplicity="1" />
     <End Role="User" Type="MedDB.Store.UserSet" Multiplicity="*" />
@@ -364,6 +387,8 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+=======
+>>>>>>> gui
 </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
@@ -836,7 +861,10 @@
           <ScalarProperty Name="ManagerID" ColumnName="ManagerID" />
           <ScalarProperty Name="AddressID" ColumnName="AddressID" />
           <ScalarProperty Name="Username" ColumnName="Username" />
+<<<<<<< HEAD
           <ScalarProperty Name="Address_AddressID" ColumnName="Address_AddressID" />
+=======
+>>>>>>> gui
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -852,15 +880,22 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="UserCredentialsSet">
       <EntityTypeMapping TypeName="IsTypeOf(MedDB.UserCredentialsSet)">
         <MappingFragment StoreEntitySet="UserCredentialsSet">
+=======
+    <EntitySetMapping Name="UserCredentialsSet1">
+      <EntityTypeMapping TypeName="IsTypeOf(MedDB.UserCredentialsSet)">
+        <MappingFragment StoreEntitySet="UserCredentialsSet1">
+>>>>>>> gui
           <ScalarProperty Name="UserCredentialsID" ColumnName="UserCredentialsID" />
           <ScalarProperty Name="UserID" ColumnName="UserID" />
           <ScalarProperty Name="Password" ColumnName="Password" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+<<<<<<< HEAD
     <EntitySetMapping Name="Sample">
       <EntityTypeMapping TypeName="IsTypeOf(MedDB.Sample)">
         <MappingFragment StoreEntitySet="Sample">
@@ -878,6 +913,8 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+=======
+>>>>>>> gui
   </EntityContainerMapping>
 </Mapping></edmx:Mappings>
   </edmx:Runtime>

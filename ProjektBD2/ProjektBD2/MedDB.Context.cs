@@ -15,13 +15,11 @@ namespace ProjektBD2
     
     public partial class MedDBContainer : DbContext
     {
-        /*
         public MedDBContainer()
             : base("name=MedDBContainer")
         {
         }
     
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -33,14 +31,6 @@ namespace ProjektBD2
         public virtual DbSet<Meeting> MeetingSet { get; set; }
         public virtual DbSet<User> UserSet { get; set; }
         public virtual DbSet<Product> ProductSet { get; set; }
-<<<<<<< HEAD
-        public virtual DbSet<UserCredentialsSet> UserCredentialsSet { get; set; }
-        public virtual DbSet<Sample> Sample { get; set; }
-        public virtual DbSet<SampleStorage> SampleStorage { get; set; }
-    }
-=======
         public virtual DbSet<UserCredentialsSet> UserCredentialsSet1 { get; set; }
-    */
-    } 
->>>>>>> gui
+    }
 }

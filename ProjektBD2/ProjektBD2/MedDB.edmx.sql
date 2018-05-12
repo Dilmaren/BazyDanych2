@@ -2,13 +2,18 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
+<<<<<<< HEAD
 -- Date Created: 04/21/2018 12:41:36
 -- Generated from EDMX file: E:\BD2\ProjektBD2\BazyDanych2\ProjektBD2\ProjektBD2\MedDB.edmx
+=======
+-- Date Created: 05/12/2018 10:06:31
+-- Generated from EDMX file: C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\MedDB.edmx
+>>>>>>> gui
 -- --------------------------------------------------
 
 SET QUOTED_IDENTIFIER OFF;
 GO
-USE [BD2];
+USE [Pharma];
 GO
 IF SCHEMA_ID(N'dbo') IS NULL EXECUTE(N'CREATE SCHEMA [dbo]');
 GO
@@ -29,12 +34,15 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_HCOHCP]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCOHCP];
 GO
+<<<<<<< HEAD
 IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
 GO
 IF OBJECT_ID(N'[dbo].[FK_HCPAddress1]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress1];
 GO
+=======
+>>>>>>> gui
 IF OBJECT_ID(N'[dbo].[FK_MeetingHCP]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingHCP];
 GO
@@ -44,14 +52,25 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_Sample_ProductSet]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[Sample] DROP CONSTRAINT [FK_Sample_ProductSet];
 GO
+<<<<<<< HEAD
 IF OBJECT_ID(N'[MedDBStoreContainer].[FK_SampleStorage_Sample]', 'F') IS NOT NULL
     ALTER TABLE [MedDBStoreContainer].[SampleStorage] DROP CONSTRAINT [FK_SampleStorage_Sample];
 GO
 IF OBJECT_ID(N'[MedDBStoreContainer].[FK_SampleStorage_UserSet]', 'F') IS NOT NULL
     ALTER TABLE [MedDBStoreContainer].[SampleStorage] DROP CONSTRAINT [FK_SampleStorage_UserSet];
+=======
+IF OBJECT_ID(N'[dbo].[FK_HCOAddress1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress1];
+>>>>>>> gui
 GO
 IF OBJECT_ID(N'[dbo].[FK_UserMeeting]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_UserMeeting];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_UserUser];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserUserCredentials]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserCredentialsSet1] DROP CONSTRAINT [FK_UserUserCredentials];
 GO
 
 -- --------------------------------------------------
@@ -81,6 +100,9 @@ IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
 GO
 IF OBJECT_ID(N'[MedDBStoreContainer].[SampleStorage]', 'U') IS NOT NULL
     DROP TABLE [MedDBStoreContainer].[SampleStorage];
+GO
+IF OBJECT_ID(N'[dbo].[UserCredentialsSet1]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserCredentialsSet1];
 GO
 
 -- --------------------------------------------------
@@ -154,8 +176,12 @@ CREATE TABLE [dbo].[UserSet] (
     [HireDate] datetime  NOT NULL,
     [ManagerID] int  NULL,
     [AddressID] int  NOT NULL,
+<<<<<<< HEAD
     [Username] nvarchar(max)  NULL,
     [Address_AddressID] int  NOT NULL
+=======
+    [Username] nvarchar(max)  NULL
+>>>>>>> gui
 );
 GO
 
@@ -170,14 +196,20 @@ CREATE TABLE [dbo].[ProductSet] (
 );
 GO
 
+<<<<<<< HEAD
 -- Creating table 'UserCredentialsSet'
 CREATE TABLE [dbo].[UserCredentialsSet] (
+=======
+-- Creating table 'UserCredentialsSet1'
+CREATE TABLE [dbo].[UserCredentialsSet1] (
+>>>>>>> gui
     [UserCredentialsID] int IDENTITY(1,1) NOT NULL,
     [UserID] int  NOT NULL,
     [Password] nvarchar(max)  NOT NULL
 );
 GO
 
+<<<<<<< HEAD
 -- Creating table 'Sample'
 CREATE TABLE [dbo].[Sample] (
     [SampleID] int  NOT NULL,
@@ -193,6 +225,8 @@ CREATE TABLE [dbo].[SampleStorage] (
 );
 GO
 
+=======
+>>>>>>> gui
 -- --------------------------------------------------
 -- Creating all PRIMARY KEY constraints
 -- --------------------------------------------------
@@ -233,6 +267,7 @@ ADD CONSTRAINT [PK_ProductSet]
     PRIMARY KEY CLUSTERED ([ProductID] ASC);
 GO
 
+<<<<<<< HEAD
 -- Creating primary key on [UserCredentialsID] in table 'UserCredentialsSet'
 ALTER TABLE [dbo].[UserCredentialsSet]
 ADD CONSTRAINT [PK_UserCredentialsSet]
@@ -251,6 +286,14 @@ ADD CONSTRAINT [PK_SampleStorage]
     PRIMARY KEY CLUSTERED ([UserID], [SampleID], [Qty] ASC);
 GO
 
+=======
+-- Creating primary key on [UserCredentialsID] in table 'UserCredentialsSet1'
+ALTER TABLE [dbo].[UserCredentialsSet1]
+ADD CONSTRAINT [PK_UserCredentialsSet1]
+    PRIMARY KEY CLUSTERED ([UserCredentialsID] ASC);
+GO
+
+>>>>>>> gui
 -- --------------------------------------------------
 -- Creating all FOREIGN KEY constraints
 -- --------------------------------------------------
@@ -405,8 +448,13 @@ ON [dbo].[UserSet]
     ([ManagerID]);
 GO
 
+<<<<<<< HEAD
 -- Creating foreign key on [UserID] in table 'UserCredentialsSet'
 ALTER TABLE [dbo].[UserCredentialsSet]
+=======
+-- Creating foreign key on [UserID] in table 'UserCredentialsSet1'
+ALTER TABLE [dbo].[UserCredentialsSet1]
+>>>>>>> gui
 ADD CONSTRAINT [FK_UserUserCredentials]
     FOREIGN KEY ([UserID])
     REFERENCES [dbo].[UserSet]
@@ -416,6 +464,7 @@ GO
 
 -- Creating non-clustered index for FOREIGN KEY 'FK_UserUserCredentials'
 CREATE INDEX [IX_FK_UserUserCredentials]
+<<<<<<< HEAD
 ON [dbo].[UserCredentialsSet]
     ([UserID]);
 GO
@@ -474,6 +523,12 @@ ADD CONSTRAINT [FK_SampleStorage_UserSet]
     ON DELETE NO ACTION ON UPDATE NO ACTION;
 GO
 
+=======
+ON [dbo].[UserCredentialsSet1]
+    ([UserID]);
+GO
+
+>>>>>>> gui
 -- --------------------------------------------------
 -- Script has ended
 -- --------------------------------------------------
