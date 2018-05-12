@@ -26,8 +26,8 @@ namespace ProjektBD2.Properties {
         [global::System.Configuration.ApplicationScopedSettingAttribute()]
         [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
         [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
-        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=DESKTOP-8KR5DN1\\BNINSTANCE;Initial Catalog=BD2;Integrated Security=Tr" +
-            "ue")]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=46.227.246.133,51433;Initial Catalog=BD2;Persist Security Info=True;U" +
+            "ser ID=sa;Password=LV9QF1ty0r")]
         public string BD2ConnectionString {
             get {
                 return ((string)(this["BD2ConnectionString"]));
