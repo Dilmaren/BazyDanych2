@@ -110,7 +110,6 @@ C:\Users\Dawid\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\Proje
 C:\Users\Dawid\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.showteammembers.resources
 C:\Users\Dawid\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.UserMonitor.resources
 C:\Users\Dawid\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.GenerateResource.Cache
-C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.DBMonitor.resources
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditAddress.resources
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCO.resources
@@ -139,5 +138,13 @@ C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\Projekt
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.UserMonitor.resources
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.GenerateResource.Cache
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.CoreCompileInputs.cache
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.exe.config
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.exe
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\ProjektBD2.pdb
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.dll
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.xml
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.exe
 C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
+C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache

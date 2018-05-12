@@ -2,7 +2,7 @@
 -- --------------------------------------------------
 -- Entity Designer DDL Script for SQL Server 2005, 2008, 2012 and Azure
 -- --------------------------------------------------
--- Date Created: 05/11/2018 23:09:44
+-- Date Created: 05/12/2018 10:06:31
 -- Generated from EDMX file: C:\Users\Przemek\source\Repos\Pharma-app\ProjektBD2\ProjektBD2\MedDB.edmx
 -- --------------------------------------------------
 
@@ -17,26 +17,14 @@ GO
 -- Dropping existing FOREIGN KEY constraints
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[FK_AddressUser]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_AddressUser];
-GO
-IF OBJECT_ID(N'[dbo].[FK_HCOAddress]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress];
-GO
-IF OBJECT_ID(N'[dbo].[FK_HCOAddress1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress1];
-GO
 IF OBJECT_ID(N'[dbo].[FK_HCOHCP]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCOHCP];
 GO
-IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
-GO
-IF OBJECT_ID(N'[dbo].[FK_HCPAddress1]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress1];
-GO
 IF OBJECT_ID(N'[dbo].[FK_MeetingHCP]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingHCP];
+GO
+IF OBJECT_ID(N'[dbo].[FK_AddressUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_AddressUser];
 GO
 IF OBJECT_ID(N'[dbo].[FK_MeetingProduct]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_MeetingProduct];
@@ -44,34 +32,49 @@ GO
 IF OBJECT_ID(N'[dbo].[FK_UserMeeting]', 'F') IS NOT NULL
     ALTER TABLE [dbo].[MeetingSet] DROP CONSTRAINT [FK_UserMeeting];
 GO
+IF OBJECT_ID(N'[dbo].[FK_HCPAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCOAddress]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCOAddress1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCOSet] DROP CONSTRAINT [FK_HCOAddress1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_HCPAddress1]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[HCPSet] DROP CONSTRAINT [FK_HCPAddress1];
+GO
+IF OBJECT_ID(N'[dbo].[FK_UserUser]', 'F') IS NOT NULL
+    ALTER TABLE [dbo].[UserSet] DROP CONSTRAINT [FK_UserUser];
+GO
 IF OBJECT_ID(N'[dbo].[FK_UserUserCredentials]', 'F') IS NOT NULL
-    ALTER TABLE [dbo].[UserCredentialsSet] DROP CONSTRAINT [FK_UserUserCredentials];
+    ALTER TABLE [dbo].[UserCredentialsSet1] DROP CONSTRAINT [FK_UserUserCredentials];
 GO
 
 -- --------------------------------------------------
 -- Dropping existing tables
 -- --------------------------------------------------
 
-IF OBJECT_ID(N'[dbo].[AddressSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[AddressSet];
-GO
 IF OBJECT_ID(N'[dbo].[HCOSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[HCOSet];
 GO
 IF OBJECT_ID(N'[dbo].[HCPSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[HCPSet];
 GO
+IF OBJECT_ID(N'[dbo].[AddressSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[AddressSet];
+GO
 IF OBJECT_ID(N'[dbo].[MeetingSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[MeetingSet];
+GO
+IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserSet];
 GO
 IF OBJECT_ID(N'[dbo].[ProductSet]', 'U') IS NOT NULL
     DROP TABLE [dbo].[ProductSet];
 GO
-IF OBJECT_ID(N'[dbo].[UserCredentialsSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UserCredentialsSet];
-GO
-IF OBJECT_ID(N'[dbo].[UserSet]', 'U') IS NOT NULL
-    DROP TABLE [dbo].[UserSet];
+IF OBJECT_ID(N'[dbo].[UserCredentialsSet1]', 'U') IS NOT NULL
+    DROP TABLE [dbo].[UserCredentialsSet1];
 GO
 
 -- --------------------------------------------------
