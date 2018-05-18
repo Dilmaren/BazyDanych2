@@ -1,11 +1,5 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
@@ -24,7 +18,7 @@ namespace ProjektBD2
             tabPage3.Text = "HCP";
             toolTip1.SetToolTip(button3, "1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA");
         }
-
+        
         private void DBMonitor_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD2DataSet5.AddressSet' table. You can move, or remove it, as needed.
@@ -34,39 +28,18 @@ namespace ProjektBD2
             // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
             this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
             // TODO: This line of code loads data into the 'bD2DataSet1.AddressSet' table. You can move, or remove it, as needed.
-      //  this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
-
+            //  this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
         }
+        
         //New Address Button
-        private void button1_Click(object sender, EventArgs e)
-        {
-            this.Hide();
-            NewHCO nowyszpital = new NewHCO();
-            nowyszpital.Show();
-        }
-
-        //New HCO Button
         private void button1_Click_1(object sender, EventArgs e)
         {
-            NewAddress nowyadres = new NewAddress();
+            Enabled = false;
+            NewAddress nowyadres = new NewAddress(this);
             nowyadres.Show();
-            this.Hide();
+            //Hide();
         }
-
-        //New HCP Button
-        private void button8_Click(object sender, EventArgs e)
-        {
-            NewHCP nowylekarz = new NewHCP();
-            nowylekarz.Show();
-            this.Hide();
-        }
-
-        //Level of treatment HELP Button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
-        }
-
+        
         //Edit Address Button
         private void button6_Click(object sender, EventArgs e)
         {
@@ -88,9 +61,62 @@ namespace ProjektBD2
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
-            EditAddress edytujadres = new EditAddress();
+            
+            Enabled = false;
+            EditAddress edytujadres = new EditAddress(this);
             edytujadres.Show();
+        }
+        
+        //Delete Address Button
+        private void button7_Click(object sender, EventArgs e)
+        {
+            string sConnection = Properties.Settings.Default.BD2ConnectionString;
+            SqlConnection conn = new SqlConnection();
+            conn.ConnectionString = sConnection;
+            conn.Open();
+            try
+            {
+                SqlCommand command1 = new SqlCommand("", conn);
+                command1.CommandType = CommandType.Text;
+                command1.Parameters.AddWithValue("@name1", dataGridView1.CurrentRow.Cells[0].Value.ToString());
+                command1.CommandText = "DELETE from dbo.AddressSet where AddressID = @name1";
+                command1.ExecuteScalar();
+
+                DataTable dt = new DataTable();
+                adapt = new SqlDataAdapter("select * from dbo.AddressSet", conn);
+                adapt.Fill(dt);
+                dataGridView1.DataSource = dt;
+
+
+            }
+            catch (SqlException er)
+            {
+                String text = "There was an error reported by SQL Server, " + er.Message;
+                MessageBox.Show(text, "ERROR");
+            }
+        }
+
+        //New HCO Button
+        private void button1_Click(object sender, EventArgs e)
+        {
+            Enabled = false;
+            NewHCO nowyszpital = new NewHCO(this);
+            nowyszpital.Show();
+            nowyszpital.Activate();
+        }
+
+        //New HCP Button
+        private void button8_Click(object sender, EventArgs e)
+        {
+            NewHCP nowylekarz = new NewHCP();
+            nowylekarz.Show();
             this.Hide();
+        }
+
+        //Level of treatment HELP Button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
         }
 
         //Edit HCO Button
@@ -171,35 +197,6 @@ namespace ProjektBD2
             pokazdoktorow.Show();
         }
 
-        //Delete Address Button
-        private void button7_Click(object sender, EventArgs e)
-        {
-            string sConnection = Properties.Settings.Default.BD2ConnectionString;
-            SqlConnection conn = new SqlConnection();
-            conn.ConnectionString = sConnection;
-            conn.Open();
-            try
-            {
-                SqlCommand command1 = new SqlCommand("", conn);
-                command1.CommandType = CommandType.Text;
-                command1.Parameters.AddWithValue("@name1", dataGridView1.CurrentRow.Cells[0].Value.ToString());
-                command1.CommandText = "DELETE from dbo.AddressSet where AddressID = @name1";
-                command1.ExecuteScalar();
-
-                DataTable dt = new DataTable();
-                adapt = new SqlDataAdapter("select * from dbo.AddressSet", conn);
-                adapt.Fill(dt);
-                dataGridView1.DataSource = dt;
-
-
-            }
-            catch (SqlException er)
-            {
-                String text = "There was an error reported by SQL Server, " + er.Message;
-                MessageBox.Show(text, "ERROR");
-            }
-        }
-
         //Show Meeting History Button
         private void button11_Click(object sender, EventArgs e)
         {
@@ -209,12 +206,15 @@ namespace ProjektBD2
             historiaspotkan.Show();
 
         }
-
+        
+        /*DBMonitor Back button - clears the memory allocated by DBMonitor
+                                and closes the window*/
         private void button12_Click(object sender, EventArgs e)
         {
-            this.Hide();
+            //this.Hide();
+            this.Dispose();
         }
-
+        
         private void dataGridView2_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string sConnection = Properties.Settings.Default.BD2ConnectionString;

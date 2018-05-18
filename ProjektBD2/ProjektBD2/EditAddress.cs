@@ -13,9 +13,14 @@ namespace ProjektBD2
 {
     public partial class EditAddress : Form
     {
-        public EditAddress()
+        private readonly Form parentForm;
+        
+        //Creats EditAddress process, and connects to the database
+        public EditAddress(Form parentFormReference)
         {
             InitializeComponent();
+            parentForm = parentFormReference;
+            
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = sConnection;
@@ -48,8 +53,9 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
-
-    private void button1_Click(object sender, EventArgs e)
+        
+        //Updates the Address and returns to the root DBMonitor window
+        private void button1_Click(object sender, EventArgs e)
         {
             String commandText = "UPDATE AddressSet SET Street=@street, City=@city, Territory=@territory, Country=@country, ZipCode=@zipcode WHERE AddressID=@param";
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
@@ -67,9 +73,11 @@ namespace ProjektBD2
                 command.Parameters.AddWithValue("@param", DBMonitor.pomoc);
                 command.ExecuteNonQuery();
                 conn.Close();
-                DBMonitor powrot = new DBMonitor();
-                powrot.Show();
-                this.Hide();
+                
+                //DBMonitor powrot = new DBMonitor();
+                parentForm.Enabled = true;
+                //this.Hide();
+                Dispose();
             }
             catch (SqlException er)
             {

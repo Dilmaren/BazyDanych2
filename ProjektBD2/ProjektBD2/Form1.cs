@@ -32,7 +32,8 @@ namespace ProjektBD2
         {
             
         }
-
+        
+        //Create new DBMonitor
         private void button1_Click(object sender, EventArgs e)
         {
 

@@ -14,9 +14,12 @@ namespace ProjektBD2
     public partial class NewHCO : Form
     {
         private static SqlDataAdapter adapt;
-        public NewHCO()
+        private readonly Form parentForm;
+        
+        public NewHCO(Form parentFormReference)
         {
             InitializeComponent();
+            parentForm = parentFormReference;
         }
 
         private void NewHCO_Load(object sender, EventArgs e)
@@ -61,9 +64,11 @@ namespace ProjektBD2
                 command.Parameters.AddWithValue("@AddressID", Int32.Parse(label13.Text.ToString()));
                 command.ExecuteNonQuery();
                 conn.Close();
-                DBMonitor powrot = new DBMonitor();
-                powrot.Show();
-                this.Hide();
+                
+                //DBMonitor powrot = new DBMonitor();
+                parentForm.Enabled = true;
+                //this.Hide();
+                Dispose();
             }
             catch (SqlException er)
             {
@@ -75,9 +80,8 @@ namespace ProjektBD2
         private void button3_Click(object sender, EventArgs e)
         {
 
-            NewAddress nowyadres5 = new NewAddress();
+            NewAddress nowyadres5 = new NewAddress(parentForm);
             nowyadres5.Show();
-
         }
 
         private void button4_Click(object sender, EventArgs e)
@@ -85,9 +89,4 @@ namespace ProjektBD2
 
         }
     }
-
- 
-    
 }
-    
-
