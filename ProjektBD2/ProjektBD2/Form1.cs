@@ -9,22 +9,32 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 
+
+
 namespace ProjektBD2
 {
     public partial class Form1 : Form
     {
+        public static Form1 form = null;
         
         public static int loggedUserID;
         public Form1()
         {
             InitializeComponent();
-                       
+
+            form = this;
+            Window window = new Window(); 
+            window.Hide();
+           
+            
+
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
             this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
+            
 
         }
 
@@ -94,7 +104,7 @@ namespace ProjektBD2
                     MessageBox.Show("FAIL", "fail");
                 }
                 conn.Close();
-
+              
             }
             catch (SqlException er)
             {
@@ -128,6 +138,16 @@ namespace ProjektBD2
         private void pictureBox4_Click(object sender, EventArgs e)
         {
             Close();
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
+           
+            Window window = Window.window;
+            window.Show();
+            Hide();
+            
         }
     }
 }

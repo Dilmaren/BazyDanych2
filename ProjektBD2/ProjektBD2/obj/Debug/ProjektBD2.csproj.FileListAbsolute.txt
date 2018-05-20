@@ -193,7 +193,6 @@ C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\Ent
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.xml
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\bin\Debug\EntityFramework.SqlServer.xml
-C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.DBMonitor.resources
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditAddress.resources
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.EditHCO.resources
@@ -224,3 +223,5 @@ C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\Pro
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csproj.CoreCompileInputs.cache
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.exe
 C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.pdb
+C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.Window.resources
+C:\Users\Przemek\Documents\GitHub\Pharma-app\ProjektBD2\ProjektBD2\obj\Debug\ProjektBD2.csprojResolveAssemblyReference.cache
