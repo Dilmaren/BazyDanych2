@@ -16,19 +16,18 @@ namespace ProjektBD2
         {
             InitializeComponent();
         }
-
+        
         private void ShowHCP_Load(object sender, EventArgs e)
         {
             // TODO: This line of code loads data into the 'bD2DataSet2.HCPSet' table. You can move, or remove it, as needed.
-            this.hCPSetTableAdapter.Fill(this.bD2DataSet2.HCPSet);
-
+            hCPSetTableAdapter.Fill(bD2DataSet2.HCPSet);
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
             NewMeeting.selectedHCPID = Convert.ToInt32(dataGridView1.CurrentRow.Cells[0].Value.ToString());
-            NewMeeting.selectedhcpname = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value.ToString() + " " + dataGridView1.CurrentRow.Cells[3].Value.ToString());
-            this.Hide();
+            NewMeeting.selectedhcpname = Convert.ToString(dataGridView1.CurrentRow.Cells[1].Value + " " + dataGridView1.CurrentRow.Cells[3].Value);
+            Hide();
             NewMeeting powrot = new NewMeeting();
             powrot.Show();
         }

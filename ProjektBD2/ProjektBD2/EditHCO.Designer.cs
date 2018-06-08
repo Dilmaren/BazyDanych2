@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class EditHCO
     {
@@ -71,12 +73,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource2)).BeginInit();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(597, 196);
+            this.button2.Location = new System.Drawing.Point(487, 165);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 48;
             this.button2.Text = "UPDATE";
             this.button2.UseVisualStyleBackColor = true;
@@ -86,7 +90,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(487, 124);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(120, 27);
             this.button1.TabIndex = 47;
             this.button1.Text = "Set AddressID:";
             this.button1.UseVisualStyleBackColor = true;
@@ -408,7 +412,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
 
         #endregion

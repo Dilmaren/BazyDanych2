@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class NewAddress
     {
@@ -40,6 +42,8 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // label1
             // 

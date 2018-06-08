@@ -25,25 +25,25 @@ namespace ProjektBD2
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = sConnection;
             conn.Open();
-
+            
             try
             {
                 SqlCommand command1 = new SqlCommand("", conn);
                 command1.CommandType = CommandType.Text;
                 command1.Parameters.AddWithValue("@addressid1", DBMonitor.pomoc);
-
+                
                 command1.CommandText = "SELECT Street FROM dbo.AddressSet where AddressID = @addressid1";
                 textBox1.Text = (String)command1.ExecuteScalar();
-
+                
                 command1.CommandText = "SELECT City FROM dbo.AddressSet where AddressID = @addressid1";
                 textBox2.Text = (String)command1.ExecuteScalar();
-
+                
                 command1.CommandText = "SELECT Territory FROM dbo.AddressSet where AddressID = @addressid1";
                 comboBox1.Text = (String)command1.ExecuteScalar();
-
+                
                 command1.CommandText = "SELECT Country FROM dbo.AddressSet where AddressID = @addressid1";
                 comboBox2.Text = (String)command1.ExecuteScalar();
-
+                
                 command1.CommandText = "SELECT ZipCode FROM dbo.AddressSet where AddressID = @addressid1";
                 textBox3.Text = Convert.ToString(command1.ExecuteScalar());
             }
@@ -54,14 +54,16 @@ namespace ProjektBD2
             }
         }
         
-        //Updates the Address and returns to the root DBMonitor window
+        //Updates the Address and returns to the parent DBMonitor window
         private void button1_Click(object sender, EventArgs e)
         {
-            String commandText = "UPDATE AddressSet SET Street=@street, City=@city, Territory=@territory, Country=@country, ZipCode=@zipcode WHERE AddressID=@param";
+            String commandText = "UPDATE AddressSet SET Street=@street, City=@city, Territory=@territory, " +
+                                 "Country=@country, ZipCode=@zipcode WHERE AddressID=@param";
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
             SqlConnection conn = new SqlConnection();
             conn.ConnectionString = sConnection;
             conn.Open();
+            
             try
             {
                 SqlCommand command = new SqlCommand(commandText, conn);
@@ -74,9 +76,7 @@ namespace ProjektBD2
                 command.ExecuteNonQuery();
                 conn.Close();
                 
-                //DBMonitor powrot = new DBMonitor();
                 parentForm.Enabled = true;
-                //this.Hide();
                 Dispose();
             }
             catch (SqlException er)
@@ -84,6 +84,13 @@ namespace ProjektBD2
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
+        }
+        
+        //Closes the window and returns to the parent DBMonitor window
+        private void windowClosing(object sender, CancelEventArgs e)
+        {
+            parentForm.Enabled = true;
+            Dispose();
         }
     }
 }

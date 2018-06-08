@@ -13,12 +13,10 @@ namespace ProjektBD2
 {
     public partial class Form1 : Form
     {
-        
         public static int loggedUserID;
         public Form1()
         {
             InitializeComponent();
-                       
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -36,7 +34,6 @@ namespace ProjektBD2
         //Create new DBMonitor
         private void button1_Click(object sender, EventArgs e)
         {
-
             DBMonitor nowymonitor = new DBMonitor();
             nowymonitor.Show();
         }
@@ -50,7 +47,6 @@ namespace ProjektBD2
         {
             UserMonitor paneluzytkownikow = new UserMonitor();
             paneluzytkownikow.Show();
-
         }
 
         private void button4_Click(object sender, EventArgs e)

@@ -1,4 +1,7 @@
-﻿namespace ProjektBD2
+﻿using System;
+using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class NewHCO
     {
@@ -6,7 +9,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -19,9 +22,9 @@
             }
             base.Dispose(disposing);
         }
-
+        
         #region Windows Form Designer generated code
-
+        
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -73,6 +76,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet5)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).BeginInit();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // namebox1
             // 
@@ -337,7 +342,7 @@
             // 
             this.button1.Location = new System.Drawing.Point(458, 129);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(114, 23);
+            this.button1.Size = new System.Drawing.Size(120, 27);
             this.button1.TabIndex = 23;
             this.button1.Text = "Set AddressID:";
             this.button1.UseVisualStyleBackColor = true;
@@ -345,9 +350,9 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(568, 201);
+            this.button2.Location = new System.Drawing.Point(458, 170);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.Size = new System.Drawing.Size(120, 40);
             this.button2.TabIndex = 24;
             this.button2.Text = "CREATE";
             this.button2.UseVisualStyleBackColor = true;
@@ -371,6 +376,7 @@
             this.button4.TabIndex = 26;
             this.button4.Text = "refresh list";
             this.button4.UseVisualStyleBackColor = true;
+            this.button4.Click += new System.EventHandler(this.button4_Click);
             // 
             // bD2DataSet5
             // 
@@ -426,11 +432,10 @@
             ((System.ComponentModel.ISupportInitialize)(this.addressSetBindingSource1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
+        
         #endregion
-
+        
         private System.Windows.Forms.TextBox namebox1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;

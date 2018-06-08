@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class showEmployees
     {
@@ -6,7 +8,7 @@
         /// Required designer variable.
         /// </summary>
         private System.ComponentModel.IContainer components = null;
-
+        
         /// <summary>
         /// Clean up any resources being used.
         /// </summary>
@@ -19,9 +21,9 @@
             }
             base.Dispose(disposing);
         }
-
+        
         #region Windows Form Designer generated code
-
+        
         /// <summary>
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
@@ -56,6 +58,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet2)).BeginInit();
             this.filtrujToolStrip.SuspendLayout();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // dataGridView1
             // 
@@ -250,11 +254,10 @@
             this.filtrujToolStrip.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
-
         }
-
+        
         #endregion
-
+        
         private System.Windows.Forms.DataGridView dataGridView1;
         private BD2DataSet2 bD2DataSet2;
         private System.Windows.Forms.BindingSource hCPSetBindingSource;
