@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class EditHCP
     {
@@ -83,6 +85,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource4)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource5)).BeginInit();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // button2
             // 

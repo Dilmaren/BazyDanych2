@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class MeetingHistory
     {
@@ -51,6 +53,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.userSetBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // bD2DataSet3
             // 

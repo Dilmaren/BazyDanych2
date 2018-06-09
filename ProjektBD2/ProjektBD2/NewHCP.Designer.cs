@@ -1,4 +1,6 @@
-﻿namespace ProjektBD2
+﻿using System.ComponentModel;
+
+namespace ProjektBD2
 {
     partial class NewHCP
     {
@@ -72,6 +74,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.bD2DataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.hCOSetBindingSource)).BeginInit();
             this.SuspendLayout();
+            // Window close button
+            this.Closing += new CancelEventHandler(this.windowClosing);
             // 
             // label1
             // 

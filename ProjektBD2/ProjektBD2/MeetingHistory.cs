@@ -16,11 +16,14 @@ namespace ProjektBD2
     {
         private DataTable dataTable = new DataTable();
         private BindingSource SBind = new BindingSource();
-        public MeetingHistory()
+        private readonly Form parentForm;
+        
+        public MeetingHistory(Form parentFormReference)
         {
             InitializeComponent();
+            parentForm = parentFormReference;
         }
-
+        
         private void MeetingHistory_Load(object sender, EventArgs e)
         {
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
@@ -46,12 +49,17 @@ namespace ProjektBD2
             }
 
         }
-
+        
         private void button1_Click(object sender, EventArgs e)
         {
-            this.Hide();
-            DBMonitor powrot = new DBMonitor();
-            powrot.Show();
+            parentForm.Enabled = true;
+            Dispose();
+        }
+        
+        private void windowClosing(object sender, CancelEventArgs e)
+        {
+            parentForm.Enabled = true;
+            Dispose();
         }
     }
 }

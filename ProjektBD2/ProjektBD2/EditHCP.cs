@@ -13,10 +13,14 @@ namespace ProjektBD2
 {
     public partial class EditHCP : Form
     {
-        public EditHCP()
+        private readonly Form parentForm;
+        
+        public EditHCP(Form parentFormReference)
         {
             InitializeComponent();
-            this.hCOSetTableAdapter.Fill(this.bD2DataSet.HCOSet);
+            parentForm = parentFormReference;
+            
+            hCOSetTableAdapter.Fill(bD2DataSet.HCOSet);
             textBox1.Text = "test";
 
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
@@ -119,15 +123,21 @@ namespace ProjektBD2
                 command.Parameters.AddWithValue("@hcoid", label11.Text);
                 command.ExecuteNonQuery();
                 conn.Close();
-                DBMonitor powrot = new DBMonitor();
-                powrot.Show();
-                this.Hide();
+
+                parentForm.Enabled = true;
+                Dispose();
             }
             catch (SqlException er)
             {
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
+        }
+        
+        private void windowClosing(object sender, CancelEventArgs e)
+        {
+            parentForm.Enabled = true;
+            Dispose();
         }
     }
 }

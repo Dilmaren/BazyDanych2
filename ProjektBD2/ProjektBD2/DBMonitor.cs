@@ -10,6 +10,7 @@ namespace ProjektBD2
         public static Int32 pomoc;
         public static String pomoc1;
         private static SqlDataAdapter adapt;
+        
         public DBMonitor()
         {
             InitializeComponent();
@@ -28,7 +29,7 @@ namespace ProjektBD2
             // TODO: This line of code loads data into the 'bD2DataSet.HCOSet' table. You can move, or remove it, as needed.
             hCOSetTableAdapter.Fill(bD2DataSet.HCOSet);
             // TODO: This line of code loads data into the 'bD2DataSet1.AddressSet' table. You can move, or remove it, as needed.
-            //  this.addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
+            // addressSetTableAdapter.Fill(this.bD2DataSet1.AddressSet);
         }
         
         //New Address Button
@@ -158,15 +159,9 @@ namespace ProjektBD2
         //New HCP Button
         private void button8_Click(object sender, EventArgs e)
         {
-            NewHCP nowylekarz = new NewHCP();
+            Enabled = false;
+            NewHCP nowylekarz = new NewHCP(this);
             nowylekarz.Show();
-            Hide();
-        }
-        
-        //Level of treatment HELP Button
-        private void button3_Click(object sender, EventArgs e)
-        {
-            MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
         }
         
         //Edit HCP Button
@@ -189,19 +184,26 @@ namespace ProjektBD2
                 String text = "There was an error reported by SQL Server, " + er.Message;
                 MessageBox.Show(text, "ERROR");
             }
-            EditHCP edytujlekarza = new EditHCP();
+            
+            Enabled = false;
+            EditHCP edytujlekarza = new EditHCP(this);
             edytujlekarza.Show();
-            Hide();
         }
         
         //Show Meeting History Button
         private void button11_Click(object sender, EventArgs e)
         {
             pomoc = Convert.ToInt32(dataGridView3.CurrentRow.Cells[3].Value.ToString());
-            Hide();
-            MeetingHistory historiaspotkan = new MeetingHistory();
-            historiaspotkan.Show();
 
+            Enabled = false;
+            MeetingHistory historiaspotkan = new MeetingHistory(this);
+            historiaspotkan.Show();
+        }
+        
+        //Level of treatment HELP Button
+        private void button3_Click(object sender, EventArgs e)
+        {
+            MessageBox.Show("1 - cztery podstawowe specjalności (choroby wew., chirurgia, położnictwo, pediatria)\n2 - szpital wojewódzki - dodatkowe specjalności (np dermatologia, kardiochirurgia, neurologia itd.)\n3 - szpital kliniczny i jednostki MSWiA", "INFO");
         }
         
         /*DBMonitor Back button - clears the memory allocated by DBMonitor
@@ -273,6 +275,7 @@ namespace ProjektBD2
                 MessageBox.Show(text, "ERROR");
             }
         }
+        
         private void dataGridView3_CellClick(object sender, DataGridViewCellEventArgs e)
         {
             string sConnection = Properties.Settings.Default.BD2ConnectionString;
